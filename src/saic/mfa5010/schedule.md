@@ -126,7 +126,7 @@ Deleuze, Gilles and Felix Guattari. "Rhizome". [A Thousand Plateaus](https://fil
 
 ## 11/21/25 Week 13
 
-Kronic, Maya B. and Amy Ireland. "Kwaizome." Cute Accelerationism. 2024.
+Kronic, Maya B. and Amy Ireland. [Introduction + "Kwaizome" pgs. 3-7 + End Notes pgs. 49-70](/assets/pdf/cuteacc.pdf). Cute Accelerationism. 2024.
 
 Additional:
 
