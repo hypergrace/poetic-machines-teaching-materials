@@ -9,6 +9,22 @@ module.exports = function (eleventyConfig) {
   const fs = require("fs");
   const path = require("path");
 
+  // Ignore draft pages (pages with draft: true in front matter)
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    eleventyExcludeFromCollections: (data) => {
+      if (data.draft === true) {
+        return true;
+      }
+      return false;
+    },
+    permalink: (data) => {
+      if (data.draft === true) {
+        return false;
+      }
+      return data.permalink;
+    },
+  });
+
   eleventyConfig.addNunjucksShortcode("p5gallery", function (folder) {
     const fs = require("fs");
     const path = require("path");

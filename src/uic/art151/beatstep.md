@@ -2,6 +2,7 @@
 layout: tutorial.njk
 weekNum: 0
 title: Arturia BeatStep 
+draft: true
 ---
 
 # Arturia Beatstep
