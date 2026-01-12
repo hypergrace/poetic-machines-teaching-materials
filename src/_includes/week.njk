@@ -1,18 +1,14 @@
 ---
 layout: base.njk
-goals:
-  - Say hello and check-in
-  - Take attendance
 ---
 
 <div class="col-sm-6">
   <h1>Week {{ weekNum }} : {{ title }}</h1>
-  {# goals #}
-  <ul class="no-bullets">
-    In-Class Goals: {% for g in goals %}
-    <li><input type="checkbox" class="cb" /> {{ g }}</li>
-    {% endfor %}
-  </ul>
+{% agenda "classtime agenda", goals %}
+
+{% endagenda %}
+
+<div class = "card">
   <h2>Homework</h2>
 
   {% if tutorial %}
@@ -87,7 +83,7 @@ goals:
         <div class="row">
           <div class="col-12">
             {% if r.img %}
-            <img src="{{ r.img }}" alt="Card image cap" class="img-fluid" />
+            <img src="{{ r.img }}" alt="Card image cap" class="img-fluid card-img-top" />
             {% else %}
             <i class="fa-book"></i>
             {% endif %}
@@ -150,7 +146,8 @@ goals:
   </div>
 
   {% endif %} 
-
+</div>
+<div class = "card">
   <h3>Examples</h3>
   
 {% p5gallery "src/scripts/introp5/" + weekNum %}
@@ -173,10 +170,13 @@ goals:
 
   {% endif %} {% endfor %} {% endif %} 
   #}
+  </div>
   
   {% if other %} 
+  
   <h3>Other Materials</h3>
   <div class="row masonry" data-masonry='{"percentPosition": true }'>
+  
     {% for o in other%} {% if o.type == "youtube" %}
     <div class="col-md-6 card" style="padding: 10px">
       <div class="ratio ratio-16x9">
@@ -232,6 +232,10 @@ goals:
   </p>
   {% endif %} #}
 </div>
+
+
+
+
 <div class="col-sm-2 pull-right card">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">

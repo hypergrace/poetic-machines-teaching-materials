@@ -1,6 +1,6 @@
 ---
 weekNum: 0
-title: Presentation
+title: Group Presentation
 layout: presentation.njk
 area: art and technology studies
 topics:

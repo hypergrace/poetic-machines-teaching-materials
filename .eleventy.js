@@ -160,6 +160,26 @@ module.exports = function (eleventyConfig) {
           </ul>
         </div>`
   );
+  
+  eleventyConfig.addPairedShortcode(
+    "agenda",
+    function(content, title, items) {
+      if (!items || !Array.isArray(items)) {
+        return `<div class="col-sm-4">
+          <div class="py-2">
+          </div>
+        </div>`;
+      }
+      const listItems = items.map(item => `<li class="list-group-item">${item}</li>`).join('');
+      return `
+       <div class="py-2">
+          <h2> ${title} </h2>
+          <ul class="list-group">
+            ${listItems}
+          </ul>
+    </div>`;
+    }
+  );
 
   eleventyConfig.addWatchTarget("src/scripts/introp5/1");
 
