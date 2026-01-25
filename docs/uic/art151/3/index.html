@@ -713,6 +713,53 @@ function draw() {
 }
 </code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-3-7-iframe.html" width="400" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// define our variables
+// control panel
+// variable declaration:
+// let: declares a variable (something that can change)
+// var: like let but older, still works
+// const: declares a constant (cannot be changed)
+
+// camelCaseStyle -- this is not a syntactical rule!
+// style guide for variables -- be short but clear!
+// single equal sign is always used for declaration of variables
+// if you need to use the ma60hematical equals, you write ==;
+
+// global variables are accesible anywhere in the sketch!
+// do *you* need to change it in order to see something different? if yes it should be a global variable, if not it might not need to be
+let vOffset = 150; // the number of pixels between the top and bottom of canvas and the start and end of the line
+let xSpacing = 10; // the horizontal spacing between lines
+let numLines = 60; // number of lines
+
+function setup() {
+  createCanvas(400, 600);
+}
+
+function draw() {
+  background(220);
+  // local scoped variable! only useable within the context of the draw loop.
+
+  // code inside () are the rules and conditions for repeating the for loop
+  // (start;stop;change)
+  // start: declare a variable e.g. let i = 0;
+  // stop: when should the computer repeat the for loop ? (if the condition it true, the computer will repeat. if not it will exit the for loop and do the next thing)
+  // we program rules and conditions around a variable
+
+  // two styles for writing rules and conditions
+  // book style: you are thinking in terms of a visual result (position on the canvas, color amount, opacity)
+  // index style: where you are thinking it terms of the number of repetitions
+
+  // code inside the {} is the code to be repeated in the for loop.
+  for (let i = 0; i &lt; numLines; i++) {
+    line(20 + xSpacing * i, vOffset * i/12, 60 + xSpacing * i/9, height - vOffset);
+  }
+}
+</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);
