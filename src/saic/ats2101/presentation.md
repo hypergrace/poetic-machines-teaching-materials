@@ -2,6 +2,7 @@
 weekNum: 0
 title: Presentation
 layout: presentation.njk
+draft: true
 area: art and technology studies
 topics:
  - title: Generative Art

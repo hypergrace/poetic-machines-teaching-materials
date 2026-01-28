@@ -1,6 +1,7 @@
 ---
 layout: tutorial.njk
 title: schedule
+draft: true
 ---
 
 ## Week

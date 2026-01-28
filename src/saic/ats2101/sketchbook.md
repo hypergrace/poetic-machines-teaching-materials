@@ -1,5 +1,5 @@
 ---
-title: sketchbook
+title: Sketchbook
 layout: tutorial.njk
 weekNum: 0
 ---
@@ -25,8 +25,7 @@ You will actively contribute to a digital sketchbook throughout your six weeks i
 - **SAVE FREQUENTLY**.
 - You will also have a project, which must be its own sketch as well.
 - Your sketches must be titled in a standardized way. This makes the process so much easier for your instructors.
-- For instance, Week 3 will have two sketches due, and so you will add both sketches
-- - `3.1-NAME-TITLE` and `3.2-NAME-TITLE`. Title is optional. Name can be initials, first and/or last name -- just something distinguishing.
+- For instance: `3-NAME-TITLE` Title is optional. Name can be initials, first and/or last name -- just something distinguishing.
 
 ### Collection
 
@@ -43,18 +42,16 @@ You will actively contribute to a digital sketchbook throughout your six weeks i
 
 We already know what the layout will be. Here is an example, as if your instructor was submitting a sketchbook.
 
-#### Collection name: `S25-ATSP2101-JOHNSON-GARRETT-LAROY`
+#### Collection name: `S25-ATSP2101-GRACE`
 
 #### Sketches:
 
-- `2.1-GLJ-PORTRAIT`
-- `3.1-GLJ`
-- `3.2-GLJ`
-- `4.1-GLJ`
-- `4.2-GLJ`
-- `5.1-GLJ`
-- `5.2-GLJ`
-- `6.1-GLJ-PROJECT`
+- `WEEK2-GGG-PORTRAIT`
+- `WEEK3-GGG-FORLOOPS`
+- `WEEK4-GGG-NESTEDFORLOOPS`
+- `WEEK5-GGG-NOISE-CONDITIONALS`
+- `WEEK7-GGG-INTERACTIVITY`
+
 
 ## Missing Work
 

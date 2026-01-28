@@ -58,7 +58,7 @@
             <ul class="list-unstyled ps-0">
              {# course info #}
               {% for p in collections[memberCollection] %} 
-              {% if p.data.weekNum == 0 %}
+              {% if p.data.weekNum == 0 and not p.data.draft %}
 
               <li class="mb-1">
                 <a href="{{ p.url }}">
