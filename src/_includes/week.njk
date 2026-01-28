@@ -108,6 +108,24 @@ layout: base.njk
   </div>
   {% endif %}
 
+  {% if screenings %}
+  <h3>Screenings</h3>
+  <div class="row">
+    {% for s in screenings %}
+    <div class="col-md-6" style="padding: 10px">
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://youtube.com/embed/{{ s }}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   {{ content | safe}}
 
   {% if listenings %}
