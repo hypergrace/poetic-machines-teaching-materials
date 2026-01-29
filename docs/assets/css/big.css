@@ -1,0 +1,29 @@
+div {
+  line-height: 1;
+  font-family: "Silkscreen", cursive;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
+
+div.biggy {
+  pointer-events: auto;
+}
+
+div.child {
+  pointer-events: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+div.biggy:hover {
+  background-color: black;
+  color: white;
+  z-index: -1;
+}
+
+#glj {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
