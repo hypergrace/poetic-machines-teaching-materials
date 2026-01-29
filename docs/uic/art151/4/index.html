@@ -717,6 +717,97 @@ function draw() {
 }
 </code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-4-5-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// make our own variables: let, var, const
+// let is modern in JS
+// var is older way
+// const is constant and so you can't change it
+// use let!
+
+// declare global variables (not in use yet!)
+let d = 40; // diameter of my circle
+let r = d / 2; // radius of the circle
+let xSpacing = 50; // pixels between the center of each circle HORIZONTALLY
+let ySpacing = 0; // pixels between the center of each circle VERTICALLY
+let rows = 100;
+let cols = 10;
+let yD = 0.1; // the difference in ySpacing
+
+let sw = 0.01;
+
+
+function setup() {
+  createCanvas(400, 400);
+  console.log(d);
+  noFill();
+
+  stroke("rgb(94,255,0)");
+  noLoop(); // sets p5 so the draw loop only runs one
+}
+
+function draw() {
+  background(0);
+  
+  // index style increments by 1 
+  // book style increments by something concrete in the sketch (like x position);
+  
+  // i is the index for the COLUMN loop number
+  // j is the index for the ROW loop number
+  // start/init; check to see if the code loops again; changes!
+
+  for (let j = 0; j &lt; rows; j++) {
+       strokeWeight(sw);
+      sw+= 0.5;
+    for (let i = 0; i &lt; cols; i++) {
+      line(xSpacing * i - r, ySpacing * j - r, r + xSpacing * i, ySpacing * j + r);
+      circle(xSpacing * i, ySpacing * j, d); //center x, center y,diameter
+      ySpacing+=yD;
+    }
+  }
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-4-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xSpacing = 12;
+let ySpacing = 12;
+let w = 10; // width of the shape
+let g = 0; // g is greyscale! 
+let rows, cols; // declare the variables in a global scale, but don't define them. we can use them anywhere! 
+let numSquares; 
+let gD; // greyscale Delta
+
+function setup() {
+  createCanvas(400, 400); // we can't use the "width" system variable until after createCanvas has been called
+  noLoop();
+  noStroke();
+  
+  rows = floor((width - w) / xSpacing);
+  cols = floor((height- w) / ySpacing);
+  numSquares = rows * cols;
+  gD = 1 / numSquares * 255;
+  console.log(gD); // range between 1 and 1024
+  
+}
+
+function draw() {
+  background(220);
+  
+  for (let y = w; y &lt; height - w; y += ySpacing) {
+    for (let x = w; x &lt; width - w; x += xSpacing) {
+      fill(g,0,100);
+      square(x, y, w);
+      g+=gD;
+    }
+  }
+}
+</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);

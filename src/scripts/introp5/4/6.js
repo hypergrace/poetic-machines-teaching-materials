@@ -1,0 +1,32 @@
+let xSpacing = 12;
+let ySpacing = 12;
+let w = 10; // width of the shape
+let g = 0; // g is greyscale! 
+let rows, cols; // declare the variables in a global scale, but don't define them. we can use them anywhere! 
+let numSquares; 
+let gD; // greyscale Delta
+
+function setup() {
+  createCanvas(400, 400); // we can't use the "width" system variable until after createCanvas has been called
+  noLoop();
+  noStroke();
+  
+  rows = floor((width - w) / xSpacing);
+  cols = floor((height- w) / ySpacing);
+  numSquares = rows * cols;
+  gD = 1 / numSquares * 255;
+  console.log(gD); // range between 1 and 1024
+  
+}
+
+function draw() {
+  background(220);
+  
+  for (let y = w; y < height - w; y += ySpacing) {
+    for (let x = w; x < width - w; x += xSpacing) {
+      fill(g,0,100);
+      square(x, y, w);
+      g+=gD;
+    }
+  }
+}
