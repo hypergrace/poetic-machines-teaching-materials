@@ -607,6 +607,136 @@ function draw() {
 }
 </code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-4-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xD = 50; // spacing between x points
+let layers = 50;
+let pD = 5; // change in our p variable
+
+function setup() {
+  createCanvas(400, 400);
+  noLoop();
+  noStroke();
+}
+
+function draw() {
+  background(255,0,100);
+  // top of canvas
+  for(let p = 0; p&lt;layers;p+=pD){
+    let g = map(p,0,layers,0,255);
+    fill(50,g,200);
+     beginShape();
+  for(let x = -width/2; x&lt;width+width;x+=xD){
+    let f = x/width * p;
+  
+    let y = (width/2) - pow(f,2);
+   vertex(x,y);
+  }
+  endShape();
+  }
+  
+  
+  // bottom of the canvas
+   for(let p = 0; p&lt;layers;p+=pD){
+    let g = map(p,0,layers,0,255);
+    fill(200,g,50);
+     beginShape();
+  for(let x = -width/2; x&lt;width+width;x+=xD){
+    let f = x/width * p;
+  
+    let y = (width/2) + pow(f,2);
+   vertex(x,y);
+  }
+  endShape();
+  }
+  
+  
+ 
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-4-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+  createCanvas(400, 400);
+  //noFill();
+}
+
+function draw() {
+  background(0);
+
+  let y = width / 2;
+  let yOffset = 0;
+
+ 
+  for (let i = 3; i &lt; 20; i += 0.2) {
+    strokeWeight(6)
+    let c = map(i,3,20,0,255);
+    stroke(c)
+    fill(c)
+     beginShape();
+    for (let x = 0; x &lt; width + width; x += 20) {
+      vertex(x-30, y + yOffset);
+      yOffset = pow((x / width) * i, 3);
+    }
+      endShape();
+  }
+  
+  
+    for (let i = 3; i &lt; 20; i += 0.2) {
+    strokeWeight(6)
+    let c = map(i,3,20,0,255);
+    stroke(c)
+    fill(c)
+     beginShape();
+    for (let x = 0; x &lt; width + width; x += 20) {
+      vertex(x-30, y - yOffset);
+      yOffset = pow((x / width) * i, 3);
+    }
+      endShape();
+  }
+
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-4-9-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// quadrilateral nested for loop 
+// "book style for loop"
+
+let sz = 100; // base size of shape
+let spacing = 40; // base spacing between shapes
+let offsetD = 5; // amount of change in offset
+let y;
+
+function setup() {
+  createCanvas(700, 700);
+  noFill();
+  y = 0; 
+  noLoop();
+}
+
+function draw() {
+  background(240);
+ y += 20;
+  
+ for (let i = 0; i &lt; 50; i++){
+    let offset = i * 5;
+   stroke(i*5);
+   for (let x = 0; x &lt; width-spacing; x+=sz/2){
+    quad(x, y + offset, x + sz, y - offset, x+sz, y + sz + offset, x, y + sz-offset);
+    offset+=offsetD;
+  } 
+ } 
+ 
+  
+}</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);
