@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,71 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <meta charset="utf-8" />
-
-  </head>
-  <body>
-    
-    <script src = "sketch.js"> 
-      
-    </script>
-    <h1> Wave </h1>
-    <h2> Khushi Shah </h2>
-    <h3> Fall 2022 </h3>
-   
-    <p>Wave is an audio/ music visualizer which acts like a generative sound artwork which people can experience as a piece of art on a wall. Audio Visualizer as the name suggests works by extracting frequency information from an audio and later creates animated structures which depict the waveforms, rhythm, loudness, and frequency of the audio which is being fed in. Audio Visualizer is right now being used as a music visualizer which is the interpretation of digital electronic signals of an audio into animated images. Wave is a music visualizer which people can look at and it can also be used on personal computers. Wave is a music visualizer in which an audio file is loaded and it later synthesis the audio and later all the data is collected about the audio like its wavelength, pitch, etc. and at the end an animated imagery which moves and synchronizes according to the tune of the audio is being formed. So basically, the data of the audio is being converted to an animated image. The use of music visualizers is trending right now especially by DJs in live clubs, people use it as a wallpaper and as a generative art piece. </p>
- <iframe title="vimeo-player" src="https://player.vimeo.com/video/781726330?h=83f4c7c157" width="640" height="316" frameborder="0" allowfullscreen></iframe>
-  <p class="cap"> <em>Video Documentation</em> </p>  
-<img src ="1 project 3 img.jpg"> </img>
-  <p class="cap"> <em>Image Documentation</em> </p>
-<img src ="2 project 3 img.jpg"> </img>
-
-
-  <main>
-    </main>
-    <script src="sketch.js"></script>
-  </body>
-</html>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -500,6 +441,67 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+<pre><code>&lt;script src = &quot;sketch.js&quot;&gt; 
+  
+&lt;/script&gt;
+&lt;h1&gt; Wave &lt;/h1&gt;
+&lt;h2&gt; Khushi Shah &lt;/h2&gt;
+&lt;h3&gt; Fall 2022 &lt;/h3&gt;
+
+&lt;p&gt;Wave is an audio/ music visualizer which acts like a generative sound artwork which people can experience as a piece of art on a wall. Audio Visualizer as the name suggests works by extracting frequency information from an audio and later creates animated structures which depict the waveforms, rhythm, loudness, and frequency of the audio which is being fed in. Audio Visualizer is right now being used as a music visualizer which is the interpretation of digital electronic signals of an audio into animated images. Wave is a music visualizer which people can look at and it can also be used on personal computers. Wave is a music visualizer in which an audio file is loaded and it later synthesis the audio and later all the data is collected about the audio like its wavelength, pitch, etc. and at the end an animated imagery which moves and synchronizes according to the tune of the audio is being formed. So basically, the data of the audio is being converted to an animated image. The use of music visualizers is trending right now especially by DJs in live clubs, people use it as a wallpaper and as a generative art piece. &lt;/p&gt;
+</code></pre>
+ <iframe title="vimeo-player" src="https://player.vimeo.com/video/781726330?h=83f4c7c157" width="640" height="316" frameborder="0" allowfullscreen></iframe>
+  <p class="cap"> <em>Video Documentation</em> </p>  
+<img src ="1 project 3 img.jpg"> </img>
+  <p class="cap"> <em>Image Documentation</em> </p>
+<img src ="2 project 3 img.jpg"> </img>
+  <main>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -523,5 +525,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let jitter = 80; // control the jump size of our random walk
+let numSteps = 20; // number of steps in the walk
+
+let noiseScale = 0.009;// zoom factor for our noise field
+
+function setup() {
+  createCanvas(700, 700);
+  noLoop();
+  // noiseSeed(10);
+  // randomSeed(6);
+}
+
+function draw() {
+  background(255);
+  
+  let x = width/2;
+  let y = height/2;
+  beginShape();
+  for(let i = 0;i<numSteps;i++){
+    let n = noise(x*noiseScale,y*noiseScale); // noise generates values between 0 and 1
+    x+=random(-jitter,jitter);
+    y+=random(-jitter,jitter);
+    curveVertex(x,y);
+    fill(0,n*255);
+    circle(x,y,n*jitter);
+  }
+  noFill();
+  endShape();
+  
+}
+  </script>
+  </body>
+  </html>

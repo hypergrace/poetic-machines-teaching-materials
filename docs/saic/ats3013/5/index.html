@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3013/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -356,15 +360,49 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week 5 : Filters and Effects; Acoustic Ecology</h1>
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+    <li class="list-group-item">filter types</li>
+    
+    <li class="list-group-item">low pass filter</li>
+    
+    <li class="list-group-item">high pass filter</li>
+    
+    <li class="list-group-item">resonant filter</li>
+    
+    <li class="list-group-item">reverb</li>
+    
+    <li class="list-group-item">soundscape</li>
+    
+    <li class="list-group-item">acoustic ecology</li>
+    
+    <li class="list-group-item">work on project 1</li>
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
 
-       <div class="py-2">
-          <h2> classtime agenda </h2>
-          <ul class="list-group">
-            <li class="list-group-item">discuss reading</li><li class="list-group-item">introduce project</li>
-          </ul>
-    </div>
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1>Filters and Effects; Acoustic Ecology</h1>
+
+
+
+
+</div>
 
 <div class = "card">
   <h2>Homework</h2>
@@ -402,8 +440,6 @@
 
     
   </div>
-  
-
   
 
   
@@ -570,8 +606,189 @@ function draw() {
   
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-5-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 100; // number of circles in a row
+      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-5-12-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCells = 20;
+
+function setup() {
+  createCanvas(600, 600);
+  noLoop();
+  noStroke();
+}
+
+function draw() {
+  background(220);
+  let w = width/numCells;
+  let g = 128;
+  for(let j = 0; j&lt;numCells;j++){
+     for (let i = 0; i &lt; numCells; i++) {
+      let r = random(-10,10);
+       g += r;
+       fill(g)
+      square(i * w, j* w, w);
+  }
+}
+  
+ 
+  
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-5-13-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCells = 50; // number of cells in the row!
+let noiseScale = 0.009; // zoom factor of our noise field --- (0.001-0.01)
+
+function setup() {
+  createCanvas(600, 600);
+  noLoop(); // running this perlin noise algorithm is expensive! 
+  noStroke();
+  //noiseSeed(1);// randomSeed() but for noise;
+  console.log(600*600)
+}
+
+function draw() {
+  background(220);
+  let w = width/numCells;
+  let g = 128;
+  for(let j = 0; j&lt;numCells;j++){
+     for (let i = 0; i &lt; numCells; i++) {
+      let n = noise(i*noiseScale,j*noiseScale); // noise generates numbers between 0-1. first param is x, second is y
+       fill(n*255); // fill expects 0-255
+      square(i * w, j* w, w);
+  }
+}
+  
+ 
+  
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-5-14-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let jitter = 80; // control the jump size of our random walk
+let numSteps = 20; // number of steps in the walk
+
+let noiseScale = 0.009;// zoom factor for our noise field
+
+function setup() {
+  createCanvas(700, 700);
+  noLoop();
+  // noiseSeed(10);
+  // randomSeed(6);
+}
+
+function draw() {
+  background(255);
+  
+  let x = width/2;
+  let y = height/2;
+  beginShape();
+  for(let i = 0;i&lt;numSteps;i++){
+    let n = noise(x*noiseScale,y*noiseScale); // noise generates values between 0 and 1
+    x+=random(-jitter,jitter);
+    y+=random(-jitter,jitter);
+    curveVertex(x,y);
+    fill(0,n*255);
+    circle(x,y,n*jitter);
+  }
+  noFill();
+  endShape();
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-5-15-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let jitter = 20; // control the jump size of our random walk
+let numSteps = 200; // number of steps in the walk
+
+let noiseScale = 0.009;// zoom factor for our noise field
+let maxW = 30; // max width of our circles
+let maxOpacity = 100; // max opacity of our circles 
+
+function setup() {
+  createCanvas(700, 700);
+  noLoop();
+  // noiseSeed(10);
+  // randomSeed(6);
+}
+
+function draw() {
+  background(255);
+  
+  let x = width/2;
+  let y = height/2;
+  beginShape();
+  for(let i = 0;i&lt;numSteps;i++){
+    let n = noise(i*noiseScale); // noise generates values between 0 and 1
+    x+=random(-jitter,jitter);
+    y+=random(-jitter,jitter);
+    curveVertex(x,y);
+    fill(0,n*maxOpacity);
+    noStroke();
+    circle(x,y,n*maxW);
+  }
+  stroke(0);
+  noFill();
+  endShape();
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-5-16-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let jitter = 20; // control the jump size of our random walk
+let numSteps = 200; // number of steps in the walk
+let numLines = 5; // number of lines 
+
+let noiseScale = 0.1; // zoom factor for our noise field
+let maxW = 30; // max width of our circles
+let maxOpacity = 100; // max opacity of our circles
+
+function setup() {
+  createCanvas(700, 700);
+  noLoop();
+   noiseSeed(10);
+   randomSeed(6);
+  
+  
+}
+
+function draw() {
+  background(255);
+
+  for (let j = 0; j &lt; numLines; j++) {
+    let x = random(width);
+    let y = random(height);
+    beginShape();
+    for (let i = 0; i &lt; numSteps; i++) {
+      let n = noise(i * noiseScale, j*noiseScale*10); // noise generates values between 0 and 1
+      x += random(-jitter, jitter);
+      y += random(-jitter, jitter);
+      curveVertex(x, y);
+       console.log(j,n);
+      fill(0,n*128,255-n*128/2, n * maxOpacity);
+      noStroke();
+      circle(x, y, n * maxW);
+    }
+    stroke(0);
+    noFill();
+    endShape();
+  }
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-5-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 100; // number of circles in a row
 let spacing; // declare but not define
 // - minus
 function setup() {
@@ -607,9 +824,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-5-3-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 50;
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-5-3-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 50;
 let spacing;
 let noiseScale = 0.02;
 let w; // width of square
@@ -638,9 +855,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-5-4-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCols = 200; // number of columns
+      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-5-4-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCols = 200; // number of columns
 let numRows = 40; // number of rows
 let xSpacing, ySpacing;
 let noiseScale = 0.03;
@@ -668,9 +885,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-5-5-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
+      <button onclick="toggleP5View('p5-iframe-11', 'p5-code-11')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-11" src="/iframes/src-scripts-introp5-5-5-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-11" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
 let xSpacing = 35;
 let startW = 50; // width of first square
 
@@ -699,9 +916,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-5-6-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
+      <button onclick="toggleP5View('p5-iframe-12', 'p5-code-12')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-12" src="/iframes/src-scripts-introp5-5-6-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-12" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
 let xSpacing = 35;
 let startW = 50; // width of first square
 
@@ -732,9 +949,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-5-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let displacement = 2;
+      <button onclick="toggleP5View('p5-iframe-13', 'p5-code-13')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-13" src="/iframes/src-scripts-introp5-5-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-13" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let displacement = 2;
 
 function setup() {
   createCanvas(400, 400);
@@ -758,9 +975,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-5-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-14', 'p5-code-14')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-14" src="/iframes/src-scripts-introp5-5-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-14" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(400, 400);
   noLoop();
   rectMode(CENTER);
@@ -787,9 +1004,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-5-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-15', 'p5-code-15')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-15" src="/iframes/src-scripts-introp5-5-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-15" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(400, 400);
   noLoop();
   noFill();
@@ -835,41 +1052,7 @@ function draw() {
   
    
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    
-    <li class="list-group-item">filter types</li>
-    
-    <li class="list-group-item">low pass filter</li>
-    
-    <li class="list-group-item">high pass filter</li>
-    
-    <li class="list-group-item">resonant filter</li>
-    
-    <li class="list-group-item">reverb</li>
-    
-    <li class="list-group-item">soundscape</li>
-    
-    <li class="list-group-item">acoustic ecology</li>
-    
-    <li class="list-group-item">work on project 1</li>
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-</div>
+<!-- End main content column -->
 
       
         </div>
@@ -893,5 +1076,29 @@ function draw() {
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

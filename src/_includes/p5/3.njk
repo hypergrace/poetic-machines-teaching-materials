@@ -17,19 +17,19 @@ sketch:
       original. See how you can incorporate color, strokeWeight(), and different shapes
       from the previous week.
 concepts:
-  - for loop
-  - nested for loop
-  - "variables: let, const"
+  - "variables: let"
   - scope
+  - repeating with a for loop
 code:
   - for
   - let
-  - const
+  - "+"
+  - "-"
+  - "/"
+  - "*"
+  - "%"
   - width
   - height
-refExamples:
-  - control iteration
-  - control embedded iteration
 other:
   - type: youtube
     id: POn4cZ0jL-o
@@ -51,3 +51,166 @@ eleventyComputed:
       authors: "{{texts.p5.authors}}"
       description: Chapters 4. Variables.
 ---
+
+This week is a vibe shift. 
+
+We move from representational approaches to art making (where the artist depicts a figure or sensation from their experience in an art work) to a process that is more in line with what a computer, or code more specifically, is good at doing. 
+
+What is a computer good at doing?
+
+**Storing information**. There are all kinds of ways of storing information. You can write a note on your hand, forget about it, and look at it again later. You can count chickens with your fingers and not worry about losing count because the information is stored in your fingers. Computers stem from devices like the abacus -- which we can think of as both a computer and a store of information simultaneously. We will explore how computers store information through _variables_.
+
+**Doing math**. Last assignment we spent a lot of our time doing math in our heads and figuring out specific position for shapes. Just like the abacus, computers are really proficient at doing math (and more quickly than us). This week we will explore writing basic arithmetic (addition, subtraction, division, multiplication) that will allow us to outsource our calculations to the computer. Operators like +,-,/,*,%, and parentheses will allow us to do this.
+
+**Repeating with a difference**. Computers work very quickly and are able to repeat very precisely. If you want to send an email to 100 of your friends to invite them to a party, you don't have to write 100 different emails. You can open a new email, input 100 emails, and the computer will automatically send to them to 100 different people. Large-scale emails such as adverts or newsletters use a technique called "mail merge" which allows writers to use a data sheet that matches names with emails, so that the same email is sent out, but they are able to create personalized greetings or other information. We will explore this this week through the __for loop__. Later, when we move to animation, the draw loop will be helpful here as well. 
+
+This week we begin our exploration of computational *affordances* through art making. _Variables_, _for loops_, and arithmetic operators will allow us to begin to use code creatively to generative geometries that we can modulate as artists creatively. Although we are still learning the foundational moves, these technical concepts are the foundation of making more complex and visually intriguing image compositions.
+
+In creative coding, we are constantly going between the role of the programmer and the artist. As a programmer, we want to write code that allows us to focus on artistic considerations when we are in artist mode. Many creative coders refer to this as a conversational workflow: you program something, then you see what the computer puts out. 
+
+## Variables
+
+Variables are helpful for a number of reasons. First, it allows us to use a word that makes sense to us to stand in for a specific number (and, later, other data types). 
+
+Looking for patterns will help you to become proficient and expedient with creative coding. This will allow us to make changes more quickly in artist mode. For instance, in the figure below, there we are drawing several shapes that have the same Y value. If we put our artist hat on and decide we want to move the row of shapes up or down, we will have to spend time looking in our code for where those functions are and change all of them manually. That is tedious!
+
+{% p5code "Y values written as numbers" %}
+function setup() {
+  createCanvas(200, 200);
+  background(220);
+ 
+ circle(50,100,30);
+ circle(100,100,30);
+ circle(150,100,30);
+}
+{% endp5code %}
+
+Instead, we can declare a  __variable__ that will allow us to use a letter or word that makes sense to us to stand in for that number. We can declare variables in different places that have different affordances, but for now let's define them at the top of the file. This is called __global scope__, which means we can use the variable anywhere in the sketch. I like to refer to this as our __control panel__: is a region of the sketch where we can quickly change parameters and see the results change (helpful when you are in artist mode and don't want to go digging through code!).
+
+Notice I use the word `let` to introduce the word that I will use as a variable, followed by the `=` sign. The word `let` will show up in the same color as the word `function`, which lets me know it is a special word in p5. On the other side of the `=` sign is the number (or other data type, more later) which the variable will store (in this case: 100). This is called declaring and initializing a variable.
+
+Notice how the `circle()` functions now include the `y` varible in the second parameter spot. This is how you "call" a variable.
+
+Note: In p5.js and Javascript in general, there are three ways to declare a variable: `let`, `var`, and `const`. Without going too far into it, you can just use `let` for this class. Anytime you see `var` or `const`, you can safely substitute `let`. 
+
+{% p5code "Declaring, Initializing, and Calling a Variable" %}
+let y = 100;
+
+function setup() {
+  createCanvas(200, 200);
+  background(220);
+ 
+  circle(50,y,30);
+  circle(100,y,30);
+  circle(150,y,30);
+}
+{% endp5code %}
+
+We can also use variables with some arithmetic. When using a variable for position, this can be helpful for group shapes together around a kind of anchor position. Addition and subtraction from the variable creates a vertical offset. 
+
+{% p5code "Using Arithmetic Offests"%}
+
+let y = 100;
+
+function setup() {
+  createCanvas(400, 200);
+  background(220);
+ 
+  circle(50,y-30,30);
+  circle(100,y,30);
+  circle(150,y+10,30);
+}
+{% endp5code %}
+
+
+Variables declared with `let` (or `var`) can also be modified in various ways after they are initialized. This makes variables even more useful. Note: here are three different ways to add 80 to the variable `y`.
+
+{% p5code "Updating and Reusing a Variable" %}
+
+let y = 60;
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+ 
+  circle(50,y-30,30);
+  circle(100,y,30);
+  circle(150,y+10,30);
+
+  y = 140; 
+
+  circle(50,y-30,30);
+  circle(100,y,30);
+  circle(150,y+10,30);
+
+  y = y + 80; 
+
+  circle(50,y-30,30);
+  circle(100,y,30);
+  circle(150,y+10,30);
+
+  y+= 80;
+
+  circle(50,y-30,30);
+  circle(100,y,30);
+  circle(150,y+10,30);
+}
+{% endp5code %}
+
+
+
+
+We can use variables for many more things than y position.  From what's already on our plate, we could make a few more: 
+
+- x position --> `x`
+- y offsets --> `yOffset`
+- circle diamater --> `d`
+
+Notice that I am using variable names that make sense to me. I can leave comments next to them which remind me what they do. While you can make a variable called `adjnfajs`, it would be annoying and unpractical to do (although practicality does not always reign supreme; for instance, if you wrote a poem using variables it may not be very practical but it may be aesthetically effective).
+
+Let's simplify the sketch a bit, write these variables in, and try something new: I want to add to the number of circles in my column. Fortunatately we have written our code so I can just copy and paste these two lines: `circle(x,y,d);` and
+  `y+= yOffset;`.
+
+{% p5code "More Variables" %}
+
+let y = 60; // y pos of circle
+let x = 50; // x pos of circle
+let yOffset = 80; // y positional difference between circles
+let d = 30; // diameter of the circle
+
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+ 
+  circle(x,y,d);
+  y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+  y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+}
+{% endp5code %}
+
+
+{% breakout %}
+Rule of thumb: when you see patterns and repetitions in your code, there is probably an easier way to write it. 
+{% endbreakout %}
+
+Remember that one of our goals was to minimize the overhead in switching between artist mode and programmer mode. If I want to try out different numbers of circles in the column, I need to spend a lot of time deleting or pasting code and I'm likely to make a mistake if I'm going too fast. What I really want is a variable called `numCircles` which I could change quick and the computer would repeat those two lines of code for me. Enter the `for loop`. 
+
+## For Loops 
+
+For loops are structures for repeating blocks of code. When you repeat something (like sit-ups or folding dough), you often count those repetitions to structure the task. When you get to a certain number of situps, you stop. Coding `for loops` work a similar way, except computers make less assumptions about what it means to count and repeat. 
+
+Let's look at the example below to understand the anatomy of the `for loop`. First, we write the word `for`, which shows up in the same color as the word `let` and `function`. It's followed by parentheses, which we will come back to. Then, curly braces `{ //contains the code to be repeated}`. 

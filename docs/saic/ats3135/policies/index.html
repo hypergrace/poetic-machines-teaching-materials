@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,89 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <div class="row">
-  <div class="col">
-    <h1>Policies</h1>
-    <div class="row">
-
-      <div class="col-sm-9">
-        <h3>ethos</h3>
-        <ul>
-          <li><a href="https://marcgarrett.org/2014/02/12/diwo-do-it-with-others-artistic-co-creation-as-a-decentralized-method-of-peer-empowerment-in-todays-multitude/">DIWO (Do It With Others)</a></li>
-
-          <li><a href="https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13">The Cult of Done Manifesto</a>
-        </ul>
-        <h3>attendance & online course engagement</h3>
-
-        <p>This class meets for 3 hours a week, but is the same number of credits as 6-hr studios. For this reason attendance is required for your passing the class. You can plan to miss class twice for no penalty. <b>2 missing sessions will result
-            in no credit received</b> — exceptions include excused absences and accommodations situations.</p>
-
-        <p>This is an online class and so you will obviously be on your computer during class. Your engagement is expected to be active, e.g. you’ll probably want to look things up and code along during class, or code along with a demo. <b>Checking
-            email, social media, or doing work for other courses is not active engagement.</b></p>
-
-        <p>I do not require that you turn your camera on for the course, but please keep in mind that such modes of presencing and contribution can promote a more fun and engaging atmosphere for the entire group. I do require that you be prepared to
-          answer questions during class, either over the microphone in chat.</p>
-
-        <h3>plagiarism and academic dishonesty</h3>
-
-        <p>As in all your classes, you’re expected to do your own work for assignments, projects, and presentations. When borrowing or referring to the ideas of others, cite the author of that work (even if informally).</p>
-
-        <p>In coding culture, we often learn to code by imitating the work of others in tutorials, walkthroughs, and examples. This mode of learning is encouraged and is a crucial part of internalizing the rhythm, cadence, and style of writing
-          coding. However there are three important things you must always keep in mind:</p>
-
-
-        <ol>
-          <li>📑**CITE BORROWED CODE** // It is common practice to use other people’s code to bolster or bootstrap your own. For instance, p5.js is a library of code written by a community of people that we will use to skip straight to a certain
-            level of expression. In commercial and artistic programming, it is common practice to use blocks of code that do generic things (such as detect if your mouse cursor is over a shape). If your work is based off or uses portions someone
-            else’s code, you should cite that in your code. Leave a <a href="https://p5js.org/examples/structure-comments-and-statements.html">comment</a> at the top of your code to point to where you learned these techniques. This constitutes being
-            honest about your work.
-          <li> ❔**ASK YOURSELF: DOES IT MAKE SENSE TO BORROW CODE?** // Remember that this is a class where your technical skill and aesthetic creativity are being evaluated. To that end, if you borrow a block of code from someone, not only should As
-            the class proceeds, you are expected to develop a facility with these techniques such that you can combine them in expressive ways and step away from “bare bones” tutorials. If your work does not meaningfully diverge from the code you are
-            based on, then your technical skills and creativity are not being showcased and they are not possible to assess.
-          <li> 🚨 **BS DETECTOR** // It is extremely obvious to the instructor when you attempt to pass off code as your own. The consequences for this are an immediate failing of the assignment. In egregious or repeated cases, it will trigger your
-            failure in the course.
-
-            <p>If you need clarity about whether some code is OK to use, just ask. You may also consult <a href="https://www.saic.edu/academics/libraries-special-collections/john-flaxman-library/academic-integrity">SAIC’s academic integrity
-                policy</a>.</p>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -518,6 +441,88 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<div class="row">
+  <div class="col">
+    <h1>Policies</h1>
+    <div class="row">
+<pre><code>  &lt;div class=&quot;col-sm-9&quot;&gt;
+    &lt;h3&gt;ethos&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://marcgarrett.org/2014/02/12/diwo-do-it-with-others-artistic-co-creation-as-a-decentralized-method-of-peer-empowerment-in-todays-multitude/&quot;&gt;DIWO (Do It With Others)&lt;/a&gt;&lt;/li&gt;
+
+      &lt;li&gt;&lt;a href=&quot;https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13&quot;&gt;The Cult of Done Manifesto&lt;/a&gt;
+    &lt;/ul&gt;
+    &lt;h3&gt;attendance &amp; online course engagement&lt;/h3&gt;
+
+    &lt;p&gt;This class meets for 3 hours a week, but is the same number of credits as 6-hr studios. For this reason attendance is required for your passing the class. You can plan to miss class twice for no penalty. &lt;b&gt;2 missing sessions will result
+        in no credit received&lt;/b&gt; — exceptions include excused absences and accommodations situations.&lt;/p&gt;
+
+    &lt;p&gt;This is an online class and so you will obviously be on your computer during class. Your engagement is expected to be active, e.g. you’ll probably want to look things up and code along during class, or code along with a demo. &lt;b&gt;Checking
+        email, social media, or doing work for other courses is not active engagement.&lt;/b&gt;&lt;/p&gt;
+
+    &lt;p&gt;I do not require that you turn your camera on for the course, but please keep in mind that such modes of presencing and contribution can promote a more fun and engaging atmosphere for the entire group. I do require that you be prepared to
+      answer questions during class, either over the microphone in chat.&lt;/p&gt;
+
+    &lt;h3&gt;plagiarism and academic dishonesty&lt;/h3&gt;
+
+    &lt;p&gt;As in all your classes, you’re expected to do your own work for assignments, projects, and presentations. When borrowing or referring to the ideas of others, cite the author of that work (even if informally).&lt;/p&gt;
+
+    &lt;p&gt;In coding culture, we often learn to code by imitating the work of others in tutorials, walkthroughs, and examples. This mode of learning is encouraged and is a crucial part of internalizing the rhythm, cadence, and style of writing
+      coding. However there are three important things you must always keep in mind:&lt;/p&gt;
+
+
+    &lt;ol&gt;
+      &lt;li&gt;📑**CITE BORROWED CODE** // It is common practice to use other people’s code to bolster or bootstrap your own. For instance, p5.js is a library of code written by a community of people that we will use to skip straight to a certain
+        level of expression. In commercial and artistic programming, it is common practice to use blocks of code that do generic things (such as detect if your mouse cursor is over a shape). If your work is based off or uses portions someone
+        else’s code, you should cite that in your code. Leave a &lt;a href=&quot;https://p5js.org/examples/structure-comments-and-statements.html&quot;&gt;comment&lt;/a&gt; at the top of your code to point to where you learned these techniques. This constitutes being
+        honest about your work.
+      &lt;li&gt; ❔**ASK YOURSELF: DOES IT MAKE SENSE TO BORROW CODE?** // Remember that this is a class where your technical skill and aesthetic creativity are being evaluated. To that end, if you borrow a block of code from someone, not only should As
+        the class proceeds, you are expected to develop a facility with these techniques such that you can combine them in expressive ways and step away from “bare bones” tutorials. If your work does not meaningfully diverge from the code you are
+        based on, then your technical skills and creativity are not being showcased and they are not possible to assess.
+      &lt;li&gt; 🚨 **BS DETECTOR** // It is extremely obvious to the instructor when you attempt to pass off code as your own. The consequences for this are an immediate failing of the assignment. In egregious or repeated cases, it will trigger your
+        failure in the course.
+
+        &lt;p&gt;If you need clarity about whether some code is OK to use, just ask. You may also consult &lt;a href=&quot;https://www.saic.edu/academics/libraries-special-collections/john-flaxman-library/academic-integrity&quot;&gt;SAIC’s academic integrity
+            policy&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -541,5 +546,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

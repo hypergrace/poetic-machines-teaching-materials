@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//atsp3900/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -334,48 +338,56 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week 8 : Intro to JS</h1>
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+    <li class="list-group-item">js: javascript</li>
+    
+    <li class="list-group-item">p5*js</li>
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
 
-       <div class="py-2">
-          <h2> classtime agenda </h2>
-          <ul class="list-group">
-            <li class="list-group-item">Introduction to p5*js</li><li class="list-group-item">Instructor Artist Talk (if there is time)</li>
-          </ul>
-    </div>
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
 
 <div class = "card">
-  <h2>Homework</h2>
+<h1>Intro to JS</h1>
 
-    
 
-  
-
-  <h2>Getting Started</h2>
+<h2>Getting Started</h2>
 <p>Getting p5*js working on your website in VS code</p>
 <h3>Make a JS file</h3>
 <p>Make a file called <code>sketch.js</code> (it can be called however you like, but this is a p5 convention for getting started).</p>
 <p>You should populate the file with some test p5 code, so that when we run things, we see that it's working. For example:</p>
 <pre>
 <code>
-
-let x = 0;
-
-function setup() {
-    createCanvas(400, 400);
+<p>let x = 0;</p>
+<p>function setup() {
+createCanvas(400, 400);
+}</p>
+<p>function draw() {
+background(&quot;#1B998B&quot;);
+circle(x,200,30);
+text(&quot;testing&quot;,x,200);
+x++;
+if (x&gt;width+15){
+x = -15;
 }
-
-function draw() {
-    background("#1B998B");
-    circle(x,200,30);
-    text("testing",x,200);
-    x++;
-    if (x>width+15){
-        x = -15;
-    }
 }
 </code>
-</pre>
+</pre></p>
 <h3>Point to p5*js</h3>
 <p>Add the following HTML element the <code>head</code> of the HTML page where you want to use p5*js. This is a large file that contains all the code needed to run p5.</p>
 <p>Notice the new <code>script</code> tag.</p>
@@ -392,6 +404,15 @@ function draw() {
 <h3>Conclusion</h3>
 <p>If everything is working, you should have a colored rectangle with a moving circle on your webpage!</p>
 
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
 
    
 </div>
@@ -765,29 +786,7 @@ function draw() {
 
    
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    
-    <li class="list-group-item">js: javascript</li>
-    
-    <li class="list-group-item">p5*js</li>
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-</div>
+<!-- End main content column -->
 
       
         </div>
@@ -811,5 +810,29 @@ function draw() {
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

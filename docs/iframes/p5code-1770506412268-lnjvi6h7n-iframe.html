@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>p5 Sketch</title>
+  <style>body { margin:0; padding:0; overflow:hidden; }</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+new p5(function(p) {
+  let y = 100;
+
+  p.setup = function() {
+    p.createCanvas(400, 200);
+      p.background(220);
+     
+      p.circle(200,y-30,30);
+      p.circle(250,y,30);
+      p.circle(300,y+10,30);
+  };
+
+});
+</script>
+</body>
+</html>

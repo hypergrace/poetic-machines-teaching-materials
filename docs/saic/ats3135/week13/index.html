@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,64 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <div class="row">
-  <div class="col-sm-9">
-    <h2>Week 13: Networked Interactive Art</h2>
-    <p>Goals: </p>
-    <ol class="no-bullets">
-      <li><input type="checkbox" class="cb"> Say hello & check-in (take attendance!)
-      <li><input type="checkbox" class="cb"> Weather Update
-      <li><input type="checkbox" class="cb"> Course Evaluations
-        <li><input type="checkbox" class="cb"> Intro to Telematic Art and Networked Interactivity  
-          <ul>
-            <li>  <a href = "https://www.youtube.com/watch?v=SyIJJr6Ldg8">a hole in space [1980] by kit galloway and sherrie rabinowitz</a>
-              <li> <a href = "https://vimeo.com/96549043">sharing faces [2014] by kyle mcdonald</a>
-                <li> <a href = "https://www.slomoco.surf/projects/ymoc">you, me, and our computers [2021] by lisa jamhoury</a>
-              
-            </ul>
-      <li><input type="checkbox" class="cb"> Overview of <a href = "https://p5party.netlify.app/">p5party.js</a> library for networked interactivity
-  <li><input type="checkbox" class="cb"><a href =" https://editor.p5js.org/gjohns13-spectacular/sketches/eoGS7ZTK0">in-class sketch</a></li>
-     
-        <li><input type="checkbox" class="cb"> Intro Project 3 (see Week 15) & Project Proposals
-       
-        <li><input type="checkbox" class="cb">Wrap-up, debrief, and sign-off!
-      </ol>
-    <h3>Homework</h3>
-    <p>none</p>
-  </div>
-</div>
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -493,6 +441,63 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<div class="row">
+  <div class="col-sm-9">
+    <h2>Week 13: Networked Interactive Art</h2>
+    <p>Goals: </p>
+    <ol class="no-bullets">
+      <li><input type="checkbox" class="cb"> Say hello & check-in (take attendance!)
+      <li><input type="checkbox" class="cb"> Weather Update
+      <li><input type="checkbox" class="cb"> Course Evaluations
+        <li><input type="checkbox" class="cb"> Intro to Telematic Art and Networked Interactivity  
+          <ul>
+            <li>  <a href = "https://www.youtube.com/watch?v=SyIJJr6Ldg8">a hole in space [1980] by kit galloway and sherrie rabinowitz</a>
+              <li> <a href = "https://vimeo.com/96549043">sharing faces [2014] by kyle mcdonald</a>
+                <li> <a href = "https://www.slomoco.surf/projects/ymoc">you, me, and our computers [2021] by lisa jamhoury</a>
+<pre><code>        &lt;/ul&gt;
+  &lt;li&gt;&lt;input type=&quot;checkbox&quot; class=&quot;cb&quot;&gt; Overview of &lt;a href = &quot;https://p5party.netlify.app/&quot;&gt;p5party.js&lt;/a&gt; library for networked interactivity
+</code></pre>
+  <li><input type="checkbox" class="cb"><a href =" https://editor.p5js.org/gjohns13-spectacular/sketches/eoGS7ZTK0">in-class sketch</a></li>
+<pre><code>    &lt;li&gt;&lt;input type=&quot;checkbox&quot; class=&quot;cb&quot;&gt; Intro Project 3 (see Week 15) &amp; Project Proposals
+   
+    &lt;li&gt;&lt;input type=&quot;checkbox&quot; class=&quot;cb&quot;&gt;Wrap-up, debrief, and sign-off!
+  &lt;/ol&gt;
+&lt;h3&gt;Homework&lt;/h3&gt;
+&lt;p&gt;none&lt;/p&gt;
+</code></pre>
+  </div>
+</div>
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -516,5 +521,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,80 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
-    <meta charset="utf-8" />
-
-
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-    
-  <h2>Sao Ohtake</h2>
-  <h1>PHOENIX</h1>
-    
-  <iframe width="800" height="600" src="https://editor.p5js.org/sohtak/full/m1ASfhaOh"></iframe>
-
-     <p class="con">
-      For the December 20th  collaboration with the cello, I decided to create interactive art that reacts to the frequencies of the cello's sound. When higher frequencies come into the microphone, the particles become warmer in color and move faster. When lower frequencies enter the microphone, the particles will be cooler in color and move slower. Using the FFT of p5, I would like to achieve this. This piece will be projected on the wall through a projector. The sound of the cello will go through a condenser microphone and through an audio interface to the computer. Ultimately, this performance will be recorded (I will upload performance video after 12/20 on this webpage).
-    </p>
-
-  <br>
-    
-  <h3>VIDEO DOCUMENTATION</h3>
-  <iframe width="560" height="315" src="https://www." title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <p class="cap">I will uploade performance video after 12/20</p>
-    
-  <br>
-    
-  <h3>CONCEPT</h3>
-   <p class="con">
-  The world is changing dramatically. In 2020, when social activities are restricted and art is forced into silence, the "Phoenix" project was launched. In any social chaos, true art reflects the times, generates empathy and inspiration, and revives without giving in. The phoenix in this project is a reflection of art itself. As we are entering a new era, art is also evolving into a new phase. Through this collaboration, we wanted to reconfigure the space by fusing music as the auditory art with the visual art.
-    </p>
-  
-   
-    
-   
-  </body>
-</html>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -509,6 +441,67 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  <h2>Sao Ohtake</h2>
+  <h1>PHOENIX</h1>
+  <iframe width="800" height="600" src="https://editor.p5js.org/sohtak/full/m1ASfhaOh"></iframe>
+<pre><code> &lt;p class=&quot;con&quot;&gt;
+  For the December 20th  collaboration with the cello, I decided to create interactive art that reacts to the frequencies of the cello's sound. When higher frequencies come into the microphone, the particles become warmer in color and move faster. When lower frequencies enter the microphone, the particles will be cooler in color and move slower. Using the FFT of p5, I would like to achieve this. This piece will be projected on the wall through a projector. The sound of the cello will go through a condenser microphone and through an audio interface to the computer. Ultimately, this performance will be recorded (I will upload performance video after 12/20 on this webpage).
+&lt;/p&gt;
+</code></pre>
+  <br>
+  <h3>VIDEO DOCUMENTATION</h3>
+  <iframe width="560" height="315" src="https://www." title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p class="cap">I will uploade performance video after 12/20</p>
+  <br>
+  <h3>CONCEPT</h3>
+   <p class="con">
+  The world is changing dramatically. In 2020, when social activities are restricted and art is forced into silence, the "Phoenix" project was launched. In any social chaos, true art reflects the times, generates empathy and inspiration, and revives without giving in. The phoenix in this project is a reflection of art itself. As we are entering a new era, art is also evolving into a new phase. Through this collaboration, we wanted to reconfigure the space by fusing music as the auditory art with the visual art.
+    </p>
+  </body>
+</html>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -532,5 +525,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

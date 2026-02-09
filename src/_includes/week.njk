@@ -2,11 +2,77 @@
 layout: base.njk
 ---
 
-<div class="col-sm-6">
-  <h1>Week {{ weekNum }} : {{ title }}</h1>
-{% agenda "classtime agenda", goals %}
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    {% for c in concepts %}
+    <li class="list-group-item">{{ c }}</li>
+    {% endfor %}
+  </ul>
+  {% if code %}
+  <div class="card-header">Coding Components:</div>
+  {% endif %}
+  <ul class="list-group">
+    {% for c in code %} {% if reference == "p5" %} {% set cd = c.split("(")[0]
+    %} {% set cd = cd.split(" ").join("") %}
 
-{% endagenda %}
+    <a href="https://p5js.org/reference/p5/{{ cd }}">
+      <li class="list-group-item">{{ c }}</li>
+    </a>
+
+    {% elseif reference == "processing" %} {% set cd = c.split("(")[0] %} {% set
+    cd = cd.split(" ").join("") %}
+
+    <a href="https://processing.org/reference/{{ cd }}.html">
+      <li class="list-group-item">{{ c }}</li>
+    </a>
+    {% elseif reference == "max" %}
+
+    <a href="https://docs.cycling74.com/max8/refpages/{{ c }}">
+      <li class="list-group-item">{{ c }}</li>
+    </a>
+
+    {% endif %} {% endfor %}
+  </ul>
+  {% if refExamples %}
+  <div class="card-header">Examples</div>
+  {% endif %}
+  <ul class="list-group">
+    {% for e in refExamples%} {% if reference == "p5" %} {% set ed =
+    e.split("(")[0] %} {% set ed = ed.split(" ") %}
+
+    <a href="https://p5js.org/examples/{{ ed | slugify }}.html">
+      <li class="list-group-item">{{ e }}</li>
+    </a>
+    {% elseif reference == "processing" %} {% endif %} {% endfor %}
+  </ul>
+  {% if functions %}
+  <div class="card-header">Coding Functions:</div>
+  <ul class="list-group">
+    {% for f in functions %} {% if reference == "p5" %}
+    <a href="https://p5js.org/reference/p5/{{ f }}">
+      <li class="list-group-item">{{ f }}()</li>
+    </a>
+    {% elseif reference == "processing" %}
+    <a href="https://processing.org/reference/{{ f }}_.html">
+      <li class="list-group-item">{{ f }}()</li>
+    </a>
+    {% endif %} {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1>{{ title }}</h1>
+
+
+{{ content | markdown | safe }}
+
+</div>
 
 <div class = "card">
   <h2>Homework</h2>
@@ -125,8 +191,6 @@ layout: base.njk
     {% endfor %}
   </div>
   {% endif %}
-
-  {{ content | safe}}
 
   {% if listenings %}
   <h3>Listenings</h3>
@@ -250,66 +314,4 @@ layout: base.njk
   </p>
   {% endif %} #}
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    {% for c in concepts %}
-    <li class="list-group-item">{{ c }}</li>
-    {% endfor %}
-  </ul>
-  {% if code %}
-  <div class="card-header">Coding Components:</div>
-  {% endif %}
-  <ul class="list-group">
-    {% for c in code %} {% if reference == "p5" %} {% set cd = c.split("(")[0]
-    %} {% set cd = cd.split(" ").join("") %}
-
-    <a href="https://p5js.org/reference/p5/{{ cd }}">
-      <li class="list-group-item">{{ c }}</li>
-    </a>
-
-    {% elseif reference == "processing" %} {% set cd = c.split("(")[0] %} {% set
-    cd = cd.split(" ").join("") %}
-
-    <a href="https://processing.org/reference/{{ cd }}.html">
-      <li class="list-group-item">{{ c }}</li>
-    </a>
-    {% elseif reference == "max" %}
-
-    <a href="https://docs.cycling74.com/max8/refpages/{{ c }}">
-      <li class="list-group-item">{{ c }}</li>
-    </a>
-
-    {% endif %} {% endfor %}
-  </ul>
-  {% if refExamples %}
-  <div class="card-header">Examples</div>
-  {% endif %}
-  <ul class="list-group">
-    {% for e in refExamples%} {% if reference == "p5" %} {% set ed =
-    e.split("(")[0] %} {% set ed = ed.split(" ") %}
-
-    <a href="https://p5js.org/examples/{{ ed | slugify }}.html">
-      <li class="list-group-item">{{ e }}</li>
-    </a>
-    {% elseif reference == "processing" %} {% endif %} {% endfor %}
-  </ul>
-  {% if functions %}
-  <div class="card-header">Coding Functions:</div>
-  <ul class="list-group">
-    {% for f in functions %} {% if reference == "p5" %}
-    <a href="https://p5js.org/reference/p5/{{ f }}">
-      <li class="list-group-item">{{ f }}()</li>
-    </a>
-    {% elseif reference == "processing" %}
-    <a href="https://processing.org/reference/{{ f }}_.html">
-      <li class="list-group-item">{{ f }}()</li>
-    </a>
-    {% endif %} {% endfor %}
-  </ul>
-  {% endif %}
-</div>
+<!-- End main content column -->

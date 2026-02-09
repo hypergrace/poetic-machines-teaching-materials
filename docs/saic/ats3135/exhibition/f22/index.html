@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,23 +425,32 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
 
 <div class = "card">
-  <h2>Homework</h2>
+<h1></h1>
 
-    
 
-  
-
-  <!doctype html>
+<p><!doctype html></p>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -455,109 +468,116 @@
         }
     </style> 
 </head>
-
 <body>
     <a href = "https://practices.digital/3135"><h1>ATS 3135: Interactive Art and Creative Code</h1></a>
     <h3>Fall 2022 Project 3 exhibition</h3>
     <div class="container text-center">
+<pre><code>    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;cam/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/cam.jpg&quot;&gt;
+                &lt;p&gt;Cam Collins - Rotating House&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;jent/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/jent.png&quot;&gt;
+                &lt;p&gt;Jent / Minh Giang Do - Manifesting Mirror&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;ziai/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/ziai.png&quot;&gt;
+                &lt;p&gt;Ziai Guo - Zodiac Filter&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;korina/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/korina.png&quot;&gt;
+                &lt;p&gt;Korina Victoria Hernandez - Cyanotype&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;sao/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/sao.png&quot;&gt;
+                &lt;p&gt;Sao Otakhe - Phoenix&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
 
-        <div class="row">
-            <div class="col-4">
-                <a href="cam/">
-                    <img class="img-fluid" src="/assets/img/f22/cam.jpg">
-                    <p>Cam Collins - Rotating House</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="jent/">
-                    <img class="img-fluid" src="/assets/img/f22/jent.png">
-                    <p>Jent / Minh Giang Do - Manifesting Mirror</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="ziai/">
-                    <img class="img-fluid" src="/assets/img/f22/ziai.png">
-                    <p>Ziai Guo - Zodiac Filter</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="korina/">
-                    <img class="img-fluid" src="/assets/img/f22/korina.png">
-                    <p>Korina Victoria Hernandez - Cyanotype</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="sao/">
-                    <img class="img-fluid" src="/assets/img/f22/sao.png">
-                    <p>Sao Otakhe - Phoenix</p>
-                </a>
-            </div>
-
-            <div class="col-4">
-                <a href="gabe/">
-                    <img class="img-fluid" src="/assets/img/f22/gabe.jpg">
-                    <p>Gabe Vincent Postle - Slow Wave</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="maya/">
-                    <img class="img-fluid" src="/assets/img/f22/maya.jpg">
-                    <p>Maya Rouss - Audio Terrain </p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="khushi/">
-                    <img class="img-fluid" src="/assets/img/f22/khushi.jpg">
-                    <p>Khushi Shah - Wave</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="chloe/">
-                    <img class="img-fluid" src="/assets/img/f22/chloe.png">
-                    <p>Chloe Henderson - Random Image Generator (RIG)</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="xin/">
-                    <img class="img-fluid" src="/assets/img/f22/xin.png">
-                    <p>Xin Yao - Sleepy Cat</p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="meiko/">
-                    <img class="img-fluid" src="/assets/img/f22/meiko.png">
-                    <p>Meiko Zhang - Relative Stationary </p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="xinyu/">
-                    <img class="img-fluid" src="/assets/img/f22/xinyu.png">
-                    <p>Xinyu Zhang - cube_noise </p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="yichen/">
-                    <img class="img-fluid" src="/assets/img/f22/yichen.png">
-                    <p>Yichen Zhang - murder web </p>
-                </a>
-            </div>
-            <div class="col-4">
-                <a href="minghao/">
-                    <img class="img-fluid" src="/assets/img/f22/minghao.jpg">
-                    <p>Minghao Zhou - NIDUS </p>
-                </a>
-            </div>
-        </div>
-    </div>
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;gabe/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/gabe.jpg&quot;&gt;
+                &lt;p&gt;Gabe Vincent Postle - Slow Wave&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;maya/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/maya.jpg&quot;&gt;
+                &lt;p&gt;Maya Rouss - Audio Terrain &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;khushi/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/khushi.jpg&quot;&gt;
+                &lt;p&gt;Khushi Shah - Wave&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;chloe/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/chloe.png&quot;&gt;
+                &lt;p&gt;Chloe Henderson - Random Image Generator (RIG)&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;xin/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/xin.png&quot;&gt;
+                &lt;p&gt;Xin Yao - Sleepy Cat&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;meiko/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/meiko.png&quot;&gt;
+                &lt;p&gt;Meiko Zhang - Relative Stationary &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;xinyu/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/xinyu.png&quot;&gt;
+                &lt;p&gt;Xinyu Zhang - cube_noise &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;yichen/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/yichen.png&quot;&gt;
+                &lt;p&gt;Yichen Zhang - murder web &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-4&quot;&gt;
+            &lt;a href=&quot;minghao/&quot;&gt;
+                &lt;img class=&quot;img-fluid&quot; src=&quot;/assets/img/f22/minghao.jpg&quot;&gt;
+                &lt;p&gt;Minghao Zhou - NIDUS &lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+&lt;/div&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js&quot;
+    integrity=&quot;sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4&quot;
+    crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+</code></pre>
 </body>
-
 </html>
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
 
    
 </div>
@@ -571,25 +591,7 @@
   
    
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-</div>
+<!-- End main content column -->
 
       
         </div>
@@ -613,5 +615,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

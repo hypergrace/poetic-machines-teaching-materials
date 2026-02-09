@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//atsp3900/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -334,15 +338,94 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week 2 : HTML 1</h1>
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+    <li class="list-group-item">html: hypertext markup language</li>
+    
+    <li class="list-group-item">css: cascading style sheets</li>
+    
+    <li class="list-group-item">js: javascript</li>
+    
+    <li class="list-group-item">p5*js</li>
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
 
-       <div class="py-2">
-          <h2> classtime agenda </h2>
-          <ul class="list-group">
-            <li class="list-group-item">Discuss Rushkoff reading</li><li class="list-group-item">Introduction Website presentations (5 mins each)</li><li class="list-group-item">Multipage HTML</li><li class="list-group-item">More CSS</li><li class="list-group-item">Intro to Geocities / Neocities</li>
-          </ul>
-    </div>
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1>HTML 1</h1>
+
+
+<h1>CSS Review</h1>
+<h2>Creating a separate CSS file</h2>
+<p>It is useful to write CSS in a separate .css file because it allows for better organization and management of your code. By separating the CSS from the HTML, it becomes easier to make changes to the styles without having to sift through the HTML code. Additionally, it allows for the reuse of styles across multiple pages, as the same .css file can be linked to each page. This can save time and effort in the long run.</p>
+<h1>New CSS material</h1>
+<h2>CSS Box Model</h2>
+<p>https://www.w3schools.com/css/css_boxmodel.asp</p>
+<ul>
+<li><strong>Content</strong> - The content of the box, where text and images appear</li>
+<li><strong>Padding</strong> - Clears an area around the content. The padding is transparent</li>
+<li><strong>Border</strong> - A border that goes around the padding and content</li>
+<li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent</li>
+</ul>
+<p><img src="/assets/img/css-box.png" alt="cssbox"></p>
+<h1>CSS Units (Rem, em, %)</h1>
+<p>CSS offers a variety of units to size elements on a webpage. Three common units are em, rem, and %.</p>
+<h2>Rem Unit</h2>
+<p>The rem unit is relative to the root element, which is typically the <code>&lt;html&gt;</code> tag. This means that the size of an element will be relative to the font-size of the root element, regardless of where it is on the page. This makes it a good unit to use for responsive design.</p>
+<pre><code class="language-css">/* Set the font-size of the root element to 16 pixels */
+html {
+  font-size: 16px;
+}
+<p>/* This is equal to 32 pixels */
+.element {
+font-size: 2rem;
+}
+</code></pre></p>
+<h2>Em Unit</h2>
+<p>The em unit is relative to the font-size of the parent element. For example, if the font-size of the parent element is 16 pixels, 1 em is equal to 16 pixels.</p>
+<pre><code class="language-css">.parent {
+  font-size: 16px;
+}
+<p>.child {
+font-size: 1em; /* This is equal to 16px */
+}
+</code></pre></p>
+<h2>% Unit</h2>
+<p>The % unit is relative to the size of the parent element. For example, if the width of the parent element is 100 pixels, 50% width is equal to 50 pixels.</p>
+<pre><code class="language-css">.parent {
+  width: 100px;
+}
+<p>.child {
+width: 50%; /* This is equal to 50px */
+}
+</code></pre></p>
+<h1>CSS Borders</h1>
+<p>CSS borders are used to add a line around an HTML element. The <code>border</code> property sets the style, width, and color of the border.</p>
+<p>Here is an example:</p>
+<pre><code class="language-css">/* Set the border style to solid, width to 2 pixels, and color to black */
+.example {
+  border: 2px solid black;
+}
+</code></pre>
+<p>This will add a 2 pixel thick solid black border around the <code>.example</code> element. Other border styles include <code>dotted</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, and <code>outset</code>.</p>
+
+
+</div>
 
 <div class = "card">
   <h2>Homework</h2>
@@ -390,64 +473,6 @@
   
 
   
-
-  <h1>CSS Review</h1>
-<h2>Creating a separate CSS file</h2>
-<p>It is useful to write CSS in a separate .css file because it allows for better organization and management of your code. By separating the CSS from the HTML, it becomes easier to make changes to the styles without having to sift through the HTML code. Additionally, it allows for the reuse of styles across multiple pages, as the same .css file can be linked to each page. This can save time and effort in the long run.</p>
-<h1>New CSS material</h1>
-<h2>CSS Box Model</h2>
-<p>https://www.w3schools.com/css/css_boxmodel.asp</p>
-<ul>
-<li><strong>Content</strong> - The content of the box, where text and images appear</li>
-<li><strong>Padding</strong> - Clears an area around the content. The padding is transparent</li>
-<li><strong>Border</strong> - A border that goes around the padding and content</li>
-<li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent</li>
-</ul>
-<p><img src="/assets/img/css-box.png" alt="cssbox"></p>
-<h1>CSS Units (Rem, em, %)</h1>
-<p>CSS offers a variety of units to size elements on a webpage. Three common units are em, rem, and %.</p>
-<h2>Rem Unit</h2>
-<p>The rem unit is relative to the root element, which is typically the <code>&lt;html&gt;</code> tag. This means that the size of an element will be relative to the font-size of the root element, regardless of where it is on the page. This makes it a good unit to use for responsive design.</p>
-<pre><code class="language-css">/* Set the font-size of the root element to 16 pixels */
-html {
-  font-size: 16px;
-}
-
-/* This is equal to 32 pixels */
-.element {
-  font-size: 2rem;
-}
-</code></pre>
-<h2>Em Unit</h2>
-<p>The em unit is relative to the font-size of the parent element. For example, if the font-size of the parent element is 16 pixels, 1 em is equal to 16 pixels.</p>
-<pre><code class="language-css">.parent {
-  font-size: 16px;
-}
-
-.child {
-  font-size: 1em; /* This is equal to 16px */
-}
-</code></pre>
-<h2>% Unit</h2>
-<p>The % unit is relative to the size of the parent element. For example, if the width of the parent element is 100 pixels, 50% width is equal to 50 pixels.</p>
-<pre><code class="language-css">.parent {
-  width: 100px;
-}
-
-.child {
-  width: 50%; /* This is equal to 50px */
-}
-</code></pre>
-<h1>CSS Borders</h1>
-<p>CSS borders are used to add a line around an HTML element. The <code>border</code> property sets the style, width, and color of the border.</p>
-<p>Here is an example:</p>
-<pre><code class="language-css">/* Set the border style to solid, width to 2 pixels, and color to black */
-.example {
-  border: 2px solid black;
-}
-</code></pre>
-<p>This will add a 2 pixel thick solid black border around the <code>.example</code> element. Other border styles include <code>dotted</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, and <code>outset</code>.</p>
-
 
    
 </div>
@@ -943,33 +968,7 @@ function draw() {
 
    
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    
-    <li class="list-group-item">html: hypertext markup language</li>
-    
-    <li class="list-group-item">css: cascading style sheets</li>
-    
-    <li class="list-group-item">js: javascript</li>
-    
-    <li class="list-group-item">p5*js</li>
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-  <ul class="list-group">
-    
-  </ul>
-  
-</div>
+<!-- End main content column -->
 
       
         </div>
@@ -993,5 +992,29 @@ function draw() {
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

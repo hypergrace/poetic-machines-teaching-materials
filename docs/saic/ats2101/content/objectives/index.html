@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats2101/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -286,49 +290,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <ul>
-<li>A sense of modern digital (and analog) technology can afford your art practice</li>
-<li>Experience with computational thinking that you will be able to use to understand the technical systems of everyday life.</li>
-<li>A familiarity with diverse technical and aesthetic approaches to art and technology broadly, as well as the unique offerings of the Art and Technology Studies department at SAIC.</li>
-<li>Beginner+ fluency with p5*js, including arrays, functions, for loops, if conditions, and the JS object.</li>
-<li>Expressive facility in an aesthetic domain with these skills.</li>
-<li>Sketches with diverse media processing techniques that may seed further work</li>
-<li>A practiced comfort level with microcontroller electronics and programming in the creation of art not limited to kinetic sculpture, interactive artwork, sound works, and responsive environments.</li>
-<li>A tactile understanding of how sensors and actuators work and how they interface with computers, tether to embodiment and the environment, a connective net of energy and information.</li>
-</ul>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -343,6 +306,48 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<ul>
+<li>A sense of modern digital (and analog) technology can afford your art practice</li>
+<li>Experience with computational thinking that you will be able to use to understand the technical systems of everyday life.</li>
+<li>A familiarity with diverse technical and aesthetic approaches to art and technology broadly, as well as the unique offerings of the Art and Technology Studies department at SAIC.</li>
+<li>Beginner+ fluency with p5*js, including arrays, functions, for loops, if conditions, and the JS object.</li>
+<li>Expressive facility in an aesthetic domain with these skills.</li>
+<li>Sketches with diverse media processing techniques that may seed further work</li>
+<li>A practiced comfort level with microcontroller electronics and programming in the creation of art not limited to kinetic sculpture, interactive artwork, sound works, and responsive environments.</li>
+<li>A tactile understanding of how sensors and actuators work and how they interface with computers, tether to embodiment and the environment, a connective net of energy and information.</li>
+</ul>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -366,5 +371,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,46 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <p>This studio course investigates the creative possibilities in programming, from interactivity to information visualization. Students explore interactive narratives and games, software art, simulations and emergent behaviors, and other code-based forms. Lectures and demonstrations provide a conceptual, aesthetic and technical foundation in programming as a creative practice. Techniques and concepts are presented through the open-source programming environment p5*js, with an introduction to advanced topics such as server facilitated interactivity and computer vision.</p>
-<p>What is at the intersection of art and technology? What does technology help us understand about art? How does art deepen our understanding of technology? Is all art technological? These questions undergird art and technology practices and studies. This course deals with simulation and games, with networked play and interactive art -- these genres of work point out a key affordance of creative media practices, its worldbuilding power.</p>
-<p>In this course, we'll begin to approach these generative problems by beginning to develop our technical facility and expressivity with a creative coding tool. We will get started with a refresher of &quot;beginner&quot; p5<em>js before continuing to build out an extended toolkit for creating interactive and generative artworks. Your guide here will be the textbook Getting Started with p5</em>js (see PDF included in materials). You’ll work in a small group to develop a tutorial on two key concept/techniques in p5. After a few weeks, we'll bring it all together in a teach-in.</p>
-<p>We will look at some artistic examples of visualization as well as its sensory sisters sonification and haptic display. After learning how to integrate live data streams via APIs into our sketches, your first project will be display visually (or otherwise) the remaining carbon budgeted before a global increase in temperature of 1.5 or 2 degrees Celsius. We'll read the introduction to McKenzie Wark's Molecular Red, in particular her emphasis of the concept of the &quot;Carbon Liberation Front&quot;. The CLF generates a view of the anthropocene and the climate crisis that radically decenters our own perspectives. How can visualization and art practice make an analogous move?</p>
-<p>In Unit 2 we'll dive into advanced functionality for keeping track of position, direction, speed, acceleration -- the groundwork of a physics engine -- through the p5.Vector. This will allow us to build towards creating simulations of complex group activity (think of a flock of birds, or a table with a thousand marbles). We will use the Nature of Code text by Daniel Schiffman (PDF also in materials) to walk us through the code, and Baudrillard and Ian Cheng to think through simulation as a world-building technique, which you'll sum up in your second project.</p>
-<p>Unit 3 brings things online. We'll look at the library p5.Party which will allow us to write code that shares data over a common server, networked interaction. This means you can code interactions between two or more computers -- whether they're in the same building or across the world. We'll show some other techniques in computer vision here using a library called MediaPipe that will allow for camera-based sensing of movement. This approach to sensing activity proffers a more deeply embodied interaction scheme that greatly exceeds the complexity of keyboard or mouse interactions which we know from every day. In your project, you'll put that together with two or more computers with our p5.party library.</p>
-<p>This &quot;multiplayer&quot; interaction segues elegantly into our last unit, games. Our approach to games will be heavily in debt to the concept of play and the immersion of role-play. Table-top roleplaying games offer a technical basis for thinking through the structurations and narrativizations in games and play. We'll leverage that simplicity in this unit, since we may also wish to combine other techniques from the preceding units in our project 4.</p>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -475,6 +441,45 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<p>This studio course investigates the creative possibilities in programming, from interactivity to information visualization. Students explore interactive narratives and games, software art, simulations and emergent behaviors, and other code-based forms. Lectures and demonstrations provide a conceptual, aesthetic and technical foundation in programming as a creative practice. Techniques and concepts are presented through the open-source programming environment p5*js, with an introduction to advanced topics such as server facilitated interactivity and computer vision.</p>
+<p>What is at the intersection of art and technology? What does technology help us understand about art? How does art deepen our understanding of technology? Is all art technological? These questions undergird art and technology practices and studies. This course deals with simulation and games, with networked play and interactive art -- these genres of work point out a key affordance of creative media practices, its worldbuilding power.</p>
+<p>In this course, we'll begin to approach these generative problems by beginning to develop our technical facility and expressivity with a creative coding tool. We will get started with a refresher of &quot;beginner&quot; p5<em>js before continuing to build out an extended toolkit for creating interactive and generative artworks. Your guide here will be the textbook Getting Started with p5</em>js (see PDF included in materials). You’ll work in a small group to develop a tutorial on two key concept/techniques in p5. After a few weeks, we'll bring it all together in a teach-in.</p>
+<p>We will look at some artistic examples of visualization as well as its sensory sisters sonification and haptic display. After learning how to integrate live data streams via APIs into our sketches, your first project will be display visually (or otherwise) the remaining carbon budgeted before a global increase in temperature of 1.5 or 2 degrees Celsius. We'll read the introduction to McKenzie Wark's Molecular Red, in particular her emphasis of the concept of the &quot;Carbon Liberation Front&quot;. The CLF generates a view of the anthropocene and the climate crisis that radically decenters our own perspectives. How can visualization and art practice make an analogous move?</p>
+<p>In Unit 2 we'll dive into advanced functionality for keeping track of position, direction, speed, acceleration -- the groundwork of a physics engine -- through the p5.Vector. This will allow us to build towards creating simulations of complex group activity (think of a flock of birds, or a table with a thousand marbles). We will use the Nature of Code text by Daniel Schiffman (PDF also in materials) to walk us through the code, and Baudrillard and Ian Cheng to think through simulation as a world-building technique, which you'll sum up in your second project.</p>
+<p>Unit 3 brings things online. We'll look at the library p5.Party which will allow us to write code that shares data over a common server, networked interaction. This means you can code interactions between two or more computers -- whether they're in the same building or across the world. We'll show some other techniques in computer vision here using a library called MediaPipe that will allow for camera-based sensing of movement. This approach to sensing activity proffers a more deeply embodied interaction scheme that greatly exceeds the complexity of keyboard or mouse interactions which we know from every day. In your project, you'll put that together with two or more computers with our p5.party library.</p>
+<p>This &quot;multiplayer&quot; interaction segues elegantly into our last unit, games. Our approach to games will be heavily in debt to the concept of play and the immersion of role-play. Table-top roleplaying games offer a technical basis for thinking through the structurations and narrativizations in games and play. We'll leverage that simplicity in this unit, since we may also wish to combine other techniques from the preceding units in our project 4.</p>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -498,5 +503,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

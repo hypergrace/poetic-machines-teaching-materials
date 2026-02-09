@@ -1,0 +1,39 @@
+let jitter = 20; // control the jump size of our random walk
+let numSteps = 200; // number of steps in the walk
+let numLines = 5; // number of lines 
+
+let noiseScale = 0.1; // zoom factor for our noise field
+let maxW = 30; // max width of our circles
+let maxOpacity = 100; // max opacity of our circles
+
+function setup() {
+  createCanvas(700, 700);
+  noLoop();
+   noiseSeed(10);
+   randomSeed(6);
+  
+  
+}
+
+function draw() {
+  background(255);
+
+  for (let j = 0; j < numLines; j++) {
+    let x = random(width);
+    let y = random(height);
+    beginShape();
+    for (let i = 0; i < numSteps; i++) {
+      let n = noise(i * noiseScale, j*noiseScale*10); // noise generates values between 0 and 1
+      x += random(-jitter, jitter);
+      y += random(-jitter, jitter);
+      curveVertex(x, y);
+       console.log(j,n);
+      fill(0,n*128,255-n*128/2, n * maxOpacity);
+      noStroke();
+      circle(x, y, n * maxW);
+    }
+    stroke(0);
+    noFill();
+    endShape();
+  }
+}

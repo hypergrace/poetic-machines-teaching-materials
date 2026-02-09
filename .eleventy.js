@@ -9,6 +9,19 @@ module.exports = function (eleventyConfig) {
   const fs = require("fs");
   const path = require("path");
 
+  // Add markdown filter
+  eleventyConfig.addFilter("markdown", function (value) {
+    return markdown.render(value);
+  });
+
+  // Track figure counts per page
+  const figureCounters = {};
+  
+  // Reset figure counters on each build
+  eleventyConfig.on("eleventy.before", async () => {
+    Object.keys(figureCounters).forEach(key => delete figureCounters[key]);
+  });
+
   // Ignore draft pages (pages with draft: true in front matter)
   eleventyConfig.addGlobalData("eleventyComputed", {
     eleventyExcludeFromCollections: (data) => {
@@ -180,6 +193,193 @@ module.exports = function (eleventyConfig) {
     </div>`;
     }
   );
+
+  // Breakout box shortcode
+  eleventyConfig.addPairedShortcode("breakout", function(content) {
+    return `
+<br>
+<div class="card" style="margin:2em 0;padding:2em;background:#f8f9fa;border:2px solid #dee2e6;">
+  <div style="font-size:1.5em;text-align:center;line-height:1.6;">
+    ${markdown.render(content.trim())}
+  </div>
+</div>
+<br>`;
+  });
+
+  // Paired shortcode for inline p5 code blocks
+  eleventyConfig.addPairedShortcode("p5code", function(code, description) {
+    const fs = require("fs");
+    const path = require("path");
+    
+    // Get weekNum from page data and track figure count
+    const weekNum = this.ctx.weekNum || this.page?.weekNum || '';
+    const pageKey = this.page?.url || 'default';
+    
+    if (!figureCounters[pageKey]) {
+      figureCounters[pageKey] = 0;
+    }
+    figureCounters[pageKey]++;
+    
+    // Generate figure label
+    const figureLabel = description 
+      ? `Figure ${weekNum} - ${figureCounters[pageKey]}: ${description}`
+      : null;
+    
+    // Generate unique ID for this code block
+    const uniqueId = `p5code-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    
+    // Convert to instance mode
+    const instanceCode = convertToInstanceMode(code.trim());
+    
+    // Extract canvas dimensions from createCanvas call
+    let width = 400, height = 400; // defaults
+    const canvasMatch = code.match(/createCanvas\s*\(\s*(\d+)\s*,\s*(\d+)\s*\)/);
+    if (canvasMatch) {
+      width = canvasMatch[1];
+      height = canvasMatch[2];
+    }
+    
+    // Create iframe HTML
+    const iframeHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>p5 Sketch</title>
+  <style>body { margin:0; padding:0; overflow:hidden; }</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+${instanceCode}
+</script>
+</body>
+</html>`;
+    
+    // Save iframe HTML to docs/iframes/
+    const outDir = path.join(__dirname, "docs", "iframes");
+    if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+    
+    const htmlFileName = `${uniqueId}-iframe.html`;
+    const htmlFilePath = path.join(outDir, htmlFileName);
+    fs.writeFileSync(htmlFilePath, iframeHtml);
+    
+    // Build HTML output with optional card wrapper
+    let output = '';
+    
+    if (figureLabel) {
+      // Wrap in card if description is provided
+      output = `
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>${figureLabel}</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="${uniqueId}-iframe" src="/iframes/${htmlFileName}" width="${width}" height="${height}" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="${uniqueId}-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">${code.trim().replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+      </div>
+    </div>
+  </div>
+</div>`;
+    } else {
+      // Original simpler layout without card
+      output = `
+<div class="p5-block" style="margin-bottom:2em;">
+  <div style="display:flex;gap:1em;flex-wrap:wrap;">
+    <div style="flex:0 0 auto;">
+      <iframe id="${uniqueId}-iframe" src="/iframes/${htmlFileName}" width="${width}" height="${height}" style="border:1px solid #ccc;display:block;"></iframe>
+    </div>
+    <div style="flex:1 1 400px;min-width:400px;">
+      <pre id="${uniqueId}-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">${code.trim().replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+    </div>
+  </div>
+</div>`;
+    }
+    
+    return output;
+  });
+
+  // Helper function to convert global mode p5 to instance mode
+  function convertToInstanceMode(code) {
+    // Check if already in instance mode
+    if (code.includes('new p5(')) {
+      return code;
+    }
+    
+    // Extract function definitions
+    const setupMatch = code.match(/function\s+setup\s*\([^)]*\)\s*\{[\s\S]*?\n\}/);
+    const drawMatch = code.match(/function\s+draw\s*\([^)]*\)\s*\{[\s\S]*?\n\}/);
+    
+    // Get any code outside setup/draw (global variables, other functions)
+    let otherCode = code;
+    if (setupMatch) otherCode = otherCode.replace(setupMatch[0], '');
+    if (drawMatch) otherCode = otherCode.replace(drawMatch[0], '');
+    otherCode = otherCode.trim();
+    
+    // Build instance mode code
+    let instanceCode = 'new p5(function(p) {\n';
+    
+    // Add other code (converted to use p.)
+    if (otherCode) {
+      instanceCode += '  ' + otherCode.replace(/\n/g, '\n  ') + '\n\n';
+    }
+    
+    // Add setup function
+    if (setupMatch) {
+      let setupBody = setupMatch[0].replace(/function\s+setup\s*\([^)]*\)\s*\{/, '').replace(/\}$/, '').trim();
+      setupBody = addP5Prefix(setupBody);
+      instanceCode += `  p.setup = function() {\n    ${setupBody.replace(/\n/g, '\n    ')}\n  };\n\n`;
+    }
+    
+    // Add draw function
+    if (drawMatch) {
+      let drawBody = drawMatch[0].replace(/function\s+draw\s*\([^)]*\)\s*\{/, '').replace(/\}$/, '').trim();
+      drawBody = addP5Prefix(drawBody);
+      instanceCode += `  p.draw = function() {\n    ${drawBody.replace(/\n/g, '\n    ')}\n  };\n`;
+    }
+    
+    instanceCode += '});';
+    
+    return instanceCode;
+  }
+
+  // Helper to add p. prefix to p5 functions
+  function addP5Prefix(code) {
+    const p5Functions = [
+      'createCanvas', 'background', 'fill', 'noFill', 'stroke', 'noStroke',
+      'strokeWeight', 'ellipse', 'circle', 'rect', 'square', 'triangle', 
+      'line', 'point', 'arc', 'quad', 'bezier', 'curve',
+      'push', 'pop', 'translate', 'rotate', 'scale',
+      'rectMode', 'ellipseMode', 'imageMode', 'angleMode',
+      'width', 'height', 'mouseX', 'mouseY', 'pmouseX', 'pmouseY',
+      'frameCount', 'frameRate', 'random', 'noise', 'map', 'lerp',
+      'sin', 'cos', 'tan', 'radians', 'degrees', 'dist',
+      'text', 'textSize', 'textAlign', 'textFont', 'textStyle',
+      'loadImage', 'image', 'tint', 'noTint',
+      'beginShape', 'endShape', 'vertex', 'bezierVertex', 'curveVertex',
+      'color', 'red', 'green', 'blue', 'alpha', 'hue', 'saturation', 'brightness',
+      'colorMode', 'blendMode', 'clear', 'erase', 'noErase'
+    ];
+    
+    let result = code;
+    p5Functions.forEach(func => {
+      // Replace function calls (not already prefixed with p.)
+      result = result.replace(
+        new RegExp(`(?<!p\\.)\\b${func}\\b(?=\\s*\\()`, 'g'),
+        `p.${func}`
+      );
+      // Replace property access (like width, height, mouseX, etc.)
+      if (['width', 'height', 'mouseX', 'mouseY', 'pmouseX', 'pmouseY', 'frameCount'].includes(func)) {
+        result = result.replace(
+          new RegExp(`(?<!p\\.)\\b${func}\\b(?!\\s*\\()`, 'g'),
+          `p.${func}`
+        );
+      }
+    });
+    
+    return result;
+  }
 
   eleventyConfig.addWatchTarget("src/scripts/introp5/1");
 

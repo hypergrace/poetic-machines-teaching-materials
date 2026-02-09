@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "//ats3135/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -421,90 +425,8 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week  : </h1>
-<div class="col-sm-4">
-          <div class="py-2">
-          </div>
-        </div>
-
-<div class = "card">
-  <h2>Homework</h2>
-
-    
-
-  
-
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <meta charset="utf-8" />
-  </head>
-
-  <body>
-    <video style ="display:none" class="input_video"></video>
-    
-    <script src="sketch.js"></script>
-    <script src="vehicle.js"></script>
-    <script src="mp-hands.js"></script>
-    
-    <h1><strong>Manifesting Mirror </strong></h1>
-  <h2>Jent / Minh Giang Do</h2>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-  <p><strong>Materials: </strong>p5js, Mediapipe API, IDMNYU Speech Recognition API</p>
-  <p class="p1">&nbsp;</p>
-
-  <p class="p1">Words have more power and friction when they are tangible and touchable. Communication with the computer has always depended on physical touches such as taking input via keyboards, etc. However, in this project, I want to show ways we can communicate with the program without any physical touch, utilizing Mediapipe hand-tracking API and speech-to-text API from IDMNYU. The viewer can see and touch their own words, their own thought. The webcam leaves the audience to reflect upon themselves and what they say on a more concrete level with the sense of virtual touch. The dispersion of particles from your words presents the biology of each character. Using steering behavior (a set of behaviors including arrive, flee, seek, target, etc) makes the interaction more realistic, simulating real-life physics, generating friction happening on the screen even without natural physical touch.</p>
-  <p>&nbsp;</p>
-    
-  </body>
-</html>
-
-
-   
-</div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-
-
-  </div>
-  
-   
-</div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
   <div class="card-header">Key Concepts:</div>
   <ul class="list-group list-group-flush">
     
@@ -519,6 +441,86 @@
   </ul>
   
 </div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1></h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+<pre><code>&lt;script
+  src=&quot;https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js&quot;
+  crossorigin=&quot;anonymous&quot;
+&gt;&lt;/script&gt;
+&lt;script
+  src=&quot;https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js&quot;
+  crossorigin=&quot;anonymous&quot;
+&gt;&lt;/script&gt;
+&lt;script
+  src=&quot;https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js&quot;
+  crossorigin=&quot;anonymous&quot;
+&gt;&lt;/script&gt;
+&lt;script
+  src=&quot;https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js&quot;
+  crossorigin=&quot;anonymous&quot;
+&gt;&lt;/script&gt;
+&lt;script
+  src=&quot;https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.1/holistic.js&quot;
+  crossorigin=&quot;anonymous&quot;
+&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; /&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt;
+</code></pre>
+  </head>
+  <body>
+    <video style ="display:none" class="input_video"></video>
+<pre><code>&lt;script src=&quot;sketch.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;vehicle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;mp-hands.js&quot;&gt;&lt;/script&gt;
+
+&lt;h1&gt;&lt;strong&gt;Manifesting Mirror &lt;/strong&gt;&lt;/h1&gt;
+</code></pre>
+  <h2>Jent / Minh Giang Do</h2>
+   <p>&nbsp;</p>
+   <p>&nbsp;</p>
+  <p><strong>Materials: </strong>p5js, Mediapipe API, IDMNYU Speech Recognition API</p>
+  <p class="p1">&nbsp;</p>
+  <p class="p1">Words have more power and friction when they are tangible and touchable. Communication with the computer has always depended on physical touches such as taking input via keyboards, etc. However, in this project, I want to show ways we can communicate with the program without any physical touch, utilizing Mediapipe hand-tracking API and speech-to-text API from IDMNYU. The viewer can see and touch their own words, their own thought. The webcam leaves the audience to reflect upon themselves and what they say on a more concrete level with the sense of virtual touch. The dispersion of particles from your words presents the biology of each character. Using steering behavior (a set of behaviors including arrive, flee, seek, target, etc) makes the interaction more realistic, simulating real-life physics, generating friction happening on the screen even without natural physical touch.</p>
+  <p>&nbsp;</p>
+  </body>
+</html>
+
+
+</div>
+
+<div class = "card">
+  <h2>Homework</h2>
+
+    
+
+  
+
+   
+</div>
+<div class = "card">
+  <h3>Examples</h3>
+  
+
+
+
+  </div>
+  
+   
+</div>
+<!-- End main content column -->
 
       
         </div>
@@ -542,5 +544,29 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

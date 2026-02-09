@@ -44,10 +44,14 @@
 
     <body>
   
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
 
       <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-3" style="z-index: 2">
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
           <div class="flex-shrink-0 p-3" style="width: 100%">
             <a href = "/uic/art151/" style = "text-decoration: none; color:black">
             <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
@@ -481,15 +485,256 @@
         </div>
       
         
-<div class="col-sm-6">
-  <h1>Week 3 : Variables and For Loops</h1>
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+    <li class="list-group-item">variables: let</li>
+    
+    <li class="list-group-item">scope</li>
+    
+    <li class="list-group-item">repeating with a for loop</li>
+    
+  </ul>
+  
+  <div class="card-header">Coding Components:</div>
+  
+  <ul class="list-group">
+       
 
-       <div class="py-2">
-          <h2> classtime agenda </h2>
-          <ul class="list-group">
-            <li class="list-group-item">Share and Discuss Coding Sketch</li><li class="list-group-item">Clarify or Demo any coding concepts unclear from Coding Sketch</li><li class="list-group-item">Intro Conditional Statements and Logical Operators</li><li class="list-group-item">Start work on Coding Sketch</li>
-          </ul>
-    </div>
+    <a href="https://p5js.org/reference/p5/for">
+      <li class="list-group-item">for</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/let">
+      <li class="list-group-item">let</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/+">
+      <li class="list-group-item">+</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/-">
+      <li class="list-group-item">-</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5//">
+      <li class="list-group-item">/</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/*">
+      <li class="list-group-item">*</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/%">
+      <li class="list-group-item">%</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/width">
+      <li class="list-group-item">width</li>
+    </a>
+
+        
+
+    <a href="https://p5js.org/reference/p5/height">
+      <li class="list-group-item">height</li>
+    </a>
+
+     
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1>Variables and For Loops</h1>
+
+
+<p>This week is a vibe shift.</p>
+<p>We move from representational approaches to art making (where the artist depicts a figure or sensation from their experience in an art work) to a process that is more in line with what a computer, or code more specifically, is good at doing.</p>
+<p>What is a computer good at doing?</p>
+<p><strong>Storing information</strong>. There are all kinds of ways of storing information. You can write a note on your hand, forget about it, and look at it again later. You can count chickens with your fingers and not worry about losing count because the information is stored in your fingers. Computers stem from devices like the abacus -- which we can think of as both a computer and a store of information simultaneously. We will explore how computers store information through <em>variables</em>.</p>
+<p><strong>Doing math</strong>. Last assignment we spent a lot of our time doing math in our heads and figuring out specific position for shapes. Just like the abacus, computers are really proficient at doing math (and more quickly than us). This week we will explore writing basic arithmetic (addition, subtraction, division, multiplication) that will allow us to outsource our calculations to the computer. Operators like +,-,/,*,%, and parentheses will allow us to do this.</p>
+<p><strong>Repeating with a difference</strong>. Computers work very quickly and are able to repeat very precisely. If you want to send an email to 100 of your friends to invite them to a party, you don't have to write 100 different emails. You can open a new email, input 100 emails, and the computer will automatically send to them to 100 different people. Large-scale emails such as adverts or newsletters use a technique called &quot;mail merge&quot; which allows writers to use a data sheet that matches names with emails, so that the same email is sent out, but they are able to create personalized greetings or other information. We will explore this this week through the <strong>for loop</strong>. Later, when we move to animation, the draw loop will be helpful here as well.</p>
+<p>This week we begin our exploration of computational <em>affordances</em> through art making. <em>Variables</em>, <em>for loops</em>, and arithmetic operators will allow us to begin to use code creatively to generative geometries that we can modulate as artists creatively. Although we are still learning the foundational moves, these technical concepts are the foundation of making more complex and visually intriguing image compositions.</p>
+<p>In creative coding, we are constantly going between the role of the programmer and the artist. As a programmer, we want to write code that allows us to focus on artistic considerations when we are in artist mode. Many creative coders refer to this as a conversational workflow: you program something, then you see what the computer puts out.</p>
+<h2>Variables</h2>
+<p>Variables are helpful for a number of reasons. First, it allows us to use a word that makes sense to us to stand in for a specific number (and, later, other data types).</p>
+<p>Looking for patterns will help you to become proficient and expedient with creative coding. This will allow us to make changes more quickly in artist mode. For instance, in the figure below, there we are drawing several shapes that have the same Y value. If we put our artist hat on and decide we want to move the row of shapes up or down, we will have to spend time looking in our code for where those functions are and change all of them manually. That is tedious!</p>
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>Figure 3 - 1: Y values written as numbers</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="p5code-1770668052646-jq1wn8kib-iframe" src="/iframes/p5code-1770668052646-jq1wn8kib-iframe.html" width="200" height="200" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="p5code-1770668052646-jq1wn8kib-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">function setup() {
+  createCanvas(200, 200);
+  background(220);
+<p>circle(50,100,30);
+circle(100,100,30);
+circle(150,100,30);
+}</code></pre>
+</div>
+</div></p>
+  </div>
+</div>
+<p>Instead, we can declare a  <strong>variable</strong> that will allow us to use a letter or word that makes sense to us to stand in for that number. We can declare variables in different places that have different affordances, but for now let's define them at the top of the file. This is called <strong>global scope</strong>, which means we can use the variable anywhere in the sketch. I like to refer to this as our <strong>control panel</strong>: is a region of the sketch where we can quickly change parameters and see the results change (helpful when you are in artist mode and don't want to go digging through code!).</p>
+<p>Notice I use the word <code>let</code> to introduce the word that I will use as a variable, followed by the <code>=</code> sign. The word <code>let</code> will show up in the same color as the word <code>function</code>, which lets me know it is a special word in p5. On the other side of the <code>=</code> sign is the number (or other data type, more later) which the variable will store (in this case: 100). This is called declaring and initializing a variable.</p>
+<p>Notice how the <code>circle()</code> functions now include the <code>y</code> varible in the second parameter spot. This is how you &quot;call&quot; a variable.</p>
+<p>Note: In p5.js and Javascript in general, there are three ways to declare a variable: <code>let</code>, <code>var</code>, and <code>const</code>. Without going too far into it, you can just use <code>let</code> for this class. Anytime you see <code>var</code> or <code>const</code>, you can safely substitute <code>let</code>.</p>
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>Figure 3 - 2: Declaring, Initializing, and Calling a Variable</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="p5code-1770668052664-x85rccee8-iframe" src="/iframes/p5code-1770668052664-x85rccee8-iframe.html" width="200" height="200" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="p5code-1770668052664-x85rccee8-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">let y = 100;
+<p>function setup() {
+createCanvas(200, 200);
+background(220);</p>
+<p>circle(50,y,30);
+circle(100,y,30);
+circle(150,y,30);
+}</code></pre>
+</div>
+</div></p>
+  </div>
+</div>
+<p>We can also use variables with some arithmetic. When using a variable for position, this can be helpful for group shapes together around a kind of anchor position. Addition and subtraction from the variable creates a vertical offset.</p>
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>Figure 3 - 3: Using Arithmetic Offests</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="p5code-1770668052671-ad9guavps-iframe" src="/iframes/p5code-1770668052671-ad9guavps-iframe.html" width="400" height="200" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="p5code-1770668052671-ad9guavps-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">let y = 100;
+<p>function setup() {
+createCanvas(400, 200);
+background(220);</p>
+<p>circle(50,y-30,30);
+circle(100,y,30);
+circle(150,y+10,30);
+}</code></pre>
+</div>
+</div></p>
+  </div>
+</div>
+<p>Variables declared with <code>let</code> (or <code>var</code>) can also be modified in various ways after they are initialized. This makes variables even more useful. Note: here are three different ways to add 80 to the variable <code>y</code>.</p>
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>Figure 3 - 4: Updating and Reusing a Variable</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="p5code-1770668052673-k3n7lt0my-iframe" src="/iframes/p5code-1770668052673-k3n7lt0my-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="p5code-1770668052673-k3n7lt0my-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">let y = 60;
+<p>function setup() {
+createCanvas(400, 400);
+background(220);</p>
+<p>circle(50,y-30,30);
+circle(100,y,30);
+circle(150,y+10,30);</p>
+<p>y = 140;</p>
+<p>circle(50,y-30,30);
+circle(100,y,30);
+circle(150,y+10,30);</p>
+<p>y = y + 80;</p>
+<p>circle(50,y-30,30);
+circle(100,y,30);
+circle(150,y+10,30);</p>
+<p>y+= 80;</p>
+<p>circle(50,y-30,30);
+circle(100,y,30);
+circle(150,y+10,30);
+}</code></pre>
+</div>
+</div></p>
+  </div>
+</div>
+<p>We can use variables for many more things than y position.  From what's already on our plate, we could make a few more:</p>
+<ul>
+<li>x position --&gt; <code>x</code></li>
+<li>y offsets --&gt; <code>yOffset</code></li>
+<li>circle diamater --&gt; <code>d</code></li>
+</ul>
+<p>Notice that I am using variable names that make sense to me. I can leave comments next to them which remind me what they do. While you can make a variable called <code>adjnfajs</code>, it would be annoying and unpractical to do (although practicality does not always reign supreme; for instance, if you wrote a poem using variables it may not be very practical but it may be aesthetically effective).</p>
+<p>Let's simplify the sketch a bit, write these variables in, and try something new: I want to add to the number of circles in my column. Fortunatately we have written our code so I can just copy and paste these two lines: <code>circle(x,y,d);</code> and
+<code>y+= yOffset;</code>.</p>
+<div class="card" style="margin-bottom:2em;">
+  <div class="card-header"><strong>Figure 3 - 5: More Variables</strong></div>
+  <div class="card-body">
+    <div style="display:flex;gap:1em;flex-wrap:wrap;">
+      <div style="flex:0 0 auto;">
+        <iframe id="p5code-1770668052676-nxa08mykq-iframe" src="/iframes/p5code-1770668052676-nxa08mykq-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      </div>
+      <div style="flex:1 1 400px;min-width:400px;">
+        <pre id="p5code-1770668052676-nxa08mykq-code" class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;height:100%;white-space:pre;"><code class="language-javascript">let y = 60; // y pos of circle
+let x = 50; // x pos of circle
+let yOffset = 80; // y positional difference between circles
+let d = 30; // diameter of the circle
+<p>function setup() {
+createCanvas(400, 400);
+background(220);</p>
+<p>circle(x,y,d);
+y+= yOffset;
+circle(x,y,d);
+y+= yOffset
+circle(x,y,d)</p>
+<p>y+= yOffset;
+circle(x,y,d);
+y+= yOffset
+circle(x,y,d)</p>
+<p>y+= yOffset;
+circle(x,y,d);
+y+= yOffset
+circle(x,y,d)</p>
+<p>}</code></pre>
+</div>
+</div></p>
+  </div>
+</div>
+<br>
+<div class="card" style="margin:2em 0;padding:2em;background:#f8f9fa;border:2px solid #dee2e6;">
+  <div style="font-size:1.5em;text-align:center;line-height:1.6;">
+    <p>Rule of thumb: when you see patterns and repetitions in your code, there is probably an easier way to write it.</p>
+  </div>
+</div>
+<br>
+<p>Remember that one of our goals was to minimize the overhead in switching between artist mode and programmer mode. If I want to try out different numbers of circles in the column, I need to spend a lot of time deleting or pasting code and I'm likely to make a mistake if I'm going too fast. What I really want is a variable called <code>numCircles</code> which I could change quick and the computer would repeat those two lines of code for me. Enter the <code>for loop</code>.</p>
+<h2>For Loops</h2>
+<p>For loops are structures for repeating blocks of code. When you repeat something (like sit-ups or folding dough), you often count those repetitions to structure the task. When you get to a certain number of situps, you stop. Coding <code>for loops</code> work a similar way, except computers make less assumptions about what it means to count and repeat.</p>
+<p>Let's look at the example below to understand the anatomy of the <code>for loop</code>. First, we write the word <code>for</code>, which shows up in the same color as the word <code>let</code> and <code>function</code>. It's followed by parentheses, which we will come back to. Then, curly braces <code>{ //contains the code to be repeated}</code>.</p>
+
+
+</div>
 
 <div class = "card">
   <h2>Homework</h2>
@@ -533,8 +778,6 @@
 
   
 
-  
-
    
 </div>
 <div class = "card">
@@ -543,8 +786,38 @@
 
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-0', 'p5-code-0')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-3-1-iframe.html" width="500" height="500" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// control panel
+      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-3-0-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declare our variables 
+// 3 ways to declare a variable: const; var; let 
+
+let d = 3; // diameter of the circle
+let r = d / 2; // calculate the radius 
+let xOffset = 0; // left hand margin (not including the radius of the circle)
+
+let numCircles = 200; // control the number of circles
+
+function setup() {
+  createCanvas(400, 400);
+  console.log(d,r);
+}
+
+function draw() {
+  background(220);
+  
+  
+ for (let i = 0;i&lt;numCircles;i=i+1) {
+    // and to repeat it!!! for a certain number of times
+  circle(xOffset+d*i,100,d);
+  }
+  
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-3-1-iframe.html" width="500" height="500" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// control panel
 let x = 3;
 let y = 250;
 let w = 10; // width of my circle
@@ -572,9 +845,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-3-2-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let g = 100;
+      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-3-2-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let g = 100;
 let offset = 100;
 let o = 255; // opacity
 
@@ -609,9 +882,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-3-3-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 25;
+      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-3-3-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 25;
 let y = 50;
 let d = 20; // diameter of our circle
 let r = d / 2;
@@ -636,9 +909,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-3-4-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declaring a varable
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-3-4-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declaring a varable
 let x = 20;
 let y = 20;
 let w = 20; // w is the width of my rectangle
@@ -664,9 +937,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-3-5-iframe.html" width="480" height="800" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-3-5-iframe.html" width="480" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(480, 800);
 }
 
@@ -684,9 +957,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-3-6-iframe.html" width="480" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global scope variables
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-3-6-iframe.html" width="480" height="480" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global scope variables
 let numLines = 250; // change var to affect for loop function and drawing spacing!
 let xOffset = 50; // x starting point
 let spacing; // declare but not define spacing;
@@ -717,9 +990,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-3-7-iframe.html" width="400" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// define our variables
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-3-7-iframe.html" width="400" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// define our variables
 // control panel
 // variable declaration:
 // let: declares a variable (something that can change)
@@ -761,6 +1034,73 @@ function draw() {
   }
 }
 </code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-3-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// variables
+let d = 20; // diameter of the circle
+let r = d / 2; // radius of the circle
+
+let inclineFactor = 5; // how much the circles go down
+
+let xOffset = 20;
+let numCircles = 20; // number of circles in each row
+
+function setup() {
+  createCanvas(400, 400);
+  console.log(r);
+}
+
+function draw() {
+  background(220);
+  // radius is half the diameter
+  // diameter is the width of the circle cutting thru its center point
+  // radius is the distance between the center of the circle to anywhere on its edge
+ 
+
+  for (let i = 0; i &lt; numCircles; i = i + 1) {
+    // the code I want to repeat!
+    
+    fill(i*20,200-i*10,0)
+    circle(xOffset + d * i, 100 + i * inclineFactor, d); // x,y,d
+  }
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-3-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declare our variables 
+// 3 ways to declare a variable: const; var; let 
+
+let d = 20; // diameter of the circle
+let r = d / 2; // calculate the radius 
+let xOffset = 0; // left hand margin (not including the radius of the circle)
+
+let numCircles = 200; // control the number of circles
+
+function setup() {
+  createCanvas(400, 400);
+  console.log(d,r);
+}
+
+function draw() {
+  background(220);
+  
+  let g = 0; 
+ for (let i = 0;i&lt;numCircles;i=i+1) {
+    // and to repeat it!!! for a certain number of times
+  
+   fill(100,g,200)
+   circle(xOffset+d*i,100,d-i);
+   g+=10;
+  }
+  
+  
+}</code></pre>
     </div>
   <script>
             function toggleP5View(iframeId, codeId) {
@@ -859,77 +1199,7 @@ function draw() {
 
    
 </div>
-
-
-
-
-<div class="col-sm-2 pull-right card">
-  <div class="card-header">Key Concepts:</div>
-  <ul class="list-group list-group-flush">
-    
-    <li class="list-group-item">for loop</li>
-    
-    <li class="list-group-item">nested for loop</li>
-    
-    <li class="list-group-item">variables: let, const</li>
-    
-    <li class="list-group-item">scope</li>
-    
-  </ul>
-  
-  <div class="card-header">Coding Components:</div>
-  
-  <ul class="list-group">
-       
-
-    <a href="https://p5js.org/reference/p5/for">
-      <li class="list-group-item">for</li>
-    </a>
-
-        
-
-    <a href="https://p5js.org/reference/p5/let">
-      <li class="list-group-item">let</li>
-    </a>
-
-        
-
-    <a href="https://p5js.org/reference/p5/const">
-      <li class="list-group-item">const</li>
-    </a>
-
-        
-
-    <a href="https://p5js.org/reference/p5/width">
-      <li class="list-group-item">width</li>
-    </a>
-
-        
-
-    <a href="https://p5js.org/reference/p5/height">
-      <li class="list-group-item">height</li>
-    </a>
-
-     
-  </ul>
-  
-  <div class="card-header">Examples</div>
-  
-  <ul class="list-group">
-       
-
-    <a href="https://p5js.org/examples/control-iteration.html">
-      <li class="list-group-item">control iteration</li>
-    </a>
-        
-
-    <a href="https://p5js.org/examples/control-embedded-iteration.html">
-      <li class="list-group-item">control embedded iteration</li>
-    </a>
-     
-  </ul>
-  
-</div>
+<!-- End main content column -->
 
       
         </div>
@@ -953,5 +1223,29 @@ function draw() {
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
 
     <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
