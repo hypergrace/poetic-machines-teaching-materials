@@ -214,3 +214,54 @@ Remember that one of our goals was to minimize the overhead in switching between
 For loops are structures for repeating blocks of code. When you repeat something (like sit-ups or folding dough), you often count those repetitions to structure the task. When you get to a certain number of situps, you stop. Coding `for loops` work a similar way, except computers make less assumptions about what it means to count and repeat. 
 
 Let's look at the example below to understand the anatomy of the `for loop`. First, we write the word `for`, which shows up in the same color as the word `let` and `function`. It's followed by parentheses, which we will come back to. Then, curly braces `{ //contains the code to be repeated}`. 
+
+Now let's look at what needs to go in the parentheses. Using a: 
+
+1. a variable declaration 
+2. a conditional statement about that variable, and
+3. a variable incrementer 
+
+We can instruct the `for loop` how to repeat and when to stop and move on with the rest of the code. These three bits of information are seperated by semicolons: 
+
+{% breakout %}
+`for (let i = 0; i<10;i++){ console.log(i);
+}`
+{% endbreakout %}
+
+The first position defines the variable used in the `for loop` -- it is where we start and runs once at the start of the loop. The second position is the coditions for repeating. In the above, the for loop will go through the code in the curly braces so long as `i` is less than `10`. The last position indicates how the `for loop` should change the variable each time. If we start at `0`, the `for loop` will run 10 times. In this example, the `for loop` is counting by 1 and the `i` variable serves as an **index** of the repetition number. 
+
+There are other ways to count. For instance, when you are counting cash money, you don't often count the number of bills, you count the amount. 
+
+In creative code, you may frequently count by pixel positional offsets, size of a shape, changes in color, etc.
+
+
+{% p5code "More Variables" %}
+
+let y = 60; // y pos of circle
+let x = 50; // x pos of circle
+let yOffset = 80; // y positional difference between circles
+let d = 30; // diameter of the circle
+
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+ 
+  circle(x,y,d);
+  y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+  y+= yOffset; 
+  circle(x,y,d);
+  y+= yOffset
+  circle(x,y,d)
+
+}
+{% endp5code %}
