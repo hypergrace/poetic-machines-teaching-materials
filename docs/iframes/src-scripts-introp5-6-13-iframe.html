@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  // use at least one for loop. Some A-level projects may use only one, but it's very likely you will need to us a nested for loop or more.
+
+// use at least global 4 variables that can be changed to influence the outcome of your generative drawing machine
+
+// must be a static image -- use noLoop() DONE
+
+// use random() and/or noise()
+
+// use randomSeed() or noiseSeed() and select one final version of your compositions
+
+// you are present for critique and participate in others' critique
+
+let jitter = 25;
+
+// declare these but don't initialize them
+let x1, y1, x2, y2, x3, y3;
+
+let sMin = 0; // min subtraction
+let sMax = 100; // max subtraction from our points
+let spacing = 2; // pixel space between each triangle
+
+let margin = 0; // margin in pixels
+
+function setup() {
+  createCanvas(600, 600);
+  noLoop();
+  noFill();
+  x1 = width / 2 + random(-jitter, jitter); //x1
+  y1 = margin + random(-jitter, jitter); //y1
+  x2 = width - margin + random(-jitter, jitter); //x2
+  y2 = height - margin + random(-jitter, jitter); //y2
+  x3 = margin + random(-jitter, jitter); //x3
+  y3 = height - margin + random(-jitter, jitter); //y3
+}
+
+function draw() {
+  background(0, 128, 200);
+
+  for (let sFactor = sMin; sFactor < sMax; sFactor += spacing) {
+    let g = map(sFactor, sMin, sMax, 0, 255); // takes 5 args: 1 is the value to be transformed, 2: original min, 3: original max, 4: new minimum and 5: new max
+    stroke(0, g, 200);
+    triangle(
+      x1,
+      y1 + sFactor,
+      x2 - sFactor,
+      y2 - sFactor,
+      x3 + sFactor,
+      y3 - sFactor
+    );
+  }
+}
+
+  </script>
+  </body>
+  </html>
