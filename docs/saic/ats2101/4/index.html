@@ -435,8 +435,72 @@ function draw() {
   
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-4-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global variable control panel
+      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-4-10-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x,y; // declare both x and y
+let jitter = 10;
+
+let numCircles = 1000;
+
+function setup() {
+  createCanvas(400, 400);
+  noLoop();
+  noStroke();
+   x = random(width); // initialize them with a random number
+   y = random(height); // init w random number
+}
+
+function draw() {
+  background(220);
+ 
+  for(let i = 0; i &lt; numCircles;i++){
+    let w = map(i,0,numCircles,200,1);
+    let g = map(i,0,numCircles,0,255);
+    x+=random(-jitter,jitter);
+     y+=random(-jitter,jitter);
+    fill(g);
+    circle(x,y,w);
+  }
+  
+
+
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-4-11-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let wD = 1; // the difference between circle widths
+let jitter = 30;
+let rJitter = 4; // potential jump in red color space
+
+function setup() {
+  createCanvas(800, 800);
+  noStroke();
+  noLoop();
+}
+
+function draw() {
+  background(255);
+  // for loop to count w! 
+  let x = width/2;
+  let y = width/2;
+  let r = 128;
+  for(let w = width/2;w&gt;50;w-=wD){
+  let g = map(w,width/2,50,0,255);
+    fill(r,g,100);
+    x+=random(-jitter,jitter);
+    y+=random(-jitter,jitter);
+    r+=random(-rJitter,rJitter)
+  circle(x,y,w);
+  }
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-4-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global variable control panel
 let padding = 10;
 let spacing = 2;
 let margin = 70; // margin between top and left of marks, bottom and right
@@ -471,9 +535,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-4-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">//
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-4-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">//
 
 let num = 100; // give a certain number of shapes
 // 10 shapes per row, and ten shapes per column
@@ -506,9 +570,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-4-4-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global variables
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-4-4-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global variables
 let margin = 150; // number of margin pixels on left and right (top and bottom) of canvas
 let radius = 10; // radius of shape
 let spacing; // in the global scope so that I can use it in the draw loop later.
@@ -552,9 +616,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-4-5-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// make our own variables: let, var, const
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-4-5-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// make our own variables: let, var, const
 // let is modern in JS
 // var is older way
 // const is constant and so you can't change it
@@ -605,9 +669,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-4-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xSpacing = 12;
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-4-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xSpacing = 12;
 let ySpacing = 12;
 let w = 10; // width of the shape
 let g = 0; // g is greyscale! 
@@ -643,9 +707,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-4-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xD = 50; // spacing between x points
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-4-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let xD = 50; // spacing between x points
 let layers = 50;
 let pD = 5; // change in our p variable
 
@@ -692,9 +756,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-4-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-4-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(400, 400);
   //noFill();
 }
@@ -738,9 +802,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-4-9-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// quadrilateral nested for loop 
+      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-4-9-iframe.html" width="700" height="700" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// quadrilateral nested for loop 
 // "book style for loop"
 
 let sz = 100; // base size of shape

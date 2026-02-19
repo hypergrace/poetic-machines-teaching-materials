@@ -762,8 +762,89 @@ function draw() {
   
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-5-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 100; // number of circles in a row
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-5-17-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let margin = 50;
+let xOffset = 10;
+let yOffset = 15;
+
+let xJitter1 = 0;
+let xJitter2 = 0;
+let yJitter1 = 0;
+let yJitter2 = 0;
+let jitter = 0.01;
+
+function setup() {
+  createCanvas(800, 800);
+  noLoop();
+}
+
+function draw() {
+  background(220);
+  for (let y = margin; y &lt; height - margin; y += yOffset) {
+    for (let x = margin; x &lt; width - margin; x += xOffset) {
+      xJitter1 += random(-5,5);
+          xJitter2 += random(-5,5);
+          yJitter1 += random(-5,5);
+          yJitter2 += random(-5,5);
+      let x1 = x + xJitter1;
+      let y1 = y + yOffset + yJitter1;
+      let x2 = x + xOffset + xJitter2;
+      let y2 = y + yJitter2;
+      line(x1, y1, x2, y2);
+    }
+  }
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-5-18-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let margin = 50;
+let xOffset = 10;
+let yOffset = 20;
+
+let xJitter1 = 0;
+let jitter = 20;
+
+let noiseScale = 0.004; 
+
+function setup() {
+  createCanvas(800, 800);
+  noLoop();
+  noFill();
+}
+
+function draw() {
+  background(220);
+  for (let y = margin; y &lt; height - margin; y += yOffset) {
+    for (let x = margin; x &lt; width - margin; x += xOffset) {
+      let w = noise(x*noiseScale,y*noiseScale) * jitter; // 1, 2, or 3 variables
+  // noise generates values between 0 and 1
+     
+      let r = random(40,70);
+      let g = random (200,255);
+      let b = random (150, 255);
+      
+      stroke(r,g,b);
+      
+      let sw = random(0,10);
+      
+      strokeWeight(sw);
+      
+      circle (x,y,w)
+
+ 
+    }
+  }
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-5-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 100; // number of circles in a row
 let spacing; // declare but not define
 // - minus
 function setup() {
@@ -799,9 +880,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-5-3-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 50;
+      <button onclick="toggleP5View('p5-iframe-11', 'p5-code-11')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-11" src="/iframes/src-scripts-introp5-5-3-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-11" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let num = 50;
 let spacing;
 let noiseScale = 0.02;
 let w; // width of square
@@ -830,9 +911,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-5-4-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCols = 200; // number of columns
+      <button onclick="toggleP5View('p5-iframe-12', 'p5-code-12')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-12" src="/iframes/src-scripts-introp5-5-4-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-12" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let numCols = 200; // number of columns
 let numRows = 40; // number of rows
 let xSpacing, ySpacing;
 let noiseScale = 0.03;
@@ -860,9 +941,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-11', 'p5-code-11')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-11" src="/iframes/src-scripts-introp5-5-5-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-11" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
+      <button onclick="toggleP5View('p5-iframe-13', 'p5-code-13')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-13" src="/iframes/src-scripts-introp5-5-5-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-13" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
 let xSpacing = 35;
 let startW = 50; // width of first square
 
@@ -891,9 +972,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-12', 'p5-code-12')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-12" src="/iframes/src-scripts-introp5-5-6-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-12" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
+      <button onclick="toggleP5View('p5-iframe-14', 'p5-code-14')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-14" src="/iframes/src-scripts-introp5-5-6-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-14" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let ySpacing = 25;
 let xSpacing = 35;
 let startW = 50; // width of first square
 
@@ -924,9 +1005,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-13', 'p5-code-13')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-13" src="/iframes/src-scripts-introp5-5-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-13" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let displacement = 2;
+      <button onclick="toggleP5View('p5-iframe-15', 'p5-code-15')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-15" src="/iframes/src-scripts-introp5-5-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-15" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let displacement = 2;
 
 function setup() {
   createCanvas(400, 400);
@@ -950,9 +1031,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-14', 'p5-code-14')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-14" src="/iframes/src-scripts-introp5-5-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-14" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-16', 'p5-code-16')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-16" src="/iframes/src-scripts-introp5-5-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-16" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(400, 400);
   noLoop();
   rectMode(CENTER);
@@ -979,9 +1060,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-15', 'p5-code-15')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-15" src="/iframes/src-scripts-introp5-5-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-15" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
+      <button onclick="toggleP5View('p5-iframe-17', 'p5-code-17')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-17" src="/iframes/src-scripts-introp5-5-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-17" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
   createCanvas(400, 400);
   noLoop();
   noFill();

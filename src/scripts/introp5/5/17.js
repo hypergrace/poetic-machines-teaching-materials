@@ -1,0 +1,31 @@
+let margin = 50;
+let xOffset = 10;
+let yOffset = 15;
+
+let xJitter1 = 0;
+let xJitter2 = 0;
+let yJitter1 = 0;
+let yJitter2 = 0;
+let jitter = 0.01;
+
+function setup() {
+  createCanvas(800, 800);
+  noLoop();
+}
+
+function draw() {
+  background(220);
+  for (let y = margin; y < height - margin; y += yOffset) {
+    for (let x = margin; x < width - margin; x += xOffset) {
+      xJitter1 += random(-5,5);
+          xJitter2 += random(-5,5);
+          yJitter1 += random(-5,5);
+          yJitter2 += random(-5,5);
+      let x1 = x + xJitter1;
+      let y1 = y + yOffset + yJitter1;
+      let x2 = x + xOffset + xJitter2;
+      let y2 = y + yJitter2;
+      line(x1, y1, x2, y2);
+    }
+  }
+}
