@@ -94,5 +94,7 @@ topics:
         url: http://www.localstyle.tv/projects.html
       - name: Kara Stone
         url: https://karastonesite.com/
+      - name: Pippin Barr
+        url: https://pippinbarr.com/
 
 ---
