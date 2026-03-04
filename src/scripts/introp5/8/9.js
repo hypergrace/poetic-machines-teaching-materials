@@ -1,0 +1,70 @@
+let x = 200;
+let xSpeed = 2;
+let y = 200; 
+let w = 100; 
+let img; 
+
+let a = 0;
+let rSpeed = 0.02; // speed of rotation;
+
+let g = 0; // green 
+let gMax = 200;
+let gMin = 100;
+let b  = 0;
+let cSpeed = 2; // speed at which color changes
+let cDir = 1; // color change direction should be ONLY -1 or 1
+
+
+function setup() {
+  createCanvas(800, 800);
+  rectMode(CENTER); // changes how x,y coordinates are interpretted for square and rectangle --> CENTER changes the x,y coordinate to the CENTER of the square or rectangle
+
+  noStroke();
+
+}
+
+function draw() {
+  background(220,1);
+  
+  // position animation block
+  x+=xSpeed;
+  if(x>width+w){
+    x = -w;// reset to left hand of screeny = random(height);
+    b = random(100,225);
+    y = random(height);
+
+    // coupled or integrated randomness
+    let r = random(0,100);
+    
+    w = map(r,0,100,10,50);
+    xSpeed = map(r,0,100,5,1);
+    rSpeed = map(r,0,100,2,0.1);
+    
+  }
+  
+  // color animation block
+  g+=cSpeed * cDir; // add to green
+ 
+  
+    // logical or conditional operators 
+  // && chains two together -- BOTH must be true 
+  // || chains two together --EITHER can be true
+
+  // switch! turns direction switch between -1 and 1;
+  if(g>gMax || g<gMin){
+    cDir*= -1;
+  }
+  
+  
+  
+  // rotation block
+  translate(x,y);
+  // to rotate, first translate to the center of the rotation
+  a+=rSpeed; // change the angle of rotation
+  rotate(a); // then rotate by a given angle
+  fill(0,g,b);
+  square(0,0,w); // then draw the shape or image
+  
+
+  
+}

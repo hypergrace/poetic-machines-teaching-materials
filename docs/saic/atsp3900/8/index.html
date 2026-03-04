@@ -459,8 +459,125 @@ function draw() {
   
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-8-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
+      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-8-10-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img;
+
+let a=0;//angle of rotation
+let rSpeed = 0.1;//speed of rotation
+
+
+let scaleFactor = 1;
+
+
+function preload(){
+ img = loadImage("/assets/p5img/pixelart.png");
+}
+
+function setup() {
+  createCanvas(800, 800);
+ 
+  imageMode(CENTER); // do the same thing for images! 
+  noStroke()
+
+
+
+
+}
+
+function draw() {
+  background(10);
+  
+  translate(mouseX,mouseY);
+  rotate(a);
+  scale(scaleFactor);
+  a+=rSpeed;
+  image(img,0,0);
+  
+  
+  if(mouseIsPressed){
+    scaleFactor+=0.03;
+    rSpeed+=0.001;
+  }
+  else {
+    scaleFactor-=0.03;
+    rSpeed-= 0.001;
+    if (scaleFactor &lt; 1){
+      scaleFactor = 1;
+    }
+    if (rSpeed&lt; 0.1){
+      rSpeed = 0.1;
+    }
+    
+  }
+  
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-8-11-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img;
+
+let a=0;//angle of rotation
+let rSpeed = 0.1;//speed of rotation
+
+
+let x = 400;
+let xSpeed = 1;
+let xDir = 1; // SWITCH! either 1 or -1;
+let y = 200;
+
+let scaleFactor = 2;
+
+let shuteWidth = 400;
+let shuteX = 200;
+
+function preload(){
+ img = loadImage("/assets/p5img/pixelart.png");
+}
+
+function setup() {
+  createCanvas(800, 800);
+ 
+  imageMode(CENTER); // do the same thing for images! 
+  noStroke();
+}
+
+function draw() {
+  background(10);
+  fill("blue");
+  rect(200,0,width/2,height);
+  translate(x,y);
+  rotate(a);
+  scale(scaleFactor);
+  a+=rSpeed * xDir;
+  image(img,0,0);
+  
+  
+  x+=xSpeed*xDir;
+  scaleFactor+=0.03;
+  if (x&gt;=shuteX+shuteWidth-img.width*scaleFactor/2 || x&lt;=shuteX + img.width*scaleFactor/2){
+    xDir *= -1;
+      x+=xSpeed*xDir;
+  }
+  
+  y+=5;
+  
+  if (y &gt;= height +img.height*scaleFactor/2){
+    y = -img.height*scaleFactor/2;
+    scaleFactor = 1;
+    x = width/2;
+  }
+
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-8-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
 let aD = 0; // difference in angles between each shape
 let aToggle = 1; // toggle which is either 1 or -1
 
@@ -496,9 +613,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-8-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-8-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
 let aD = 0; // difference in angles between each shape
 let aToggle = 1; // toggle which is either 1 or -1
 
@@ -551,9 +668,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-8-4-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-8-4-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
 // also note that the image locations are different from how they will look when you upload them to the p5 editor for the same reasons.
 
 let img1, img2, img3, img4;
@@ -654,9 +771,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-8-5-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-8-5-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
 // also note that the image locations are different from how they will look when you upload them to the p5 editor for the same reasons.
 let img1, img2, img3, img4;
 
@@ -721,6 +838,277 @@ function draw() {
   //   circle(x, y, 3);
 }
 </code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-8-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let a = 0; // the angle of rotation for shape one
+let rSpeed = 0.02; // the speed of rotation
+let w = 75; // square width
+
+let a2 = 0; // angle of rotation for shape 2 
+let rSpeed2 = -0.05;// speed of rotation for shape 2
+
+// setup runs once at the start to "set things up"
+function setup() {
+  createCanvas(400, 400);
+  //   noStroke();
+  strokeWeight(4);
+  noFill();
+}
+// draw loops continuously thereafter
+function draw() {
+  background(255);
+
+  // the point around which a shape rotates is called the point of origin.
+  // the default point of origin is the top left corner in p5
+  // the point of origin is always 0,0
+  // so --&gt; to rotate a shape, we want to change the point of origin.
+  // --&gt; translate(); AND THEN rotate();
+  
+  // SHAPE 1 // push and pop are ways of isolating drawing states
+  push(); // starts the drawing state, it remembers translate, rotate -- this also remembers fill, stroke, 
+  translate(50, 50); // it takes 2 values: they are added to the current point of origin.
+  // for(let x = 0;x&lt;width;x+=20){
+  //   line(x,0,x,height);
+  //   line(0,x,width,x);
+  // }
+  
+   point(0,0); // point of origin
+   rotate(a);
+  fill('red');
+  square(-w/2, -w/2, w); // the x and y coordinates are the top left! 
+    pop(); // we end the drawing state and forget the translation,rotation, fill, stroke
+    a+=rSpeed; //update the angle of rotation for shape 1
+  
+  // SHAPE 2 
+  push();
+  translate(200,200);
+  rotate(a2);
+  square(-w/2,-w/2,w);
+
+  pop();
+  
+  a2 += rSpeed2; // update the angle of rotation for shape 2
+  
+  
+} // the end of the draw loop ALSO forgets or ends the drawing state
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-8-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img1,img2 // declare variables for my images;
+
+// pre load runs even before setup! it will wait until everything is done and loaded beforemoving on with p5.
+
+// transformations: translate, rotate, scale 
+
+
+let img1a = 0; //angle of rotation for img1
+let img1rSpeed = 0.002;// speed of rotation
+
+let img2a = 0; //angle of rotation for img1
+let img2rSpeed = -0.0003;// speed of rotation
+let img2s = 1;
+
+function preload(){
+
+  img1 = loadImage("/assets/p5img/img1.jpeg");
+
+ img2 = loadImage("/assets/p5img/img2.jpeg");
+}
+
+function setup() {
+  createCanvas(400, 400);
+   img1.resize(600,0);
+   img2.resize(600,0);
+ 
+    blendMode(EXCLUSION);
+}
+
+function draw() {
+  //background(220);
+  
+  
+
+  // image 2 draw state
+
+
+  push();
+  translate(200,200);
+  rotate(img2a)
+  scale(img2s);
+  image(img2,-img2.width/2,-img2.height/2);
+  pop();
+  
+  img2a+=img2rSpeed;
+  
+  img2s+=0.001;
+  // animation control loop
+  if(img2s&gt;2){
+    img2s = random(1,2);
+    img2rSpeed = random(0.001,0.01);
+  }
+  
+  
+ //heres a grid 
+    strokeWeight(8);  
+  for(let x = 0;x&lt;width;x+=20){
+
+    line(x,0,x,width);
+    line(0,x,height,x);
+  }
+  
+  
+     // IMAGE 1
+  push(); // start image 1 state 
+  translate(200,200);
+  point(0,0);
+  rotate(img1a);
+  tint(255,0,0,100);
+  image(img1,-img1.width/2,-img1.height/2);// image to show (as a variable), x, y pos (default works like square or rectangle)
+  //filter(INVERT);
+
+  filter(BLUR,10);
+  pop(); // end image 1 state
+  img1a+=img1rSpeed;
+  
+  
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-8-8-iframe.html" width="400" height="300" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let sprite;
+let bg;
+
+let xOffset = 40;
+let yOffset = 100;
+
+let xAnimOffset = 360; // the number of pixels we need to offset IF we are progressing through our sprite sheet!
+
+let animState = 2;
+
+let a = 0;
+
+function preload() {
+  sprite = loadImage("/assets/p5img/sprite.png");
+  bg = loadImage("/assets/p5img/img3.jpeg");
+}
+
+function setup() {
+  createCanvas(400, 300);
+  //frameRate(10); // takes number and converts to frames per second
+  bg.resize(400, 0);
+  //uncomment the save gif in order to save the gif to your computer!
+ // saveGif("cat.gif",3);
+}
+
+function draw() {
+  image(bg, 0, 0);
+  image(
+    sprite,
+    0,
+    0,
+    sprite.width * 1.1,
+    sprite.height,
+    xOffset + xAnimOffset * animState,
+    yOffset
+  );
+ console.log(frameCount);
+  if (frameCount % 10 == 0) {
+    animState++;
+
+    if (animState &gt; 2) {
+      animState = 0;
+    }
+  }
+
+  translate(20, 20);
+  rotate(a);
+  square(-10, -10, 20);
+  a += 0.1;
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-8-9-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 200;
+let xSpeed = 2;
+let y = 200; 
+let w = 100; 
+let img; 
+
+let a = 0;
+let rSpeed = 0.02; // speed of rotation;
+
+let g = 0; // green 
+let gMax = 200;
+let gMin = 100;
+let b  = 0;
+let cSpeed = 2; // speed at which color changes
+let cDir = 1; // color change direction should be ONLY -1 or 1
+
+
+function setup() {
+  createCanvas(800, 800);
+  rectMode(CENTER); // changes how x,y coordinates are interpretted for square and rectangle --&gt; CENTER changes the x,y coordinate to the CENTER of the square or rectangle
+
+  noStroke();
+
+}
+
+function draw() {
+  background(220,1);
+  
+  // position animation block
+  x+=xSpeed;
+  if(x&gt;width+w){
+    x = -w;// reset to left hand of screeny = random(height);
+    b = random(100,225);
+    y = random(height);
+
+    // coupled or integrated randomness
+    let r = random(0,100);
+    
+    w = map(r,0,100,10,50);
+    xSpeed = map(r,0,100,5,1);
+    rSpeed = map(r,0,100,2,0.1);
+    
+  }
+  
+  // color animation block
+  g+=cSpeed * cDir; // add to green
+ 
+  
+    // logical or conditional operators 
+  // && chains two together -- BOTH must be true 
+  // || chains two together --EITHER can be true
+
+  // switch! turns direction switch between -1 and 1;
+  if(g&gt;gMax || g&lt;gMin){
+    cDir*= -1;
+  }
+  
+  
+  
+  // rotation block
+  translate(x,y);
+  // to rotate, first translate to the center of the rotation
+  a+=rSpeed; // change the angle of rotation
+  rotate(a); // then rotate by a given angle
+  fill(0,g,b);
+  square(0,0,w); // then draw the shape or image
+  
+
+  
+}</code></pre>
     </div>
   <script>
             function toggleP5View(iframeId, codeId) {
