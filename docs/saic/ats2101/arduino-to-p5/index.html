@@ -311,27 +311,125 @@
         </div>
       
         
-<div class="col-sm-6"><h1>Arduino to p5.js Serial Communication</h1>
-<h2>Arduino Code</h2>
-<p>Example code for joystick input on pins A0,A1,A2.</p>
-<p>`void setup() {</p>
-<p>Serial.begin(9600); //set up Serial communication at 9600Baud
-}</p>
-<p>void loop() {
-int v0 = analogRead(A0);
-int v1 = analogRead(A1);
-int v2 = analogRead(A2);</p>
-<p>Serial.print(v0);
-Serial.print(',');
-Serial.print(v1);
-Serial.print(',');
-Serial.println(v2);</p>
-<p>delay(10);</p>
-<p>}
-`</p>
-<h2>p5.js Code</h2>
-<p>Note this code contains an additional JS file that is not immediately visible when you look at the editor. For this reason, you will need to DUPLICATE this p5 sketch as a starting point!</p>
-<p>https://editor.p5js.org/jps723/sketches/Byvw1lu6Z</p>
+<div class="col-sm-6">
+# Arduino to p5.js Serial Communication
+
+We are using the p5.webserial library available here: https://github.com/gohai/p5.webserial/tree/main. 
+
+## Arduino Code  
+
+Example code for joystick input on pins A0,A1,A2.
+
+`void setup() {
+
+
+ Serial.begin(9600); //set up Serial communication at 9600Baud
+}
+
+void loop() {
+  int v0 = analogRead(A0);
+  int v1 = analogRead(A1);
+  int v2 = analogRead(A2);
+
+  Serial.print(v0);
+  Serial.print(',');
+  Serial.print(v1);
+  Serial.print(',');
+  Serial.println(v2);
+
+  delay(10);
+
+}
+` 
+
+
+## p5.js Code 
+
+
+### index.html
+
+We need to add a line to our HTML file that references the p5.webserial library. See the second script tag below:
+
+
+<pre class="language-html" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"&gt;&lt;/script&gt;
+    &lt;script src="https://unpkg.com/@gohai/p5.webserial@^1/libraries/p5.webserial.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"&gt;&lt;/script&gt;
+    
+    
+    
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+    &lt;meta charset="utf-8" /&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+    &lt;/main&gt;
+    &lt;script src="sketch.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+### script.js
+
+This is a good starting point for us. Note that to connect to Arduino, we need to have some 'user gesture' from the browser. It can't automatically connect to Arduino. So we make a simply button (which can be hidden) to initialize the connection. 
+
+Make sure you do not have Arduino IDE open during this. Your computer can only have one serial connection per port.
+
+
+
+<pre class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-javascript">let serial;
+let buffer = '';
+
+let joyX = 0;
+let joyY = 0;
+let joySwitch = 0;
+let xpos = 0;
+let ypos = 0;
+
+function setup() {
+  createCanvas(400, 200);
+  serial = createSerial();
+
+  createButton('Connect Serial').mousePressed(() =&gt; {
+    if (!serial.opened()) serial.open(9600);
+  });
+}
+
+function draw() {
+  background(255);
+  if (serial.availableBytes() &gt; 0) {
+    buffer += serial.read();
+    let lines = buffer.split('\n');
+    buffer = lines.pop();
+
+    for (const line of lines) {
+      const parts = line.trim().split(',');
+      if (parts.length &gt;= 3) {
+        joyX = parseInt(parts[0], 10);
+        joyY = parseInt(parts[1], 10);
+        joySwitch = parseInt(parts[2], 10);
+
+        // Map raw joystick to canvas position
+        xpos = map(joyX, 0, 1023, 0, width);
+        ypos = map(joyY, 0, 1023, 0, height);
+        
+        if(joySwitch){
+          fill("blue");
+        }
+        else {
+          fill("red")
+        }
+        
+        circle(xpos,ypos,20);
+        
+        
+      }
+    }
+  }
+}</code></pre>
+
 </div>
 
       

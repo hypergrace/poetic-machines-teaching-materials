@@ -206,6 +206,28 @@ module.exports = function (eleventyConfig) {
 <br>`;
   });
 
+  // Paired shortcode for HTML code blocks (no iframe)
+  eleventyConfig.addPairedShortcode("htmlcode", function(code) {
+    const escaped = code
+      .trim()
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    return `
+<pre class="language-html" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-html">${escaped}</code></pre>`;
+  });
+
+  // Paired shortcode for p5.js code blocks (no iframe)
+  eleventyConfig.addPairedShortcode("p5codeonly", function(code) {
+    const escaped = code
+      .trim()
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    return `
+<pre class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-javascript">${escaped}</code></pre>`;
+  });
+
   // Paired shortcode for inline p5 code blocks
   eleventyConfig.addPairedShortcode("p5code", function(code, description) {
     const fs = require("fs");
