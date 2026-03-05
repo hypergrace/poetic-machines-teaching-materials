@@ -1,0 +1,128 @@
+---
+layout: tutorial.njk
+weekNum: 0
+title: Arduino to p5.js Serial Communication
+draft: false
+---
+
+# Arduino to p5.js Serial Communication
+
+We are using the p5.webserial library available here: https://github.com/gohai/p5.webserial/tree/main. 
+
+## Arduino Code  
+
+Example code for joystick input on pins A0,A1,A2.
+
+`void setup() {
+
+
+ Serial.begin(9600); //set up Serial communication at 9600Baud
+}
+
+void loop() {
+  int v0 = analogRead(A0);
+  int v1 = analogRead(A1);
+  int v2 = analogRead(A2);
+
+  Serial.print(v0);
+  Serial.print(',');
+  Serial.print(v1);
+  Serial.print(',');
+  Serial.println(v2);
+
+  delay(10);
+
+}
+` 
+
+
+## p5.js Code 
+
+
+### index.html
+
+We need to add a line to our HTML file that references the p5.webserial library. See the second script tag below:
+
+{% htmlcode %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <script src="https://unpkg.com/@gohai/p5.webserial@^1/libraries/p5.webserial.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+{% endhtmlcode %}
+
+### script.js
+
+This is a good starting point for us. Note that to connect to Arduino, we need to have some 'user gesture' from the browser. It can't automatically connect to Arduino. So we make a simply button (which can be hidden) to initialize the connection. 
+
+Make sure you do not have Arduino IDE open during this. Your computer can only have one serial connection per port.
+
+
+{% p5codeonly %}
+
+let serial;
+let buffer = '';
+
+let joyX = 0;
+let joyY = 0;
+let joySwitch = 0;
+let xpos = 0;
+let ypos = 0;
+
+function setup() {
+  createCanvas(400, 200);
+  serial = createSerial();
+
+  createButton('Connect Serial').mousePressed(() => {
+    if (!serial.opened()) serial.open(9600);
+  });
+}
+
+function draw() {
+  background(255);
+  if (serial.availableBytes() > 0) {
+    buffer += serial.read();
+    let lines = buffer.split('\n');
+    buffer = lines.pop();
+
+    for (const line of lines) {
+      const parts = line.trim().split(',');
+      if (parts.length >= 3) {
+        joyX = parseInt(parts[0], 10);
+        joyY = parseInt(parts[1], 10);
+        joySwitch = parseInt(parts[2], 10);
+
+        // Map raw joystick to canvas position
+        xpos = map(joyX, 0, 1023, 0, width);
+        ypos = map(joyY, 0, 1023, 0, height);
+        
+        if(joySwitch){
+          fill("blue");
+        }
+        else {
+          fill("red")
+        }
+        
+        circle(xpos,ypos,20);
+        
+        
+      }
+    }
+  }
+}
+{% endp5codeonly %}
+
