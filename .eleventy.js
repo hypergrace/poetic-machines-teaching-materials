@@ -228,6 +228,17 @@ module.exports = function (eleventyConfig) {
 <pre class="language-javascript" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-javascript">${escaped}</code></pre>`;
   });
 
+  // Paired shortcode for Arduino code blocks (no iframe)
+  eleventyConfig.addPairedShortcode("arduinocode", function(code) {
+    const escaped = code
+      .trim()
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    return `
+<pre class="language-cpp" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-cpp">${escaped}</code></pre>`;
+  });
+
   // Paired shortcode for inline p5 code blocks
   eleventyConfig.addPairedShortcode("p5code", function(code, description) {
     const fs = require("fs");
