@@ -236,7 +236,7 @@ module.exports = function (eleventyConfig) {
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
     return `
-<pre class="language-cpp" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-cpp">${escaped}</code></pre>`;
+<pre class="language-arduino" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-arduino">${escaped}</code></pre>`;
   });
 
   // Paired shortcode for inline p5 code blocks

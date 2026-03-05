@@ -41,8 +41,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
   </head>
 
     <body>
@@ -317,14 +319,14 @@
 <div class="col-sm-6">
 <h1>Arduino to p5.js Serial Communication</h2>
 
-We are using the p5.webserial library available here: https://github.com/gohai/p5.webserial/tree/main. 
+We are using the p5.webserial library available <a href = "https://github.com/gohai/p5.webserial/tree/main">here</a>. 
 
 <h2>Arduino Code </h2>  
 
 Example code for joystick input on pins A0,A1,A2.
 
 
-<pre class="language-cpp" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-cpp">void setup() {
+<pre class="language-arduino" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-arduino">void setup() {
 
 
  Serial.begin(9600); //set up Serial communication at 9600Baud
