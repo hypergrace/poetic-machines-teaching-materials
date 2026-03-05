@@ -327,8 +327,6 @@ Example code for joystick input on pins A0,A1,A2.
 
 
 <pre class="language-arduino" style="background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;white-space:pre;"><code class="language-arduino">void setup() {
-
-
  Serial.begin(9600); //set up Serial communication at 9600Baud
 }
 
@@ -408,8 +406,8 @@ function draw() {
     let lines = buffer.split('\n');
     buffer = lines.pop();
 
-    for (const line of lines) {
-      const parts = line.trim().split(',');
+    for (let ln of lines) {
+      let parts = ln.trim().split(',');
       if (parts.length &gt;= 3) {
         joyX = parseInt(parts[0], 10);
         joyY = parseInt(parts[1], 10);
