@@ -1,0 +1,59 @@
+let img1, img2; // variables that will hold my images
+let a = 0; // angle of rotation of our icon
+let noiseScale = 0.006; // smooth out our noise values
+
+let x = 200;
+let y = 200;
+
+let lerpFactor = 0.01; //
+
+let hoverA = 0; // angle for our sin() to create a left and right hover
+let amp = 20;
+
+let s = 1; // scale factor of img1 AND img2 that grows and shrinks with the two mousePress States
+
+function preload() {
+  img1 = loadImage("/assets/p5img/smiley1.png");
+  img2 = loadImage("/assets/p5img/smiley2.png");
+}
+
+function setup() {
+  createCanvas(500, 500);
+  imageMode(CENTER); // allows to adjust how image() interprets x y coordinates. CENTER will interpret x and y as the center
+  angleMode(DEGREES); // defaults RADIANS: 0 - (2 * 3.14)
+  // DEGREES 0-360
+}
+
+function draw() {
+  if (mouseIsPressed == false) {
+    background(0);
+    // variable scope -- local scope declaration
+    let xOffset = sin(hoverA) * amp; // this variable is only usable inside this if clause
+    translate(x + xOffset, y);
+    x = lerp(x, mouseX, lerpFactor);
+    y = lerp(y, mouseY, lerpFactor);
+    let d = dist(x, y, mouseX, mouseY);
+    let n = noise(x * noiseScale, mouseY * noiseScale, d * noiseScale); // noise gives 0-1 -- it's actually 0.2 - 0.8
+    a = map(n, 0.2, 0.8, 0, 360); // ??? whats the range of rotation???
+    //
+    rotate(a);
+    scale(s); // when scale gets value, it just interprets it like a positive value
+    image(img1, 0, 0);
+    // a+=0.1; // adding gives us a constant rotation in one direction.
+    hoverA++;
+  if (s>1){
+       s-=0.05; // shrink or scale down the image
+  }  
+ 
+  
+  }
+  else {
+    background(0,10);
+    let xOffset = random(-s*6,s*6);
+     let yOffset = random(-s*3,s*3);
+    translate(mouseX+xOffset,mouseY+yOffset);
+    scale(s);
+    image(img2, 0, 0);
+    s+=0.1;// scale up the image
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let minR = 10;
+let maxR = 200;
+let dR = 10; // difference between radii
+
+let col1, col2;
+let noiseScale = 0.005;
+
+function setup() {
+  createCanvas(400, 400);
+  col1 = color("rgb(121,124,245)"); //
+  col2 = color("rgb(189,109,189)");
+  noStroke();
+  angleMode(DEGREES); // 0 - 360
+}
+
+function draw() {
+  background("rgb(127,205,255)");
+
+  for (let r = maxR; r > minR; r -= dR) {
+    let cI = map(r, maxR, minR, 0, 1);
+    let c = lerpColor(col1, col2, cI); // goes between two colors
+    fill(c);
+  
+    beginShape();
+    for (let a = 0; a < 360; a += 10) {
+      let n1 = noise(a*noiseScale,r*noiseScale,frameCount*noiseScale);
+       let n2 = noise(r*noiseScale, a*noiseScale,frameCount*noiseScale);
+      let xOffset = sin(a) * r * n1;
+      let yOffset = cos(a) * r * n2;
+      vertex(width / 2 + xOffset, height / 2 + yOffset);
+    }
+    endShape(CLOSE);
+  }
+   filter(BLUR);
+}
+
+  </script>
+  </body>
+  </html>
