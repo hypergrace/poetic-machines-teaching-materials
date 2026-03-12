@@ -581,8 +581,109 @@ function draw() {
   
     <div class="p5-block" style="margin-bottom:2em;">
       <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-8-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
+      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-8-12-iframe.html" width="532" height="360" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let spritesheet; // declare image variable globally
+let landscape; // variable for bg image
+let rain;
+
+let rainSound; // rainsound 
+let speech; 
+
+// source image variables -- spritesheet! where are we in the spritesheet!
+let sw = 32;
+let sh = 32;
+
+let sx = 0;
+let sy = 0;
+
+// destination variables -- where does the spritesheet go in the canvas??
+
+let dx = 0; // canvas position
+let dy = 0; // canvas y pos
+let dw = 200; // width is the diameter, radius is diameter / 2
+let dh = 200;
+
+// runs before setup!
+function preload() {
+  // gets the image ready for p5
+  spritesheet = loadImage("/assets/p5Img/rainguy/spritesheet.png");
+  landscape = loadImage("/assets/p5Img/rainguy/landscape.jpg");
+  speech = loadImage("/assets/p5Img/rainguy/speechBubble.png");
+  rain = loadImage("/assets/p5Img/rainguy/rain.png");
+  rainSound = loadSound("/assets/p5Img/rainguy/rain.mp3");
+}
+
+function setup() {
+  createCanvas(532, 360);
+ // frameRate(1);
+  imageMode(CENTER); // interpret x and y coordinates as the center of the image
+  dx = width / 2;
+  dy = height / 2;
+}
+
+function draw() {
+  
+  
+  
+  image(landscape, width / 2, height / 2);
+  textFont("Brush Script MT")
+  textSize(100);
+  
+  
+  // animation loop
+  // % modulo -- similar to divide, but it gives you the remainder 
+  if (frameCount % 33 == 0)
+  sx += sw; // only advance the animation every 33 frames
+  if (sx &gt;= sw * 4) {
+    sx = 0;
+  }
+
+  // interactivity
+
+  let d = dist(mouseX, mouseY, dx, dy);
+  let hover = d &lt; dw / 2;
+
+  if (hover && mouseIsPressed) {
+    // sad mode
+    sy = sw; // adjust to the second row = 32 pixels
+    image(spritesheet, dx, dy, dw, dh, sx, sy, sw, sh);
+  
+    image(speech,dx+150,dy-100,200,200);
+  
+    push();
+    translate(dx+90,dy-100);
+    rotate(-0.2);
+    text("booo",0,0);  
+    pop();
+    
+      image(rain, width / 2, height / 2);
+    
+    if(rainSound.isPlaying() == false){
+       rainSound.play(); //start playback
+    
+    }
+   
+    dx = mouseX;
+    dy = mouseY;
+  }
+  //happy mode
+  else {
+    image(spritesheet, dx, dy, dw, dh, sx, sy, sw, sh);
+    sy = 0;
+    rainSound.stop(); // stop the playback
+  }
+
+  //drawing
+
+  // image(img, dx, dy, dWidth, dHeight, sx, sy, [sWidth], [sHeight], [fit], [xAlign], [yAlign])
+}
+</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-8-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
 let aD = 0; // difference in angles between each shape
 let aToggle = 1; // toggle which is either 1 or -1
 
@@ -618,9 +719,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-8-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-8-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let w = 50;
 let aD = 0; // difference in angles between each shape
 let aToggle = 1; // toggle which is either 1 or -1
 
@@ -673,9 +774,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-8-4-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
+      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-8-4-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
 // also note that the image locations are different from how they will look when you upload them to the p5 editor for the same reasons.
 
 let img1, img2, img3, img4;
@@ -776,9 +877,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-8-5-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
+      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-8-5-iframe.html" width="640" height="480" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// note, I have to comment out filters because of a bug in how my website converts them to be displayed.
 // also note that the image locations are different from how they will look when you upload them to the p5 editor for the same reasons.
 let img1, img2, img3, img4;
 
@@ -846,9 +947,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-8-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let a = 0; // the angle of rotation for shape one
+      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-8-6-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let a = 0; // the angle of rotation for shape one
 let rSpeed = 0.02; // the speed of rotation
 let w = 75; // square width
 
@@ -903,9 +1004,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-8-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img1,img2 // declare variables for my images;
+      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-8-7-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img1,img2 // declare variables for my images;
 
 // pre load runs even before setup! it will wait until everything is done and loaded beforemoving on with p5.
 
@@ -986,9 +1087,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-8-8-iframe.html" width="400" height="300" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let sprite;
+      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-8-8-iframe.html" width="400" height="300" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let sprite;
 let bg;
 
 let xOffset = 40;
@@ -1042,9 +1143,9 @@ function draw() {
     </div>
   
     <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-10', 'p5-code-10')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-10" src="/iframes/src-scripts-introp5-8-9-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-10" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 200;
+      <button onclick="toggleP5View('p5-iframe-11', 'p5-code-11')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-11" src="/iframes/src-scripts-introp5-8-9-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-11" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 200;
 let xSpeed = 2;
 let y = 200; 
 let w = 100; 
