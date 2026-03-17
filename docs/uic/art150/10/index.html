@@ -850,6 +850,55 @@ function draw() {
 }
 </code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-10-6-iframe.html" width="800" height="200" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let basegH = 20; // base grass height
+let gH = []; // all of the deviations from the base height;
+
+let gD = 3; // grass distance
+
+let g = []; // hold my random g green color values
+
+let noiseScale = 0.01; // noiseScale for our grass blade animation
+
+let windScale = 0.01;
+
+let xOffset = []; // offset for the second x parameter so the grass blades are at a diagonal
+
+function setup() {
+  createCanvas(800, 200);
+  strokeWeight(gD-1);
+ 
+  // populates our g array with random g values
+  for(let i = 0; i &lt; 1000;i++){
+    // color
+     let gr = random(220,255); // generate one new value
+     g[i] = gr; // plug our gr random value into conseq spaces in our array
+    // grass height   
+    gH[i] = basegH + random(-5,5);
+    
+    xOffset[i] = random(-gD,gD);
+    
+  }
+
+}
+
+function draw() {
+  background(220);
+
+  // i corresp
+ for(let i = 0; i&lt;width;i+=gD){
+   let n = noise(i*noiseScale,frameCount*windScale); // produces results 0-1; 0.2-0.8
+   let nMapped = map(n,0.2,0.8,-gD,gD);
+   
+   
+   stroke(10,g[i],90);
+   line(i,height,i+xOffset[i]+nMapped,height-gH[i]);
+ }
+}</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);

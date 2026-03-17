@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let basegH = 20; // base grass height
+let gH = []; // all of the deviations from the base height;
+
+let gD = 3; // grass distance
+
+let g = []; // hold my random g green color values
+
+let noiseScale = 0.01; // noiseScale for our grass blade animation
+
+let windScale = 0.01;
+
+let xOffset = []; // offset for the second x parameter so the grass blades are at a diagonal
+
+function setup() {
+  createCanvas(800, 200);
+  strokeWeight(gD-1);
+ 
+  // populates our g array with random g values
+  for(let i = 0; i < 1000;i++){
+    // color
+     let gr = random(220,255); // generate one new value
+     g[i] = gr; // plug our gr random value into conseq spaces in our array
+    // grass height   
+    gH[i] = basegH + random(-5,5);
+    
+    xOffset[i] = random(-gD,gD);
+    
+  }
+
+}
+
+function draw() {
+  background(220);
+
+  // i corresp
+ for(let i = 0; i<width;i+=gD){
+   let n = noise(i*noiseScale,frameCount*windScale); // produces results 0-1; 0.2-0.8
+   let nMapped = map(n,0.2,0.8,-gD,gD);
+   
+   
+   stroke(10,g[i],90);
+   line(i,height,i+xOffset[i]+nMapped,height-gH[i]);
+ }
+}
+  </script>
+  </body>
+  </html>
