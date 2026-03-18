@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let bugs = []; // an array that holds all my bug objects!
+let numBugs = 30;
+
+let counter = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  for(let i = 0; i < numBugs; i++){
+    bugs[i] = new JitterBug(random(width),random(height),random(20,40));
+    bugs[i].populate();
+  }
+}
+
+function mousePressed() {
+  
+  bugs[counter].target();
+
+  counter++;
+  if (counter == numBugs) {
+    counter = 0;
+  }
+  
+}
+
+function draw() {
+  background(220);
+ for(let i = 0; i < numBugs; i++){
+    bugs[i].move();
+    bugs[i].show();
+  }
+ 
+}
+
+class JitterBug {
+  // the constructor runs once! when the object is made
+  // properties
+  constructor(x, y, jitter) {
+    this.x = x;
+    this.y = y;
+    this.targetX = x;
+    this.targetY = y;
+    this.w = random(30,100);
+    this.speed = map(this.w,30,100,0.1,0.02);
+    this.jitter = jitter;
+    this.numVertices = random(5,30);
+    this.xOffsets = [];
+    this.xOffsetTargets = [];
+    this.yOffsets = [];
+    this.yOffsetTargets = [];
+  }
+  populate(){
+    for(let i = 0; i < this.numVertices;i++){
+      this.xOffsets[i] = random(-this.jitter, this.jitter);
+      this.yOffsets[i] = random(-this.jitter, this.jitter);
+      
+      this.xOffsetTargets[i] = this.xOffsets[i];
+      this.yOffsetTargets[i] = this.yOffsets[i];
+    }
+  }
+  // methods -- are like functions FOR that object
+  show() {
+    // whatever goes in here is the code that is run!
+  //  circle(this.x, this.y, this.w);
+
+    beginShape();
+    for (let i = 0; i < this.numVertices; i++) {
+      vertex(
+        this.x + this.xOffsets[i],
+        this.y + this.yOffsets[i]
+      );
+    }
+    endShape();
+  }
+  move() {
+    // moves the x and y pos to target values;
+    this.x = lerp(this.x, this.targetX, this.speed);
+    this.y = lerp(this.y, this.targetY, this.speed);
+    // moves the x and y pos of squiggle vertices to target values;
+    for(let i = 0; i < this.numVertices; i++){
+      this.xOffsets[i] = lerp(this.xOffsets[i], this.xOffsetTargets[i], this.speed);
+      this.yOffsets[i] = lerp(this.yOffsets[i], this.yOffsetTargets[i], this.speed);
+    }
+    
+  }
+  target(x, y) {
+    // this sets the destination for the entire shape
+    this.targetX = mouseX;
+    this.targetY = mouseY;
+    //this sets teh destination for all the squiggle vertices
+      for(let i = 0; i < this.numVertices;i++){
+      this.xOffsetTargets[i] = random(-this.jitter, this.jitter);
+      this.yOffsetTargets[i] = random(-this.jitter, this.jitter);
+    }
+    
+    
+  }
+}
+
+  </script>
+  </body>
+  </html>

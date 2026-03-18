@@ -1,0 +1,34 @@
+// LFO example
+
+
+let a = 0;
+let speed = 0.1;
+let amp = 10; //unt of pixels this circle moves from left to right;
+
+// LFO to control or modulate the amplitude of our circle's sway but also the width of the circle
+let LFOa = 0;
+let LFOspeed = 0.009; // 
+let LFOamp = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  
+  
+  LFOa+=LFOspeed;
+  let LFO = sin(LFOa) * LFOamp; // base output of theLFO is -100 to 100
+  // ue base output to map to sway amp, w, g
+  amp = map(LFO,-100,100,10,200);
+  let w = map(LFO,-100,100,1,100);
+  let g = map(LFO,-100,100,0,255)
+  a+=speed;
+  fill(g);
+  let x = 200 + sin(a) * amp;
+  let y = 200;
+
+  circle(x,y,w);
+}

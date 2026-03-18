@@ -534,6 +534,7 @@
 <ul>
 <li>changing variables with +=, ++, etc.</li>
 <li>using noise() with frameCount to fluidly change the output</li>
+<li>opacity/transparency (either in background or stroke/fill to create different effects)</li>
 <li>images
 -- textured images with tint() and filter()
 -- sprite animations or characters</li>
@@ -557,7 +558,7 @@
 <h2>Gamelike or Narrative &quot;Tableau&quot;</h2>
 <p>The first is closer to what we think of when we hear the word &quot;animation&quot;: a scene with a background and foreground which either plays automatically (more scene or narrative adjacent) or is activated by interactivity (more game like).</p>
 <p>Your project does not need to (and probably should not) aim to create an entire narrative or playable game with win and lose conditions. This is what is meant by &quot;tableau&quot;. Aim instead to create something that gestures towards that: in the case of the narrative scene, maybe you are setting the scene just before the story starts. In the case of the interactive element, you may aim to have a convincing and satisfying interactive behavior that moves a character along.</p>
-<h2>Generative Art</h2>
+<h2>Generative Art Moving &quot;Tableau&quot;</h2>
 <p>You may elect to continue working in a more geometric and visually abstract fashion as we saw in the first project, except this time your work will require motion. This time you should <em>not</em> use noLoop() as we want for your composition to change over time. In this approach, you may any and all of the techniques described above to create movement, including interactivity, changing variables linearly (+,-, for example), animation loops, LFOs, sine wave or circular movement, translate, rotate, etc. The difference is primarily that you are not trying to render a scene, but working with shapes (or images!) to create a more abstract visual.</p>
 
 
@@ -576,6 +577,68 @@
   <h3>Examples</h3>
   
 
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-0', 'p5-code-0')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-11-1-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let monkey;
+
+let headX = 125; 
+let headY = 125;
+
+let r = 50;
+
+let ballOn = true; 
+
+
+function preload(){
+  monkey = loadImage("/assets/p5img/monkey.png");
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  image(monkey,0,0);
+  
+  push();
+  noFill();
+  stroke("red");
+  circle(headX,headY,r*2);
+  pop();
+
+  let d =dist(mouseX,mouseY,headX,headY);
+  
+ let hover = d&lt;r;
+  
+  if(hover){
+    ballOn = false;
+  }
+  
+  if(ballOn){
+    circle(mouseX,mouseY,10);
+  }
+
+}</code></pre>
+    </div>
+  <script>
+            function toggleP5View(iframeId, codeId) {
+              const iframe = document.getElementById(iframeId);
+              const code = document.getElementById(codeId);
+              if (iframe.style.display === 'none') {
+                iframe.style.display = '';
+                code.style.display = 'none';
+              } else {
+                iframe.style.display = 'none';
+                code.style.display = '';
+                // Trigger Prism.js syntax highlighting
+                if (window.Prism && code.querySelector('code')) {
+                  Prism.highlightElement(code.querySelector('code'));
+                }
+              }
+            }
+          </script>
 
 
   </div>

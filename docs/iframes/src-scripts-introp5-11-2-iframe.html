@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let jb, jb2; 
+let numBugs = 2;
+
+let counter = 0;
+
+function setup() {
+  createCanvas(400, 400);
+ // noLoop();
+  jb = new JitterBug(20,300,20); //x,y,jitter
+  jb2 = new JitterBug(250,100,10); // x,y hitter
+ // console.log(jb,jb2);
+}
+
+function mousePressed(){
+  if(counter == 0){
+    jb.target();
+  }
+  else if (counter == 1){
+    jb2.target()
+  }
+  
+  counter++;
+  if(counter==numBugs){
+    counter = 0;
+  }
+}
+
+function draw() {
+  background(220);
+
+  
+ // circle(x + random(-jitter,jitter),y+ random(-jitter,jitter),w)
+//circle(jb.x +jb.xOffset,jb.y + jb.yOffset,jb.w);
+  // circle(jb2.x +jb2.xOffset,jb2.y + jb2.yOffset,jb2.w);
+  jb.move();
+  jb2.move();
+  
+  jb.show();
+  jb2.show();
+  
+  // beginShape();
+  //   for(let i=0;i<numVertices;i++){
+  //     vertex(x + random(-jitter,jitter),y + random(-jitter,jitter))
+  //   }
+  // endShape();
+  
+
+}
+
+class JitterBug {
+  // the constructor runs once! when the object is made
+  // properties 
+  constructor(x,y,jitter){
+    this.x = x;
+    this.y = y; 
+    this.targetX = x;
+    this.targetY = y;
+    this.w = 100; 
+    this.jitter = jitter;
+    this.xOffset = random(-this.jitter,this.jitter);
+    this.yOffset = random(-this.jitter,this.jitter);
+
+  }
+  // methods -- are like functions FOR that object
+  show(){
+    // whatever goes in here is the code that is run! 
+   
+    circle(this.x + this.xOffset,this.y+ this.yOffset,this.w)
+  }
+  move(){
+   this.x = lerp(this.x,this.targetX,0.05);
+   this.y = lerp(this.y,this.targetY,0.05);
+  }
+  target(x,y){
+    this.targetX = mouseX;
+    this.targetY = mouseY;
+  }
+}
+  </script>
+  </body>
+  </html>

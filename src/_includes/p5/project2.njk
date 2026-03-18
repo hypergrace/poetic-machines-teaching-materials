@@ -18,8 +18,8 @@ In both cases, you should aim to use coding elements which support your artistic
 - simple 2D shapes
 - complex shapes with beginShape(), endShape(), and either vertex() or curveVertex()
 - for loops 
--- index style (where the for loop variable increments by one)
--- drawing element style (where the for loop variable increments by some amount that is useful to a drawing operation)
+  -- index style (where the for loop variable increments by one)
+  -- drawing element style (where the for loop variable increments by some amount that is useful to a drawing operation)
 - nested for loops
 - randomness
 - noise
@@ -28,24 +28,25 @@ In both cases, you should aim to use coding elements which support your artistic
 ### Module 2: Animation and Movement
 - changing variables with +=, ++, etc.
 - using noise() with frameCount to fluidly change the output
+- opacity/transparency (either in background or stroke/fill to create different effects)
 - images 
--- textured images with tint() and filter()
--- sprite animations or characters
+  -- textured images with tint() and filter()
+  -- sprite animations or characters
 - transformations
--- translate()
--- rotate()
--- scale()
+  -- translate()
+  -- rotate()
+  -- scale()
 - sinusoidal movement
--- drawing in a circular fashion with sin() and cos()
--- drawing in a spiral fashion with sin() and cos() and a changing radius
--- moving elements in a sine wave fashion with sin() and a changing angle input
+  -- drawing in a circular fashion with sin() and cos()
+  -- drawing in a spiral fashion with sin() and cos() and a changing radius
+  -- moving elements in a sine wave fashion with sin() and a changing angle input
 - animation loops
--- if/else loops (ex. 0->255)
--- if/else loops with "bounce" (ex. 0->255->0);
+  -- if/else loops (ex. 0->255)
+  -- if/else loops with "bounce" (ex. 0->255->0);
 - "LFO" (low frequency oscillator) modulation of animation loops (a slower loop that modifies the speed of the first loop) 
 - interactivity
--- from keyboard input
--- from mouse input
+  -- from keyboard input
+  -- from mouse input
 - arrays 
 
  
@@ -56,6 +57,6 @@ The first is closer to what we think of when we hear the word "animation": a sce
 Your project does not need to (and probably should not) aim to create an entire narrative or playable game with win and lose conditions. This is what is meant by "tableau". Aim instead to create something that gestures towards that: in the case of the narrative scene, maybe you are setting the scene just before the story starts. In the case of the interactive element, you may aim to have a convincing and satisfying interactive behavior that moves a character along. 
 
 
-## Generative Art 
+## Generative Art Moving "Tableau"
 
 You may elect to continue working in a more geometric and visually abstract fashion as we saw in the first project, except this time your work will require motion. This time you should *not* use noLoop() as we want for your composition to change over time. In this approach, you may any and all of the techniques described above to create movement, including interactivity, changing variables linearly (+,-, for example), animation loops, LFOs, sine wave or circular movement, translate, rotate, etc. The difference is primarily that you are not trying to render a scene, but working with shapes (or images!) to create a more abstract visual.
