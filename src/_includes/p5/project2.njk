@@ -1,27 +1,61 @@
 ---
 layout: week.njk
-title: "Project 2: Movement and Animation"
+title: "Project 2: Animated Tableaus"
 weekNum: 11
 tags:
   - p5
   - project
-goals:
-  - Project Presentations and Critiques
-  - Introduce next unit
-examples:
-sketch:
-  title: Project 2
-  text:
-    - Using p5*js, use the canvas to create an animated artwork. It may be an animated narrative, cubistic and abstract. It may be inspired by some of the works we've seen before, or completely your own.
-  requirements:
-    - Use one of the following -- 
-    - a moving element (bounce off walls, circular, spiral, or sine wave movement)
-    - use rotate() or scale() to transform a drawn element (circle, square, rectangle, polygon, line, etc.) at least once in your code.
-eleventyComputed:
-  readings:
-    - name: "{{ texts.p5.title }}"
-      url: "{{ texts.p5.url }}"
-      description: Review Chapters 6, 8, 9 as needed.
-      img: "{{ texts.p5.img }} "
-      authors: "{{ texts.p5.authors }} "
 ---
+
+## Overview
+
+Using p5*js, use the canvas to create an animated artwork. In our tutorials, we have seen two different ways of approaching animation and movement in p5. Many of you will find it convenient to choose one or the other, but both approaches can be combined in interesting ways as well. 
+
+In both cases, you should aim to use coding elements which support your artistic vision, integrating elements from this module with the previous module. You do not need to use all of these, but you will likely use three or four from each module. What I am most interested in is that you have created a compelling animated sketch that evidences two weeks of work. As a review: 
+
+### Module 1: Generative art
+- variables
+- simple 2D shapes
+- complex shapes with beginShape(), endShape(), and either vertex() or curveVertex()
+- for loops 
+-- index style (where the for loop variable increments by one)
+-- drawing element style (where the for loop variable increments by some amount that is useful to a drawing operation)
+- nested for loops
+- randomness
+- noise
+- if/else conditional statements
+
+### Module 2: Animation and Movement
+- changing variables with +=, ++, etc.
+- using noise() with frameCount to fluidly change the output
+- images 
+-- textured images with tint() and filter()
+-- sprite animations or characters
+- transformations
+-- translate()
+-- rotate()
+-- scale()
+- sinusoidal movement
+-- drawing in a circular fashion with sin() and cos()
+-- drawing in a spiral fashion with sin() and cos() and a changing radius
+-- moving elements in a sine wave fashion with sin() and a changing angle input
+- animation loops
+-- if/else loops (ex. 0->255)
+-- if/else loops with "bounce" (ex. 0->255->0);
+- "LFO" (low frequency oscillator) modulation of animation loops (a slower loop that modifies the speed of the first loop) 
+- interactivity
+-- from keyboard input
+-- from mouse input
+- arrays 
+
+ 
+## Gamelike or Narrative "Tableau" 
+  
+The first is closer to what we think of when we hear the word "animation": a scene with a background and foreground which either plays automatically (more scene or narrative adjacent) or is activated by interactivity (more game like). 
+
+Your project does not need to (and probably should not) aim to create an entire narrative or playable game with win and lose conditions. This is what is meant by "tableau". Aim instead to create something that gestures towards that: in the case of the narrative scene, maybe you are setting the scene just before the story starts. In the case of the interactive element, you may aim to have a convincing and satisfying interactive behavior that moves a character along. 
+
+
+## Generative Art 
+
+You may elect to continue working in a more geometric and visually abstract fashion as we saw in the first project, except this time your work will require motion. This time you should *not* use noLoop() as we want for your composition to change over time. In this approach, you may any and all of the techniques described above to create movement, including interactivity, changing variables linearly (+,-, for example), animation loops, LFOs, sine wave or circular movement, translate, rotate, etc. The difference is primarily that you are not trying to render a scene, but working with shapes (or images!) to create a more abstract visual.

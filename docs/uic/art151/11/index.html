@@ -391,7 +391,7 @@
                     aria-expanded="false"
                   >
                 
-                    Week 11 : Project 2: Movement and Animation
+                    Week 11 : Project 2: Animated Tableaus
             
              
                  
@@ -511,9 +511,54 @@
 <div class="col-sm-6 order-2">
 
 <div class = "card">
-<h1>Project 2: Movement and Animation</h1>
+<h1>Project 2: Animated Tableaus</h1>
 
 
+<h2>Overview</h2>
+<p>Using p5*js, use the canvas to create an animated artwork. In our tutorials, we have seen two different ways of approaching animation and movement in p5. Many of you will find it convenient to choose one or the other, but both approaches can be combined in interesting ways as well.</p>
+<p>In both cases, you should aim to use coding elements which support your artistic vision, integrating elements from this module with the previous module. You do not need to use all of these, but you will likely use three or four from each module. What I am most interested in is that you have created a compelling animated sketch that evidences two weeks of work. As a review:</p>
+<h3>Module 1: Generative art</h3>
+<ul>
+<li>variables</li>
+<li>simple 2D shapes</li>
+<li>complex shapes with beginShape(), endShape(), and either vertex() or curveVertex()</li>
+<li>for loops
+-- index style (where the for loop variable increments by one)
+-- drawing element style (where the for loop variable increments by some amount that is useful to a drawing operation)</li>
+<li>nested for loops</li>
+<li>randomness</li>
+<li>noise</li>
+<li>if/else conditional statements</li>
+</ul>
+<h3>Module 2: Animation and Movement</h3>
+<ul>
+<li>changing variables with +=, ++, etc.</li>
+<li>using noise() with frameCount to fluidly change the output</li>
+<li>images
+-- textured images with tint() and filter()
+-- sprite animations or characters</li>
+<li>transformations
+-- translate()
+-- rotate()
+-- scale()</li>
+<li>sinusoidal movement
+-- drawing in a circular fashion with sin() and cos()
+-- drawing in a spiral fashion with sin() and cos() and a changing radius
+-- moving elements in a sine wave fashion with sin() and a changing angle input</li>
+<li>animation loops
+-- if/else loops (ex. 0-&gt;255)
+-- if/else loops with &quot;bounce&quot; (ex. 0-&gt;255-&gt;0);</li>
+<li>&quot;LFO&quot; (low frequency oscillator) modulation of animation loops (a slower loop that modifies the speed of the first loop)</li>
+<li>interactivity
+-- from keyboard input
+-- from mouse input</li>
+<li>arrays</li>
+</ul>
+<h2>Gamelike or Narrative &quot;Tableau&quot;</h2>
+<p>The first is closer to what we think of when we hear the word &quot;animation&quot;: a scene with a background and foreground which either plays automatically (more scene or narrative adjacent) or is activated by interactivity (more game like).</p>
+<p>Your project does not need to (and probably should not) aim to create an entire narrative or playable game with win and lose conditions. This is what is meant by &quot;tableau&quot;. Aim instead to create something that gestures towards that: in the case of the narrative scene, maybe you are setting the scene just before the story starts. In the case of the interactive element, you may aim to have a convincing and satisfying interactive behavior that moves a character along.</p>
+<h2>Generative Art</h2>
+<p>You may elect to continue working in a more geometric and visually abstract fashion as we saw in the first project, except this time your work will require motion. This time you should <em>not</em> use noLoop() as we want for your composition to change over time. In this approach, you may any and all of the techniques described above to create movement, including interactivity, changing variables linearly (+,-, for example), animation loops, LFOs, sine wave or circular movement, translate, rotate, etc. The difference is primarily that you are not trying to render a scene, but working with shapes (or images!) to create a more abstract visual.</p>
 
 
 </div>
@@ -521,53 +566,7 @@
 <div class = "card">
   <h2>Homework</h2>
 
-   
-  <h3>Project 2</h3>
-  
-  <p>Using p5*js, use the canvas to create an animated artwork. It may be an animated narrative, cubistic and abstract. It may be inspired by some of the works we&#39;ve seen before, or completely your own.</p>
     
-  <h4>requirements</h4>
-  <ol>
-    
-    <li>Use one of the following --</li>
-    
-    <li>a moving element (bounce off walls, circular, spiral, or sine wave movement)</li>
-    
-    <li>use rotate() or scale() to transform a drawn element (circle, square, rectangle, polygon, line, etc.) at least once in your code.</li>
-    
-  </ol>
-     
-
-  <h3>Readings</h3>
-  <div class="row">
-    
-    <div class="col-md-12 col-lg-6">
-      <div class="card">
-        <div class="row">
-          <div class="col-12">
-            
-            <img src="/assets/img/p5.jpg " alt="Card image cap" class="img-fluid card-img-top" />
-            
-          </div>
-          <div class="col-12">
-            <a href="/assets/pdf/p5.pdf" class="btn btn-dark">
-            <div class="card-body">
-              <h5 class="card-title">Make: Getting Started with p5*js</h5>
-              <p class="card-text">
-                Review Chapters 6, 8, 9 as needed.
-              </p>
-              <p class="card-text">by Lauren McCarthy, Casey Reas, Ben Fry </p>
-              
-            </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-  </div>
-  
 
   
 
