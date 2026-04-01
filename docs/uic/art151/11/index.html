@@ -622,6 +622,94 @@ function draw() {
 
 }</code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-11-2-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// LFO example
+
+
+let a = 0;
+let speed = 0.1;
+let amp = 10; //unt of pixels this circle moves from left to right;
+
+// LFO to control or modulate the amplitude of our circle's sway but also the width of the circle
+let LFOa = 0;
+let LFOspeed = 0.009; // 
+let LFOamp = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  
+  
+  LFOa+=LFOspeed;
+  let LFO = sin(LFOa) * LFOamp; // base output of theLFO is -100 to 100
+  // ue base output to map to sway amp, w, g
+  amp = map(LFO,-100,100,10,200);
+  let w = map(LFO,-100,100,1,100);
+  let g = map(LFO,-100,100,0,255)
+  a+=speed;
+  fill(g);
+  let x = 200 + sin(a) * amp;
+  let y = 200;
+
+  circle(x,y,w);
+}</code></pre>
+    </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-11-3-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let monkey; 
+// transparent backgrounds are only possible in png! 
+
+let amp = 1; // thge amplitude of the monkey's circular movement
+// we want theLFO to change the amplitude of the monkey's circular movement
+
+let LFOa = 0; // angle for a sin wave that changes our amplitude
+let LFOamp = 100; // maximum amplitude of the LFO 
+let LFOspeed = 0.001; // small values cause it's slower! 
+
+let a = 0; 
+function preload(){
+  monkey = loadImage("/assets/p5img/monkey.png");
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+ // background(220);
+  // LFO code replacing basic animation loop
+  
+  LFOa+=LFOspeed; //update the LFO angle with the lfospeed
+  amp= sin(LFOa)*LFOamp; 
+  //console.log("monkey's amplitude " + amp);
+  
+  
+  
+  // basic animation loop
+//   amp++;
+  
+//   if (amp &gt; 500){
+//     amp = 0;
+//   }
+  
+  let x = sin(a) * amp + 200;  
+  let y = cos(a) * amp + 200;
+  translate(x,y)
+  rotate(a)
+  image(monkey,0,0);
+  a+= 0.02;
+
+}</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);
