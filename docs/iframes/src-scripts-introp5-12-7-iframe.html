@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>p5 Sketch</title>
+    <style>body { margin:0; padding:0; overflow:hidden; }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+  let x = [];
+let y = [];
+let numParticles = 500;
+
+let w = [];
+let jitter = [];
+let lerpV = [];
+
+// counter structure (LFO); low frequency! seconds
+let counter = 0;
+let counterThresh = 1000; // the length of our counter in frames! 60 = 1 second
+let mode = []; // mode is either 1 or 0. 0 is jitterbug and 1 is homing
+
+
+let pInc = numParticles/counterThresh;
+let pCount = 0;
+
+function setup() {
+  createCanvas(600, 600);
+
+  // particle factory
+  for (let i = 0; i < numParticles; i++) {
+    let r = i/numParticles*-1; // use this as a guide for w, jitter, and lerpV
+
+    w[i] = map(r, 0, 1, 2, 10); // if r == 0, then w is small 2 pix, 1 is large 10 pixels
+    jitter[i] = map(r, 0, 1, 10, 2); // if r == 0, then movementjump is larger 10 pixels
+    lerpV[i] = map(r, 0, 1, 0.03, 0.01); // if r == 0, then speed of return is 0.03 which is faster
+
+    x[i] = width / 2;
+    y[i] = height / 2;
+
+    mode[i] = 0;
+  }
+  console.log(260/numParticles);
+}
+
+function draw() {
+  background(220);
+
+  counter++;
+  pCount += pInc;
+
+  if (counter > counterThresh) {
+    counter = 0;
+    pCount = 0;
+  }
+
+  // particle movement and drawing for loop!!!
+  for (let i = 0; i < numParticles; i++) {
+    if (pCount == i*pInc) {
+      if (mode[i] == 0) {
+        mode[i] = 1;
+      } else {
+        mode[i] = 0;
+      }
+    }
+
+    if (mode[i] == 1) {
+      x[i] = lerp(x[i], width / 2, lerpV[i]);
+      y[i] = lerp(y[i], width / 2, lerpV[i]);
+    } else {
+      x[i] += random(-jitter[i], jitter[i]);
+      y[i] += random(-jitter[i], jitter[i]);
+    }
+
+    // draw the particles
+    circle(x[i], y[i], w[i]);
+  }
+}
+
+function mousePressed() {
+  console.log(frameRate());
+}
+
+  </script>
+  </body>
+  </html>
