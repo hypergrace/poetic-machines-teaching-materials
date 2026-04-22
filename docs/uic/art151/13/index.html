@@ -691,6 +691,88 @@ class Bird {
   
 }</code></pre>
     </div>
+  
+    <div class="p5-block" style="margin-bottom:2em;">
+      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
+      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-13-2-iframe.html" width="800" height="800" style="border:1px solid #ccc;display:block;"></iframe>
+      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// GLOBAL VARIABLES
+let candy;
+
+let spriteW,spriteH;// width and height in pixels of each candy icon or sprite INSIDE the candy image
+
+let sheetCols = 6;
+let sheetRows = 4;
+
+// for each Candy
+let candyXOffset;
+let candyYOffset; 
+
+let bonbons = [];// array that will hold all the bonbon objects~!
+let numBonbons = 200;
+
+function preload () {
+  candy = loadImage("/assets/p5img/candy2.jpg");
+}
+
+function setup() {
+  createCanvas(800, 800);
+  // global variable that we need in order to figure out where in the image we're grabbing our candy sample (which candy!)
+  spriteW = candy.width/sheetCols;
+  spriteH = candy.height/sheetRows;
+  // bonbon factory
+ 
+  for(let i = 0; i &lt; numBonbons;i++){
+    // temporary variable in the local scope of this for loop inside the setup function
+    let b = new Bonbon();
+     bonbons[i] = b;
+    // bonbons.push(b); // add the end of that array
+    
+  }
+
+}
+
+function draw() {
+  background(220);
+
+  // iterating through an array
+ for(let i = 0;i&lt;numBonbons;i++){
+   bonbons[i].checkHover();
+   bonbons[i].show();
+ }
+  
+  
+}
+
+// written the blueprint for our Bonbon 
+class Bonbon {
+  constructor(){
+    this.candyColsOffset = floor(random(0,sheetCols));
+    this.candyRowsOffset = floor(random(0,sheetRows));
+    this.dx = random(width); // x on the canvas
+    this.dy = random(height); // y on canvas
+    this.dWidth = 80; // width of the image on the canvas
+    this.dHeight = 80; // height of the image on the canvas
+    this.sx = this.candyColsOffset * spriteW;
+    this.sy = this.candyRowsOffset * spriteH;
+    this.sWidth = spriteW;
+    this.sHeight = spriteH; 
+    this.appear = true;
+  }
+  show(){
+    if(this.appear == true){
+      
+    image(candy,this.dx, this.dy, this.dWidth, this.dHeight, this.sx, this.sy, this.sWidth, this.sHeight);
+    }
+  }
+  checkHover(){
+    if(mouseX &gt; this.dx && mouseX &lt; this.dx + this.dWidth && mouseY &gt; this.dy && mouseY &lt; this.dy + this.dHeight && mouseIsPressed == true){
+      this.appear = false;
+    }
+  }
+}
+
+</code></pre>
+    </div>
   <script>
             function toggleP5View(iframeId, codeId) {
               const iframe = document.getElementById(iframeId);
