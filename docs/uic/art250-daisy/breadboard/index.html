@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Grace Grace Grace" />
+    <title>UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <!-- Custom styles -->
+    <link href="/assets/css/sidebars.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <script src="/assets/js/p5.js"></script>
+    <script src="https://kit.fontawesome.com/1582dd25e1.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  </head>
+
+    <body>
+  
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
+          <div class="flex-shrink-0 p-3" style="width: 100%">
+            <a href = "/uic/art250-daisy/" style = "text-decoration: none; color:black">
+            <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
+              UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation
+            </h4>
+          </a>
+            <ul class="list-unstyled ps-0">
+             
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/250-syllabus/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Syllabus
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/github/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 GitHub Repository
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/materials/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Materials
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/max9744amp/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Class D Amplifier Max9744
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/presentation/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Presentation
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/schedule/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Schedule
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+              
+              
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/1/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 1 : Getting Started
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/2/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 2 : Intro to Sound &amp; Synthesis
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/3/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 3 : Gen~ Gates and Triggers
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/4/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 4 : Gen~ and Structuring Events in Time
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/5/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 5 : Filters and Effects; Acoustic Ecology
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/6/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 6 : Project 1: Soundscape Intervention
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/7/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 7 : Effects, Musical Sound and Rapid Prototyping
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/8/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 8 : Welcome to Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/9/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 9 : Software for Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/10/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 10 : Project 2: Performance Patch 
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+              
+            
+            </ul>
+          </div>
+        </div>
+      
+        
+<div class="col-sm-6">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+		
+<article id="post-855" class="post-855 page type-page status-publish hentry category-components category-electronics category-lab">
+	<header class="entry-header">
+		<h1 class="entry-title">Lab:  Setting Up A Breadboard</h1>	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		
+<h2><span id="Introduction">Introduction</span></h2>
+
+
+
+<p>The easiest way to get started building electronic circuits is by using a solderless breadboard. A breadboard is a tool for holding the components of your circuit, and connecting them together. It’s got holes that are the right size for hookup wires and the ends of most components, so you can push wires and components in and pull them out without much trouble. This lab shows how to set up a breadboard, both with an Arduino and with an independent power supply (9-12V) through a 5V Voltage Regulator (7805). By the time you finish the lab, you should have an understanding of how the holes in a solderless breadboard are connected, and how to configure your breadboard for different microcontroller projects, and even for projects without a microcontroller.</p>
+
+
+
+<p>You won&#8217;t always need a voltage regulator. For most microcontroller circuits, you&#8217;ll get power from your computer&#8217;s USB port, regulated through your microcontroller, to power sensors and LEDs. But for higher current projects or higher voltage projects involving components like motors or larger light sources, it&#8217;s good to know what a voltage regulator is and how to use it.</p>
+
+
+
+<p><a rel="noopener noreferrer" href="https://vimeo.com/380170576" target="_blank">Video: Connecting Power Supply to Breadboard with Regulator</a></p>
+
+
+
+<p>If you&#8217;re using a brand new breadboard, you might want to check out <a href="https://itp.nyu.edu/physcomp/videos/videos-tools/#Breadboard_Basics">these videos</a> as well before you get started, to prep your board and care for your microcontroller.</p>
+
+
+
+<h3><span id="What_You8217ll_Need_to_Know">What You&#8217;ll Need to Know</span></h3>
+
+
+
+<p>To get the most out of this lab, you should be familiar with the following concepts beforehand. If you’re not, review the links below:</p>
+
+
+
+<ul><li>What is a <a href="https://itp.nyu.edu/physcomp/labs/components/#Voltage_Regulator">Voltage Regulator</a></li><li>Batteries and Power Supplies</li><li><a href="https://itp.nyu.edu/physcomp/lessons/electronics/understanding-dc-power-supplies/">All about DC Power supplies</a> &#8211; this page will introduce you to DC power supplies. You probably have several in your house already, and this lesson will tell you more about how they work and how you can use them. </li></ul>
+
+
+
+<p><span style="color: #ff0000;"><strong>Safety Warning:&nbsp;</strong><span style="color: #000000;">When inserting components on or removing components from a breadboard always unplug power supply first!</span></span> You are likely to damage your components if you are changing your circuit while it is still powered.</p>
+
+
+
+<h3><span id="Things_Youll_Need">Things You’ll Need</span></h3>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_short-e1532116106284.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_short-e1532116106284-150x150.jpg" alt="A short solderless breadboard with two rows of holes along each side. There are no components mounted on the board." class="wp-image-788"/></a><figcaption>Figure 1. A short solderless breadboard.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/hookup_wire2.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/hookup_wire2-150x150.jpg" alt="Three 22AWG solid core hookup wires. Each is about 6cm long. The top one is black; the middle one is red; the bottom one is blue. All three have stripped ends, approximately 4 to 5mm on each end." class="wp-image-1203"/></a><figcaption>Figure 2. 22AWG solid core hookup wires.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/DC_power_jack.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/DC_power_jack-150x150.jpg" alt="A DC power jack. It pairs with a plug with a 2.1mm inside diameter, 5.5mm outside diameter plug, and has screw terminals on the back so that you can attach wires to it." class="wp-image-4696" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/DC_power_jack-150x150.jpg 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/DC_power_jack-768x768.jpg 768w, https://itp.nyu.edu/physcomp/wp-content/uploads/DC_power_jack.jpg 1000w" sizes="(max-width: 150px) 85vw, 150px" /></a><figcaption>Figure 4. A DC Power Jack</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/v_reg_7805.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/v_reg_7805-150x150.jpg" alt="5-volt regulator, model 7805. This component has three legs and a tab at the top with a hole in it. If you hold the component with the tab at the top and the bulging side of the component facing you, the legs will be arranged, from left to right, voltage input, ground, and voltage output. " class="wp-image-784"/></a><figcaption>Figure 5. 5-volt voltage regulator, model 7805</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/wire_stripper.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/wire_stripper-150x150.jpg" alt="Wire strippers. The jaws of this wire stripper have multiple hole sizes so that it can strip wires of variable sizes." class="wp-image-1594"/></a><figcaption>Figure 6. Wire stripper tool</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/multimeter1.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/multimeter1-150x150.jpg" alt="Multimeter tool. This tool has a dial to set the function, and three holes into which to plug the testing leads. The leads are currently plugged into the center hole and the right hand hole." class="wp-image-1592"/></a><figcaption>Figure 7. Multimeter tool</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-150x150.jpg" alt="LEDs. Shown here are four LEDs. The one on the right is an RGB LED. You can tell this because it has four legs, while the others have only two legs." class="wp-image-787"/></a><figcaption>Figure 8. LEDs. Shown here are four LEDs. The one on the right is an RGB LED. You can tell this because it has four legs, while the others have only two legs.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="alignleft size-thumbnail"><img loading="lazy" width="150" height="150" src="https://itp.nyu.edu/physcomp/wp-content/uploads/pcomp-kit-f2019-arduino-nano-33-iot-150x150.jpg" alt="Photo of an Arduino Nano 33 IoT module. The USB connector is at the top of the image, and the physical pins are numbered in a U-shape from top left to bottom left, then from bottom right to top right." class="wp-image-5921"/><figcaption>Figure 9. Arduino Nano 33 IoT. You could use any model of Arduino instead, for this lab.</figcaption></figure></div>
+
+
+
+<h2><span id="Setting_up_the_Breadboard">Setting up the Breadboard</span></h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_with_regulator.png"><img loading="lazy" width="242" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_with_regulator-242x300.png" alt="A solderless breadboard with a 7805 5-Volt voltage regulator mounted on it. There are several rows of holes for components. The holes on the breadboard are separated by 0.1-inch spaces, and are organized in many short rows in the center, and in two long rows down each side of the board. The short horizontal rows in the middle are separated by a center divider. The side rows are usually marked red, for voltage, and blue or black, for ground. On this breadboard, the side rows on the left side are connected to their counterparts on the right side with wires. The voltage regulator is mounted in the top three short rows on the right side of the board. The regulator faces to the left. The row holding the regulator's center pin is connected to the blue or black side row on the right side. The row holding the regulator's bottom pin is connected to the red side row on the right side." class="wp-image-2326" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_with_regulator-242x300.png 242w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_with_regulator-828x1024.png 828w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_with_regulator.png 1024w" sizes="(max-width: 242px) 85vw, 242px" /></a><figcaption>Figure 10. Solderless breadboard with a 7805 voltage regulator mounted on it.</figcaption></figure></div>
+
+
+
+<p>Figure 10 shows a typical breadboard with a 7805 5-Volt voltage regulator mounted on it. There are several rows of holes for components. The holes on the breadboard are separated by 0.1-inch spaces, and are organized in many short rows in the center, and in two long rows down each side of the board. The short horizontal rows in the middle are separated by a center divider. The pattern varies from model to model; some breadboards have only one strip down each side, others have multiple side rows, and some have no side rows at all.</p>
+
+
+
+<p><a rel="noopener noreferrer" href="https://vimeo.com/374067285#t=0m38s" target="_blank">Related Video: Introduction to breadboards</a></p>
+
+
+
+<p>On each side of the board are two long rows of holes, with a black&nbsp;or a red line next to each row (on many boards, you&#8217;ll see a blue row instead of black). &nbsp;All the holes in each of these lines are connected together with a strip of metal in the back. In the center are several short rows of holes separated by a central divider. All of the five holes in each row in the center are connected with a metal strip as well. This allows you to use the holes in any given row to connect components together. To see which holes are connected to which, take a multimeter and a couple of wires, set the multimeter to measure continuity, stick the two wires in two holes, and measure them with the multimeter. If the meter indicates continuity, then the two holes in question are connected.</p>
+
+
+
+<h2><span id="What8217s_Inside_A_Breadboard">What&#8217;s Inside A Breadboard?</span></h2>
+
+
+
+<p>The image below (Figure 11) of the back of a breadboard may help to clear up how the holes on the front of the board are connected. The backing of the board has been removed (don’t remove the backing on your own board! It will make the board useless) to expose the metal strips connecting the holes. You can clearly see the short horizontal strips in the center separated by the divider, and the long strips vertically down the side. The detailed photo in Figure 12&nbsp; illustrates how the holes and strips are related. Each of the holes connected to the horizontal strips are connected, and each of the holes connected to each long vertical side strips are connected to each other. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_back.png"><img loading="lazy" width="126" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_back-126x300.png" alt="The back of a breadboard with the adhesive backing removed, showing the metal strips underneath. Each long row down the side has a continuous metal strip underneath, running vertically down the board. The metal strip connects all the holes in its row. The holes of the short rows are connected with short metal strips running perpendicular to the long strips on the side. There is a break in the middle of the board, so that there is no connection between the right side and the left side. " class="wp-image-2325" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_back-126x300.png 126w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_back.png 431w" sizes="(max-width: 126px) 85vw, 126px" /></a><figcaption>Figure 11. The back of a breadboard, shown with the backing removed.</figcaption></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-full"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-continuity.jpg"><img loading="lazy" width="229" height="130" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-continuity.jpg" alt="A close-up picture of the front of the breadboard. The green lines indicate which holes are connected by a metal strip behind. Each short horizontal group of five holes is connected, and each long vertical group of holes is connected. The vertical groups are not connected to each other or to the horizontal groups, however. " class="wp-image-1541"/></a><figcaption>Figure 12. A close-up picture of the front of the breadboard. The green lines indicate which holes are connected by a metal strip behind.</figcaption></figure></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>The reason for the center divider is so that you&nbsp;can mount integrated circuit chips, like a microprocessor, on the breadboard. IC chips in a <strong>DIP package</strong> (Dual In-line Package) have two rows of pins that to which you need to connect other components. The center row isolates the two rows from each other, and gives you several holes connected to each pin, so that you can connect other components.</p>
+
+
+
+<h2><span id="Powering_the_Breadboard">Powering the Breadboard</span></h2>
+
+
+
+<p><span style="color: #ff0000;">Avoid adding, removing, or changing components on a breadboard whenever the board is powered. You risk shocking yourself and damaging your components.</span></p>
+
+
+
+<p>The most common connections you need on a breadboard are voltage and ground. That&#8217;s why solderless breadboards are designed the way they are. The long rows of connected holes down either side are designed to be used as  power and ground <strong>buses</strong>. A <strong>bus</strong> is a long electrical connection that has many points where you can connect to it. Figure 13 shows the typical wiring on a breadboard, connecting the bus rows on the left with those on the right. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-full"><img loading="lazy" width="413" height="383" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-1.png" alt="A solderless breadboard with the voltage and ground buses indicated on the sides." class="wp-image-9712"/><figcaption>Figure 13. A solderless breadboard with the voltage and ground buses indicated on the sides. The left and right sides of the board are connected via two wires which connect the voltage bus on the left with the one on the right, and the ground bus on the left with the one on the right. </figcaption></figure></div>
+
+
+
+<p>Next you&#8217;ll see how to connect an Arduino microcontroller to your breadboard to supply power to the components on the board. Later on, you&#8217;ll see how to power a board without a microcontroller. </p>
+
+
+
+<h2><span id="Using_a_Breadboard_with_a_Microcontroller">Using a Breadboard with a Microcontroller</span></h2>
+
+
+
+<p>For most projects in this class you&#8217;ll power your circuit via a microcontroller like the Arduino Nano 33 IoT or the Uno.  To do that, your breadboard will usually be connected as shown in Figures 14 and 15.  You&#8217;ll connect the voltage and ground buses on the breadboard to voltage and ground from the microcontroller. On the Arduino module, you can  use the 5V or 3.3V output, depending on the circuit you are using and  depending on your model. Typically, you&#8217;ll use 5V on the Uno and 3.3V on the Nano 33 IoT. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-full"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplate_bb.png"><img loading="lazy" width="559" height="365" src="https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplate_bb.png" alt="An Arduino Uno on the left connected to a solderless breadboard, right. The Uno's 5V output hole is connected to the red column of holes on the far left side of the breadboard. The Uno's ground hole is connected to the blue column on the left of the board. The red and blue columns on the left of the breadboard are connected to the red and blue columns on the right side of the breadboard with red and black wires, respectively. These columns on the side of a breadboard are commonly called the buses. The red line is the voltage bus, and the black or blue line is the ground bus. " class="wp-image-2159" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplate_bb.png 559w, https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplate_bb-300x195.png 300w" sizes="(max-width: 559px) 85vw, 559px" /></a><figcaption><em>Figure 14. Breadboard view of an Arduino Uno on the left connected to a solderless breadboard, right.</em></figcaption></figure></div>
+
+
+
+<p><a name="LabTemplate_bb"></a>As shown in Figure 15, the Uno&#8217;s 5V output hole is connected to the red side column of holes on the far left side of the breadboard; this is the <strong>voltage bus</strong>. The Uno&#8217;s ground hole is connected to the blue side column on the left of the board, or <strong>ground bus</strong>. The red and blue columns on the left of the breadboard are connected to the red and blue columns on the right side of the breadboard with red and black wires, respectively.  With this setup, you can supply 5V to any component on the breadboard, using the Uno&#8217;s onboard 5-volt regulator. You can power the Uno either through USB or through a 9-12V power supply plugged into the Uno&#8217;s power jack.  <meta charset="utf-8">There is a limit to the current that you can supply from this regulator, though, about 1 amp at 5V.</p>
+
+
+
+<p><meta charset="utf-8">If you&#8217;re using an Uno for this lab, connecting the circuit in Figure 14, then set your multimeter to measure DC voltage, and measure the voltage between the voltage and ground buses of your breadboard. When the Uno is plugged into a USB power supply, you should get 5V. </p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-full"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplateNanoShort_bb.png"><img loading="lazy" width="455" height="717" src="https://itp.nyu.edu/physcomp/wp-content/uploads/LabTemplateNanoShort_bb.png" alt="Arduino Nano on a breadboard." class="wp-image-5903"/></a><figcaption><em>Figure 15. Breadboard view of an Arduino Nano mounted on a solderless breadboard.</em></figcaption></figure></div>
+
+
+
+<p><a name="LabTemplateNanoShort_bb"></a>In Figure 15, you see a similar setup for the Arduino Nano 33 IoT.  The Nano is mounted at the top of the breadboard, straddling the center divide, with its USB connector facing up. The top pins of the Nano are in row 1 of the breadboard.</p>
+
+
+
+<p>The Nano, like all Dual-Inline Package (DIP) modules, has its physical pins numbered in a U shape, from top left to bottom left, to bottom right to top right. The Nano&#8217;s 3.3V out pin (physical pin 2) is connected to the left side red column of the breadboard. This is the <strong>voltage bus</strong>. The Nano&#8217;s GND pin (physical pin 14) is connected to the left side black column, the <strong>ground bus</strong>.  The blue columns (ground buses) are connected together at the bottom of the breadboard with a black wire. The red columns (voltage buses) are connected together at the bottom of the breadboard with a red wire. Wired like this, you can supply 3.3V to any component on the breadboard through the Nano&#8217;s onboard 3.3V regulator. There is a limit to the current that you can supply from this regulator, though, about 1 amp at 3.3V.</p>
+
+
+
+<p>If you&#8217;re using a Nano for this lab, connecting the circuit in Figure 15, then set your multimeter to measure DC voltage, and measure the voltage between pin 2 of the Nano (3.3V out) and pin 14 (ground). When the Nano is plugged into a USB power supply, you should get 3.3V. </p>
+
+
+
+<h2><span id="Powering_A_Breadboard_Circuit_From_A_Microcontroller_Via_A_DC_Power_Supply">Powering A Breadboard Circuit From A Microcontroller Via A DC Power Supply</span></h2>
+
+
+
+<p>Quite often, you&#8217;ll want to supply power to a circuit through an Arduino. Sometimes, you&#8217;ll have components that run at the microcontroller&#8217;s voltage, and sometimes they will require a higher voltage. From both the Nano and the Uno, if you power them from a DC power supply, you can supply 5V, 3.3V and the voltage of the power supply.</p>
+
+
+
+<p>When you&#8217;re not powering it via its USB connector, the Nano 33 IoT and the Nano Every can be powered through the V<sub>in</sub> pin (pin 15, bottom left side of the module) by a voltage range from 7 &#8211; 21 volts. This wide range means that you can use a 9V battery, or a DC power supply anywhere from 7-21V. When you power the Nano this way, you get 3.3V from the 3V3 pin (pin 2) just as if you were powering from USB. If you have components that need a higher voltage, you can supply them directly from your power supply via the V<sub>in</sub> pin. Figure 16 shows a Nano powered from a 12V DC power jack. The Jack&#8217;s positive terminal is connected to the V<sub>in</sub> pin (pin 15) and the negative terminal is connected to the ground pin (pin 14). </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="400" height="464" src="https://itp.nyu.edu/physcomp/wp-content/uploads/NanoExternalPower_bb-1.png" alt=" Breadboard view of a Nano 33 IoT on a breadboard connected to a DC power jack for external DC powering." class="wp-image-8991"/><figcaption><em>Figure 16. Breadboard view of a Nano 33 IoT on a breadboard connected to a DC power jack for external DC powering. The jack&#8217;s positive terminal is connected to the Nano&#8217;s Vin pin (pin 15) and the negative terminal is connected to ground (pin 14). In this configuration, the Nano will run, and will output 3.3V between the 3V3 pin (pin 2) and ground. </em></figcaption></figure>
+
+
+
+<p>When you are using a DC power supply as shown in Figure 16, you can also add a 5V regulator powered by the power supply, if you need both 3.3V and 5V for your components. Figure 17 shows a Nano supplied by a DC power jack on the V<sub>in</sub> and ground pins, and a 5V regulator attached to the V<sub>in</sub> pin as well, to supply 5V for components that need that voltage. </p>
+
+
+
+<p>Try connecting the circuit in Figure 17, then set your multimeter to measure DC voltage, and measure the voltage between pin 2 of the Nano (3.3V out) and pin 14 (ground). When the DC power jack is plugged in, you should get 3.3V. Now move the positive (red) probe of your meter to the bottom pin of the voltage regulator (row 21 on the board). You should read 5V. Now move the positive probe to the Nano&#8217;s pin 16 (V<sub>in</sub>). You should read whatever the voltage of the DC power supply is, somewhere between 7 and 21V. </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="400" height="514" src="https://itp.nyu.edu/physcomp/wp-content/uploads/NanoExternalPower_7805_bb.png" alt="Breadboard view of a Nano 33 IoT and a 7805 voltage regulator powered from a DC power jack." class="wp-image-8992"/><figcaption><em>Figure 17. Breadboard view of a Nano 33 IoT and a 7805 voltage regulator powered from a DC power jack. The DC power jack is wired as shown in the previous figure (positive terminal to V<sub>in</sub>, negative terminal to ground. However, in this image, a 5V regulator is added on the breadboard below the Nano. Its V<sub>in</sub> pin is connected to the V<sub>in</sub> of the Nano (and the DC power supply&#8217;s positive terminal) and its ground is connected to the ground bus. In this circuit, you can supply 3.3V via the Nano&#8217;s 3V3 pin (pin 2), 5V from the 7805 regulator, and 7-21V from the DC power supply.</em></figcaption></figure>
+
+
+
+<p>The Uno accepts 7-12V in via its DC power jack, and it has two voltage regulators on board. Pin 5 on the left side of the board supplies 5V, and pin 4 on the left side supplies 3.3V. Pin 8 on the left side is connected directly to the V<sub>in</sub>, so you can supply 7-12V, depending on the voltage of your DC power supply, from that pin. For example, figure 18 shows an Uno connected to a 9V battery and supplying 9V to the breadboard via the V<sub>in</sub> pin.  </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" width="500" height="558" src="https://itp.nyu.edu/physcomp/wp-content/uploads/UnoExternalPower_bb.png" alt="Uno connected to a 9V battery via a battery clip. " class="wp-image-8993"/><figcaption><em>Figure 18. Uno connected to a 9V battery via a battery clip. The Uno&#8217;s V<sub>in</sub> pin (pin 8 on the left side) is connected to a breadboard&#8217;s voltage bus, and one of the ground pins (pin 7) is connected to the ground bus. The Uno is thus supplying 9V for any components on that breadboard.</em></figcaption></figure>
+
+
+
+<p><meta charset="utf-8">If you&#8217;re using an Uno for this lab, connecting the circuit in Figure 18, then set your multimeter to measure DC voltage, and measure the voltage between the voltage and ground buses of your breadboard. When the Uno is plugged into a DC power supply, you should get whatever the voltage of the DC power supply is, between 7 and 12V. </p>
+
+
+
+<p>With an external power supply and a voltage regulator, you can supply almost any voltage your components might need, while still giving the Arduino the voltage it needs to run. In general, you will always connect the ground lines together, and keep the different voltages separate from each other. To see an application of this, see the <a href="https://itp.nyu.edu/physcomp/labs/motors-and-transistors/using-a-transistor-to-control-high-current-loads-with-an-arduino/" data-type="page" data-id="405">Using a Transistor to Control High Current Loads with an Arduino Lab</a>.</p>
+
+
+
+<p>You can use the circuits above as templates for almost any microcontroller-driven project. Even if you&#8217;re just using the microcontroller to power the breadboard, as shown below, you can still work with these circuits as a base. </p>
+
+
+
+<h2><span id="Powering_the_Breadboard_without_a_Microcontroller">Powering the Breadboard without a Microcontroller</span></h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_regulator_closeup.png"><img loading="lazy" width="300" height="147" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_regulator_closeup-300x147.png" alt="Close-up showing a 7805 5-volt voltage regulator connected to a breadboard. The breadboard is oriented so that the long rows are horizontal this time, and you are looking at the back of the regulator. The regulator is connected to the right-most three rows of the board. " class="wp-image-2323" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_regulator_closeup-300x147.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_regulator_closeup-1024x503.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 19. Close-up showing a 7805 5-volt voltage regulator connected to a breadboard.</figcaption></figure></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Sometimes you&#8217;ll want to build circuits without a microcontroller. This section shows you how to set up a breadboard without a microcontroller. You&#8217;ll add a 5-volt voltage regulator, and power the board from a 12-volt DC power adapter which feeds the regulator.  </p>
+
+
+
+<p>The regulator in Figure 19 is used to supply 5 Volts to the red side columns of the breadboard. In this image, you&#8217;re looking at the board sideways, with the the back of the regulator facing you.  The pins of the regulator are, from left to right: voltage out, ground, voltage in. Notice that the regulator&#8217;s voltage out pin on the left is connected to the red side row of the breadboard with a red wire. The regulator&#8217;s center pin (ground) is connected to the black side row. These will be your voltage and ground <strong>bus rows</strong>. The side  rows on one side are connected to the corresponding side rows on the other side via two wires. The two black rows are connected to each other via a black wire, and the red rows are connected via a red wire. </p>
+
+
+
+<p><a rel="noopener noreferrer" href="https://vimeo.com/380170576#t=4m43s" target="_blank">Related Video: Using a voltage regulator on a breadboard</a></p>
+
+
+
+<p>With your board connected like this, you&#8217;ll be able to build many different 5-Volt circuits on the board. The last thing you need to add is a power connector to connect 9 &#8211; 12 volts DC to supply power for the voltage regulator. Figure 20 below shows a power connector connected to the voltage input and ground pins of the voltage regulator. This circuit is now the same as the one shown in Figure 17 above, but with the Arduino Nano removed.</p>
+
+
+
+<p><a rel="noopener noreferrer" href="https://vimeo.com/380170576#t=6m4s" target="_blank">Related Video: Wiring a power supply using a DC power jack</a></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_power_jack.png"><img loading="lazy" width="1024" height="782" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_power_jack-1024x782.png" alt="breadboard_power_jack" class="wp-image-2324" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_power_jack-1024x782.png 1024w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_power_jack-300x229.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard_power_jack.png 1340w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px" /></a><figcaption>Figure 20. Board with 5V voltage regulator and power connector ready to go.</figcaption></figure></div>
+
+
+
+<h2><span id="Will_it_Light_Test_Your_Understanding">Will it Light? Test Your Understanding</span></h2>
+
+
+
+<p>Figures 22-30 below show an LED and a resistor connected in a breadboard. Some are connected correctly and others are not. Take a guess as to whether the LED will light or not, then click the links below the image to find out. All of the circuits below are versions of the same circuit, shown in the schematic in Figure 21:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_resistor_schem.png"><img loading="lazy" width="300" height="122" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_resistor_schem-300x122.png" alt="Schematic image of a 220-ohm resistor and an LED connected to a 7805 5-volt regulator. At left, there is a power plug. The positive terminal of the power plug is connected to the voltage input of a 7805 voltage regulator. The negative terminal of the power plug is connected to the ground terminal of the regulator. The voltage output of the regulator is connected to a 220-ohm resistor. The other side of the resistor is connected to the anode of an LED. The cathode of the LED is connected to the ground terminal of the regulator. " class="wp-image-2121" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_resistor_schem-300x122.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_resistor_schem.png 538w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 21. Schematic image of a 220-ohm resistor and an LED connected to a 7805 5-volt regulator. Regulator pins are numbered from left to right.&nbsp; One terminal of the resistor is connected to the regulator&#8217;s output pin (pin 3), and the other terminal is connected tothe  LED&#8217;s anode. The LED&#8217;s cathode is attached to the regulator&#8217;s ground pin (pin 2). A 9-12V DC power source is connected to the regulator&#8217;s voltage in (pin 1) and ground (pin 2).&nbsp;<a href="https://github.com/ITPNYU/physcomp/blob/master/tactile-graphics/led_resistor_schem_02_tactile_2019.svg">Download the tactile  schematic as SVG</a>. <a href="https://github.com/ITPNYU/physcomp/blob/master/tactile-graphics/led_resistor_schem_01_tactile_2019.svg">Download the tactile schematic key as SVG.</a></figcaption></figure></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>These circuit images will test your understanding of how the breadboard works. You can build the circuits yourself, using any one of Figures 14, 15,  17 or 20 to supply 5V for the LED circuit. </p>
+
+
+
+<p>If your board is wired as in Figure 22, will the LED below light up when you power the board? Take a guess, then click the link below the image to find out.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img loading="lazy" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2a.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row twelve in the center area. An LED is connected to another hole in row twelve. The other side of the LED is connected to a hole in row fourteen. Another hole in row fourteen connects to the ground bus on the right side of the board." width="512" height="512"/><figcaption>Figure 22. Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row twelve in the center area. An LED is connected to another hole in row twelve. The other side of the LED is connected to a hole in row fourteen. Another hole in row fourteen connects to the ground bus on the right side of the board.</figcaption></figure></div>
+
+
+
+<div id="led1-link-855" class="sh-link led1-link sh-hide"><a href="#" onclick="showhide_toggle('led1', 855, 'Show me the answer', 'Hide answer'); return false;" aria-expanded="false"><span id="led1-toggle-855">Show me the answer</span></a></div><div id="led1-content-855" class="sh-content led1-content sh-hide" style="display: none;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2b.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2b-300x300.png" alt="This image shows the same circuit as shown above, but the LED is lit up." class="wp-image-2272" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2b-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2b-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_2b-1024x1024.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 23. This image shows the same circuit as shown above, but the LED is lit up.</figcaption></figure></div>
+
+
+
+<p>When wired as in Figures 22 and 23, the LED will light up because the circuit is wired correctly. The power flows from bus row through the resistor to row twelve of the board. The LED&#8217;s anode connects to the same row, and the cathode is in another row, row fourteen. Then the black wire connects that second row to the ground bus, completing the circuit. The LED will light.<br></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Try another one. When wired as in Figure 24, will the LED below light up when you power the board? Take a guess, then click the link below the image to find out.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a.png"><img loading="lazy" width="298" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a-298x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row twelve in the center area. An LED is connected to a hole in row twelve on the right side. The other side of the LED is connected the ground bus on the right side." class="wp-image-2327" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a-298x300.png 298w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a-1020x1024.png 1020w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_1a.png 1023w" sizes="(max-width: 298px) 85vw, 298px" /></a><figcaption>Figure 24. Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row twelve in the center area. An LED&#8217;s anode is connected to a hole in row twelve on the right side. The cathode of the LED is connected the ground bus on the right side.</figcaption></figure></div>
+
+
+
+<div id="led2-link-855" class="sh-link led2-link sh-hide"><a href="#" onclick="showhide_toggle('led2', 855, 'Show me the answer', 'Hide answer'); return false;" aria-expanded="false"><span id="led2-toggle-855">Show me the answer</span></a></div><div id="led2-content-855" class="sh-content led2-content sh-hide" style="display: none;"></p>
+
+
+
+<p>The photo above, Figure 24, is wired incorrectly. The power flows from bus row through the resistor to row twelve of the board. The LED&#8217;s anode connects to the same row, but on the other side of the center divide, so there is a break in between the resistor and the LED. The LED will not light.<br></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Here&#8217;s a third one, Figure 25. Will the LED below light up when you power the board? Take a guess, then click the link below the image to find out.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3a.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3a-300x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row thirteen in the center area. A red wire connects row thirteen on the left with row thirteen on the right. An LED is connected to a hole in row thirteen on the right side. The other side of the LED is connected the ground bus on the right side." class="wp-image-2528" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3a-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3a-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3a.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 25. Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row thirteen in the center area. A red wire connects row thirteen on the left with row thirteen on the right. An LED&#8217;s anode is connected to a hole in row thirteen on the right side. The cathode of the LED is connected the ground bus on the right side.</figcaption></figure></div>
+
+
+
+<div id="led3-link-855" class="sh-link led3-link sh-hide"><a href="#" onclick="showhide_toggle('led3', 855, 'Show me the answer', 'Hide answer'); return false;" aria-expanded="false"><span id="led3-toggle-855">Show me the answer</span></a></div><div id="led3-content-855" class="sh-content led3-content sh-hide" style="display: none;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3b.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3b-300x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row thirteen in the center area. A red wire connects row thirteen on the left with row thirteen on the right. An LED is connected to a hole in row thirteen on the right side. The other side of the LED is connected the ground bus on the right side. The LED is lit up." class="wp-image-2529" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3b-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3b-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_3b.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 26. This image shows the same circuit as shown above, but the LED is lit up.</figcaption></figure></div>
+
+
+
+<p>The photos above, Figures 25 and 26, are wired correctly. It&#8217;s almost the same as Figure 24, but now the two sides of the junction row are connected by a wire, completing the circuit. The LED will light up.</p>
+
+
+
+<p></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Here&#8217;s another test. In Figure 27, will the LED below light up when you power the board? Take a guess, then click the link below the image to find out.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4a.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4a-300x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row fifteen in the center area. An LED is connected to two holes in row fifteen of the left side of the board as well. A black wire connects row fifteen on the left side of the board to the ground bus on the right side of the board. " class="wp-image-2320" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4a-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4a-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4a.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 27. Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the left. Its other end is connected to row fifteen in the center area. An LED is connected to two holes in row fifteen of the left side of the board as well. A black wire connects row fifteen on the left side of the board to the ground bus on the right side of the board.</figcaption></figure></div>
+
+
+
+<div id="led4-link-855" class="sh-link led4-link sh-hide"><a href="#" onclick="showhide_toggle('led4', 855, 'Show me the answer', 'Hide answer'); return false;" aria-expanded="false"><span id="led4-toggle-855">Show me the answer</span></a></div><div id="led4-content-855" class="sh-content led4-content sh-hide" style="display: none;"><br>The photo above, Figure 27, is wired incorrectly. Both of the LED&#8217;s connections are in the same junction row as the end of the resistor, so the LED is bypassed by the conductor under the row. The schematic below, Figure 28, shows what&#8217;s happening electrically. The LED will not light. This is a short circuit. The schematic below shows it.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4_schem.png"><img loading="lazy" width="300" height="170" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4_schem-300x170.png" alt="Schematic image of a 220-ohm resistor and an LED connected to a 7805 5-volt regulator. At left, there is a power plug. The positive terminal of the power plug is connected to the voltage input of a 7805 voltage regulator. The negative terminal of the power plug is connected to the ground terminal of the regulator. The voltage output of the regulator is connected to a 220-ohm resistor. The other side of the resistor is connected to the anode of an LED. The cathode of the LED is connected to the ground terminal of the regulator. The LED is bypassed by a wire, however, so the current bypasses the LED entirely. " class="wp-image-2335" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4_schem-300x170.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_4_schem.png 578w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 28. Schematic image of a 220-ohm resistor and an LED connected to a 7805 5-volt regulator. The LED is bypassed by a wire, however, so the current bypasses the LED entirely.</figcaption></figure></div>
+
+
+
+<p></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Here&#8217;s a final test. In Figure 29, will the LED below light up when you power the board? Take a guess, then click the link below the image to find out.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5a.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5a-300x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the right. Its other end is connected to row twenty in the on the right side of the center area. An LED is connected to a hole in row twenty on the right side as well. The other side of the LED is connected row twenty on the left side. A black wire connects row twenty on the left with the ground bus on the left side." class="wp-image-2319" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5a-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5a-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5a.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 29. Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the right. Its other end is connected to row twenty in the on the right side of the center area. An LED is connected to a hole in row twenty on the right side as well. The other side of the LED is connected row twenty on the left side. A black wire connects row twenty on the left with the ground bus on the left side.</figcaption></figure></div>
+
+
+
+<div id="led5-link-855" class="sh-link led5-link sh-hide"><a href="#" onclick="showhide_toggle('led5', 855, 'Show me the answer', 'Hide answer'); return false;" aria-expanded="false"><span id="led5-toggle-855">Show me the answer</span></a></div><div id="led5-content-855" class="sh-content led5-content sh-hide" style="display: none;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5b.png"><img loading="lazy" width="300" height="300" src="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5b-300x300.png" alt="Photo of a solderless breadboard with a 7805 voltage regulator mounted on it, as in the images above. The regulator is connected to a DC power plug, and the ground and voltage output of the regulator is connected to the voltage and ground bus rows on the right side of the breadboard. The ground and voltage bus rows on the right are connected to the ground and voltage bus rows on the left with wires at the bottom of the board. A 220-ohm resistor is connected to the voltage bus on the right. Its other end is connected to row twenty in the on the right side of the center area. An LED is connected to a hole in row twenty on the right side as well. The other side of the LED is connected row twenty on the left side. A black wire connects row twenty on the left with the ground bus on the left side. The LED is lit up." class="wp-image-2318" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5b-300x300.png 300w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5b-150x150.png 150w, https://itp.nyu.edu/physcomp/wp-content/uploads/led_test_5b.png 1024w" sizes="(max-width: 300px) 85vw, 300px" /></a><figcaption>Figure 30. This image shows the same circuit as shown above, but the LED is lit up.</figcaption></figure></div>
+
+
+
+<p>The photos above, Figures 29 and 30, are wired correctly. The resistor connects to power on the right, the resistor spans the center divider, and the black wire connects to ground on the left. The LED will light.</p>
+
+
+
+<p>If you connected an LED and resistor just as it&#8217;s shown in Figures 29 and 30, and it didn&#8217;t light, check to make sure that the anode (the long leg) of the LED is connected to the resistor, and the cathode (the short leg) is connected to the ground wire.<br></div>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Below,  in Figure 31, the three LED’s are connected in parallel using two rows. They are then connected to power and ground by connecting the rows to the voltage row and the ground row. These three LEDs are in parallel with each other.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-led-parallel-photo.jpg"><img loading="lazy" width="320" height="240" src="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-led-parallel-photo.jpg" alt="Three LEDs mounted on a solderless breadboard. The three LEDs in this photo are connected in parallel using two rows. All of their anodes are connected to row 37 on the left side of the center area. All of their cathodes are connected to row 40 on the left side. They are then connected to voltage and ground through wires connecting the rows to the voltage row and the ground rows on the left side of the board." class="wp-image-1543" srcset="https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-led-parallel-photo.jpg 320w, https://itp.nyu.edu/physcomp/wp-content/uploads/breadboard-led-parallel-photo-300x225.jpg 300w" sizes="(max-width: 320px) 85vw, 320px" /></a><figcaption>Figure 31. LEDS in parallel on a breadboard</figcaption></figure></div>
+
+
+
+<p>Many options are possible using a breadboard, which is what makes them very useful and convenient for building circuits. Once you understand which holes are connected to each other (and which ones are not), you can build any circuit very quickly.</p>
+
+
+
+<h2><span id="Breadboarding_Best_Practices">Breadboarding Best Practices</span></h2>
+
+
+
+<p>It’s a good idea to keep your circuits neat. When possible, shorten the leads on components so there is no bare metal sticking up from the breadboard. Make sure no wires cross each other with metal touching (this is the biggest source of short circuits on a breadboard). Lay things out as sensibly as possible, so each component of the circuit is near the components it needs to connect to. Use wires when needed to separate parts of the circuit that are crowded together. Use consistent colors of wires when possible; for example, use green or black for ground connections, red for power connections, white or blue for data connections, and so forth. This will make your troubleshooting much easier.</p>
+	</div><!-- .entry-content -->
+
+	
+</article><!-- #post-855 -->
+
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+</div>
+
+<p>
+  These materials are from
+  <a href="https://itp.nyu.edu/physcomp/">pcomp at NYU ITP.</a>
+</p>
+
+      
+        </div>
+      
+        <script>
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
+                itemSelector: ".item",
+              });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
+          });
+        </script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/bootstrap.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
+
+    <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

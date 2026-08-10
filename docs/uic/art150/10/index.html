@@ -521,6 +521,7 @@
 
 </div>
 
+
 <div class = "card">
   <h2>Homework</h2>
 
@@ -572,353 +573,8 @@
 
    
 </div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-0', 'p5-code-0')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-10-1-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let rows = 40;
-let noiseScale = 0.007; //
-let noiseSpeed = 0.01;
-
-function setup() {
-  createCanvas(600, 600);
-  noiseSeed(1); // stabilize the noise field -- everytime we get the same results from noise
-}
-
-function draw() {
-  background(220);
-  let yd = height / rows;
-  let xd = width / rows;
-  for (let x = xd / 2; x &lt; width; x += xd) {
-    for (let y = yd / 2; y &lt; height; y += yd) {
-      let w =
-        noise(x * noiseScale, y * noiseScale, frameCount * noiseSpeed) * xd; // plug in up to 3 values, returns avalue betwen 0 -1
-      circle(x, y, w);
-    }
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-10-2-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let noiseScale = 0.007; //
-let noiseSpeed = 0.01; //
-
-function setup() {
-  createCanvas(600, 600);
-  noiseSeed(1); // stabilize the noise field -- everytime we get the same results from noise
-  angleMode(DEGREES); // default mode angles is RADIANS
-}
-
-function draw() {
-  background(220);
-  translate(width / 2, height / 2);
-  let r = 50;
-  let points = 100;
-
-  beginShape();
-  for (let a = 0; a &lt; 360; a += 360 / points) {
-    let n = map(
-      noise(a * noiseScale, frameCount * noiseSpeed),
-      0.1,
-      0.9,
-      0.5,
-      1
-    );
-
-    let x = sin(a) * (r * n); // sin and cos return values between -1 and 1
-    let y = cos(a) * (r * n);
-
-    vertex(x, y);
-  }
-  endShape(CLOSE);
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-10-3-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let noiseScale = 0.007; //
-let noiseSpeed = 0.005; //
-
-let tx, ty; // translation coordinates
-
-let ra = 0; // rotation angle
-
-let bgA = 0; // angle for sin movement between bg colors
-let bgc1, bgc2;
-
-let maxRadius = 400;
-
-function setup() {
-  createCanvas(600, 600);
-  noiseSeed(1); // stabilize the noise field -- everytime we get the same results from noise
-  angleMode(DEGREES); // default mode angles is RADIANS
-  tx = width / 2;
-  ty = height / 2;
-
-  bgc1 = color("#E91E63");
-  bgc2 = color("#1EE9E0");
-}
-
-// interrupts the draw loop
-function mousePressed() {
-  tx = mouseX;
-  ty = mouseY;
-  maxRadius = 0;
-}
-
-function mouseDragged() {
-  tx = mouseX;
-  ty = mouseY;
-}
-
-function draw() {
-  if (maxRadius &lt; 400) {
-    maxRadius++;
-  }
-
-  let bgLerp = map(sin(bgA), -1, 1, 0, 1); // sin returns between -1 and 1
-  bgA += 0.1;
-
-  let bg = lerpColor(bgc1, bgc2, bgLerp);
-  bg.setAlpha(1); // sets the transparency of the color
-  background(bg);
-
-  // translation
-  translate(tx, ty);
-  tx += 0.5;
-  ty += 0.7;
-  if (tx &gt; width * 2 && ty &gt; height * 2) {
-    tx = -width / 3;
-    ty = -height / 3;
-  }
-  //rotation
-  rotate(ra);
-  ra += 0.2;
-
-  noFill();
-  strokeWeight(5);
-  let points = 15;
-
-  for (let r = 10; r &lt; maxRadius; r += 3) {
-    let s = map(r, 10, width, 0, 1);
-    let c = lerpColor(color("#9C27B0"), color("#00BCD4"), s); // interpolates between two colors by a factor between 0 and 1
-    stroke(c);
-    beginShape();
-    for (let a = 180; a &lt; 360; a += 360 / points) {
-      let n = map(
-        noise(a * noiseScale, r * noiseScale, frameCount * noiseSpeed),
-        0.1,
-        0.9,
-        0.5,
-        1
-      );
-
-      let n2 = map(
-        noise(a * noiseScale, r * noiseScale, 1000 + frameCount * noiseSpeed),
-        0.1,
-        0.9,
-        0.5,
-        1
-      );
-
-      //       let n = 1;
-      //       let n2 = 1;
-
-      let x = sin(a * n) * (r * n2); // sin and cos return values between -1 and 1
-      let y = cos(a * n2) * (r * n);
-
-      vertex(x, y);
-    }
-    endShape();
-  }
-
-  filter(BLUR);
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-10-4-iframe.html" width="500" height="500" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let img1, img2; // variables that will hold my images
-let a = 0; // angle of rotation of our icon
-let noiseScale = 0.006; // smooth out our noise values
-
-let x = 200;
-let y = 200;
-
-let lerpFactor = 0.01; //
-
-let hoverA = 0; // angle for our sin() to create a left and right hover
-let amp = 20;
-
-let s = 1; // scale factor of img1 AND img2 that grows and shrinks with the two mousePress States
-
-function preload() {
-  img1 = loadImage("/assets/p5img/smiley1.png");
-  img2 = loadImage("/assets/p5img/smiley2.png");
-}
-
-function setup() {
-  createCanvas(500, 500);
-  imageMode(CENTER); // allows to adjust how image() interprets x y coordinates. CENTER will interpret x and y as the center
-  angleMode(DEGREES); // defaults RADIANS: 0 - (2 * 3.14)
-  // DEGREES 0-360
-}
-
-function draw() {
-  if (mouseIsPressed == false) {
-    background(0);
-    // variable scope -- local scope declaration
-    let xOffset = sin(hoverA) * amp; // this variable is only usable inside this if clause
-    translate(x + xOffset, y);
-    x = lerp(x, mouseX, lerpFactor);
-    y = lerp(y, mouseY, lerpFactor);
-    let d = dist(x, y, mouseX, mouseY);
-    let n = noise(x * noiseScale, mouseY * noiseScale, d * noiseScale); // noise gives 0-1 -- it's actually 0.2 - 0.8
-    a = map(n, 0.2, 0.8, 0, 360); // ??? whats the range of rotation???
-    //
-    rotate(a);
-    scale(s); // when scale gets value, it just interprets it like a positive value
-    image(img1, 0, 0);
-    // a+=0.1; // adding gives us a constant rotation in one direction.
-    hoverA++;
-  if (s&gt;1){
-       s-=0.05; // shrink or scale down the image
-  }  
- 
-  
-  }
-  else {
-    background(0,10);
-    let xOffset = random(-s*6,s*6);
-     let yOffset = random(-s*3,s*3);
-    translate(mouseX+xOffset,mouseY+yOffset);
-    scale(s);
-    image(img2, 0, 0);
-    s+=0.1;// scale up the image
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-10-5-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let minR = 10;
-let maxR = 200;
-let dR = 10; // difference between radii
-
-let col1, col2;
-let noiseScale = 0.005;
-
-function setup() {
-  createCanvas(400, 400);
-  col1 = color("rgb(121,124,245)"); //
-  col2 = color("rgb(189,109,189)");
-  noStroke();
-  angleMode(DEGREES); // 0 - 360
-}
-
-function draw() {
-  background("rgb(127,205,255)");
-
-  for (let r = maxR; r &gt; minR; r -= dR) {
-    let cI = map(r, maxR, minR, 0, 1);
-    let c = lerpColor(col1, col2, cI); // goes between two colors
-    fill(c);
-  
-    beginShape();
-    for (let a = 0; a &lt; 360; a += 10) {
-      let n1 = noise(a*noiseScale,r*noiseScale,frameCount*noiseScale);
-       let n2 = noise(r*noiseScale, a*noiseScale,frameCount*noiseScale);
-      let xOffset = sin(a) * r * n1;
-      let yOffset = cos(a) * r * n2;
-      vertex(width / 2 + xOffset, height / 2 + yOffset);
-    }
-    endShape(CLOSE);
-  }
-   filter(BLUR);
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-10-6-iframe.html" width="800" height="200" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let basegH = 20; // base grass height
-let gH = []; // all of the deviations from the base height;
-
-let gD = 3; // grass distance
-
-let g = []; // hold my random g green color values
-
-let noiseScale = 0.01; // noiseScale for our grass blade animation
-
-let windScale = 0.01;
-
-let xOffset = []; // offset for the second x parameter so the grass blades are at a diagonal
-
-function setup() {
-  createCanvas(800, 200);
-  strokeWeight(gD-1);
- 
-  // populates our g array with random g values
-  for(let i = 0; i &lt; 1000;i++){
-    // color
-     let gr = random(220,255); // generate one new value
-     g[i] = gr; // plug our gr random value into conseq spaces in our array
-    // grass height   
-    gH[i] = basegH + random(-5,5);
-    
-    xOffset[i] = random(-gD,gD);
-    
-  }
-
-}
-
-function draw() {
-  background(220);
-
-  // i corresp
- for(let i = 0; i&lt;width;i+=gD){
-   let n = noise(i*noiseScale,frameCount*windScale); // produces results 0-1; 0.2-0.8
-   let nMapped = map(n,0.2,0.8,-gD,gD);
-   
-   
-   stroke(10,g[i],90);
-   line(i,height,i+xOffset[i]+nMapped,height-gH[i]);
- }
-}</code></pre>
-    </div>
-  <script>
-            function toggleP5View(iframeId, codeId) {
-              const iframe = document.getElementById(iframeId);
-              const code = document.getElementById(codeId);
-              if (iframe.style.display === 'none') {
-                iframe.style.display = '';
-                code.style.display = 'none';
-              } else {
-                iframe.style.display = 'none';
-                code.style.display = '';
-                // Trigger Prism.js syntax highlighting
-                if (window.Prism && code.querySelector('code')) {
-                  Prism.highlightElement(code.querySelector('code'));
-                }
-              }
-            }
-          </script>
 
 
-  </div>
   
    
 </div>
@@ -928,17 +584,23 @@ function draw() {
         </div>
       
         <script>
-          $(function () {
-            /* 瀑布流區塊div */
-            var $container = $(".masonry");
-        
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function () {
-    
-              $container.masonry({
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
                 itemSelector: ".item",
               });
-            });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
           });
         </script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

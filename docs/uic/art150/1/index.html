@@ -536,6 +536,7 @@
 
 </div>
 
+
 <div class = "card">
   <h2>Homework</h2>
 
@@ -605,46 +606,8 @@
 
    
 </div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-0', 'p5-code-0')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-1-test-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
-  createCanvas(400, 400);
-  background(220);
-}
-
-function draw() {
-  fill(100, 150, 255);
-  ellipse(mouseX, mouseY, 100, 100);
-  text(mouseX + ", " + mouseY, mouseX, mouseY);
-  console.log(mouseX + ", " + mouseY);
-}
-</code></pre>
-    </div>
-  <script>
-            function toggleP5View(iframeId, codeId) {
-              const iframe = document.getElementById(iframeId);
-              const code = document.getElementById(codeId);
-              if (iframe.style.display === 'none') {
-                iframe.style.display = '';
-                code.style.display = 'none';
-              } else {
-                iframe.style.display = 'none';
-                code.style.display = '';
-                // Trigger Prism.js syntax highlighting
-                if (window.Prism && code.querySelector('code')) {
-                  Prism.highlightElement(code.querySelector('code'));
-                }
-              }
-            }
-          </script>
 
 
-  </div>
   
    
   
@@ -792,17 +755,23 @@ function draw() {
         </div>
       
         <script>
-          $(function () {
-            /* 瀑布流區塊div */
-            var $container = $(".masonry");
-        
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function () {
-    
-              $container.masonry({
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
                 itemSelector: ".item",
               });
-            });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
           });
         </script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

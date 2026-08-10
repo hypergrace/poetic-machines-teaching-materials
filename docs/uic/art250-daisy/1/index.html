@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Grace Grace Grace" />
+    <title>UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <!-- Custom styles -->
+    <link href="/assets/css/sidebars.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <script src="/assets/js/p5.js"></script>
+    <script src="https://kit.fontawesome.com/1582dd25e1.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  </head>
+
+    <body>
+  
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
+          <div class="flex-shrink-0 p-3" style="width: 100%">
+            <a href = "/uic/art250-daisy/" style = "text-decoration: none; color:black">
+            <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
+              UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation
+            </h4>
+          </a>
+            <ul class="list-unstyled ps-0">
+             
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/250-syllabus/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Syllabus
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/github/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 GitHub Repository
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/materials/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Materials
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/max9744amp/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Class D Amplifier Max9744
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/presentation/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Presentation
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/schedule/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Schedule
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+              
+              
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/1/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 1 : Getting Started
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/2/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 2 : Intro to Sound &amp; Synthesis
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/3/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 3 : Gen~ Gates and Triggers
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/4/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 4 : Gen~ and Structuring Events in Time
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/5/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 5 : Filters and Effects; Acoustic Ecology
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/6/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 6 : Project 1: Soundscape Intervention
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/7/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 7 : Effects, Musical Sound and Rapid Prototyping
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/8/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 8 : Welcome to Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/9/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 9 : Software for Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/10/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 10 : Project 2: Performance Patch 
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+              
+            
+            </ul>
+          </div>
+        </div>
+      
+        
+<!-- Right panel (key concepts) - shows first on mobile -->
+<div class="col-sm-2 order-1 order-sm-3 card right-panel-mobile">
+  <div class="card-header">Key Concepts:</div>
+  <ul class="list-group list-group-flush">
+    
+    <li class="list-group-item">pitch</li>
+    
+    <li class="list-group-item">amplitude</li>
+    
+    <li class="list-group-item">frequency</li>
+    
+    <li class="list-group-item">phase</li>
+    
+    <li class="list-group-item">control parameters</li>
+    
+    <li class="list-group-item">resonance</li>
+    
+    <li class="list-group-item">oscillation</li>
+    
+    <li class="list-group-item">envelopes</li>
+    
+    <li class="list-group-item">attack</li>
+    
+    <li class="list-group-item">decay</li>
+    
+    <li class="list-group-item">sustain</li>
+    
+    <li class="list-group-item">release</li>
+    
+    <li class="list-group-item">filters</li>
+    
+    <li class="list-group-item">LFO (low frequency oscillators)</li>
+    
+    <li class="list-group-item">sequence</li>
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+  <ul class="list-group">
+    
+  </ul>
+  
+</div>
+
+<!-- Main content - shows second on mobile -->
+<div class="col-sm-6 order-2">
+
+<div class = "card">
+<h1>Getting Started</h1>
+
+
+
+
+</div>
+
+
+
+  
+   
+</div>
+<!-- End main content column -->
+
+      
+        </div>
+      
+        <script>
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
+                itemSelector: ".item",
+              });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
+          });
+        </script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/bootstrap.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
+
+    <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

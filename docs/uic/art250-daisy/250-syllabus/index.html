@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Grace Grace Grace" />
+    <title>UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <!-- Custom styles -->
+    <link href="/assets/css/sidebars.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <script src="/assets/js/p5.js"></script>
+    <script src="https://kit.fontawesome.com/1582dd25e1.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-arduino.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  </head>
+
+    <body>
+  
+    <!-- Mobile nav toggle button -->
+    <button id="mobile-nav-toggle" class="btn btn-primary mobile-nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-sm-3 sidebar-col" id="sidebar" style="z-index: 2">
+          <div class="flex-shrink-0 p-3" style="width: 100%">
+            <a href = "/uic/art250-daisy/" style = "text-decoration: none; color:black">
+            <h4 class="fs-5 fw-semibold" style="margin-left: 10px">
+              UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation
+            </h4>
+          </a>
+            <ul class="list-unstyled ps-0">
+             
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/250-syllabus/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Syllabus
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/github/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 GitHub Repository
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/materials/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Materials
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/max9744amp/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Class D Amplifier Max9744
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/presentation/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Presentation
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/schedule/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                 Schedule
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+              
+              
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/1/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 1 : Getting Started
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/2/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 2 : Intro to Sound &amp; Synthesis
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/3/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 3 : Gen~ Gates and Triggers
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/4/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 4 : Gen~ and Structuring Events in Time
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/5/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 5 : Filters and Effects; Acoustic Ecology
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/6/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 6 : Project 1: Soundscape Intervention
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/7/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 7 : Effects, Musical Sound and Rapid Prototyping
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/8/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 8 : Welcome to Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/9/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 9 : Software for Hardware
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+
+              <li class="mb-1">
+                <a href="/uic/art250-daisy/10/">
+                  <button
+                    class="btn align-items-left rounded collapsed nav-butt"
+                    style="text-align: left"
+                    aria-expanded="false"
+                  >
+                
+                    Week 10 : Project 2: Performance Patch 
+
+            
+             
+                 
+                  </button>
+                </a>
+              </li>
+              
+               
+              
+               
+              
+               
+              
+               
+              
+               
+              
+              
+            
+            </ul>
+          </div>
+        </div>
+      
+        
+
+
+
+
+
+
+<div class="col-sm-6">
+        <div class="py-2">
+          <h1> UIC | ART 250 | More-than-human Sonic Ecologies: DIY Hardware for Site-specific Performance and Installation </h1>
+          <ul class="list-group">
+            <li class="list-group-item">instructor: dr. garrett laroy johnson (he/they)</li>
+            <li class="list-group-item">time: Monday & Wednesday 1:00 - 3:30pm</li>
+            <li class="list-group-item">term: Spring 2024</li>
+            <li class="list-group-item">location: (see course schedule)</li>
+          </ul>
+        </div>
+
+
+<div class="md-block"><p>Sound and media art works at the edge of ecology. In fact, many artist and theorists are interested in how media and sound themselves are part of ecology.</p>
+<p>In this studio class, students will learn to program the nascent microcomputer Daisy. We will program Daisy ourselves using a patcher style visual programming language called Gen~ built inside of the sound program MaxMSP. Connecting potentiometers and LEDs we will work to create synthesizers for performances we design in response to natural and built environments. With compact microphones, light sensors, and speakers, we will create responsive media systems that form feedback loops with the surrounding ecology.</p>
+<p>Our studio practice will be enriched by readings and critiques of important artists working in this field, such as David Dunn, Hildegard von Westerkamp, Lauren Sarah Hayes, Francisco Lopez, among others.</p>
+<p>The class will be taught as a series of lectures, discussions, tutorials, project work, and student critiques.</p>
+</div>
+
+<h2>LEARNING OBJECTIVES</h2>
+ 
+<div class="md-block"><ul>
+<li>Develop beginner familiarity with sound synthesis concepts</li>
+<li>Create custom configurations of software and hardware that respond artfully to a given site</li>
+<li>Critically examine sound and acoustics' role in the built and natural environment</li>
+<li>Develop idiosyncratic processes to facilitate creatively engaging with computation</li>
+<li>Produce a series of works from exercises to longer-term projects.</li>
+<li>Productively discuss and critique peers’ work.</li>
+<li>Connect technical skills to critical thinking to create meaningful artistic compositions.</li>
+</ul>
+</div>
+
+<h3>Important Dates</h3>
+<ul class="list-group">
+  
+  <li class="list-group-item">January 8, M Instruction begins.</li>
+  
+  <li class="list-group-item">January 15, M Martin Luther King Jr. Day. No classes.</li>
+  
+  <li class="list-group-item">March 18-22, M-F Spring vacation. No classes.</li>
+  
+  <li class="list-group-item">April 26, F Instruction ends.</li>
+  
+  <li class="list-group-item">April 29-May 3, M-F Final examinations.</li>
+  
+  <li class="list-group-item">May 8, W Instructor grading deadline for 16-week courses (5 p.m.)</li>
+  
+  <li class="list-group-item">May 13, M Grades available via my.UIC.edu</li>
+  
+</ul>
+
+<h2>GRADING, ATTENDANCE, PRIVACY, AND ACCOMODATION POLICIES</h2>
+
+<h5>Department of Art, UIC</h5>
+
+<h3>Contact / Credit Hour Policies</h3>
+<p></p>
+
+
+
+<h3>Grading Key</h3>
+<ul class="list-group">
+  
+  <li class="list-group-item">A Work is of exceptionally high quality both technically and conceptually. The student and work exhibits ambition that is successfully realized far beyond the level required and could not be improved in any way. The student takes big risks! The student is always on time and prepared, vocal in class, inquisitive, and clearly invested in what they are thinking about and making both in class and outside of class. The student takes copious notes and refers to their notes regularly. Projects must show significant growth between class periods. The student must display significant growth over the course of the semester through risk, experimentation, and care for their work and what they are learning.</li>
+  
+  <li class="list-group-item">B Work is of good effort with creative ideas, but not accomplished to fully embody the initial conceptual or formal impetus. The student and their work display little risk in creative execution of projects and remains steadfast in their familiar ways of working and thinking. Ideas are safe and predictable. The student takes notes randomly and hardly refers to them. The student is on time but scattered and less prepared.</li>
+  
+  <li class="list-group-item">C Work is average, the assignments have been fulfilled and on time but with minimal effort. Barely meets the requirements of the assignment with little or no regard for the depth of the artist’s known potential. Predictably late and unprepared for class, often not taking any notes or making effort to remember what was said in class. The student is quiet during conversations and little work is being done outside of class.</li>
+  
+  <li class="list-group-item">D The work does not meet the assignment’s criteria, and/or is incomplete at critique time. The student has poor attendance, is absent minded in lectures and conversations, and shows little to no work being done outside of class.</li>
+  
+  <li class="list-group-item">F Failure to complete projects, or to participate in critique, or failure to arrive prepared for class routinely.</li>
+  
+</ul>
+
+
+
+<h3>Attendance</h3>
+
+  
+<p>The following had been carefully written  by the faculty of the UIC Art Department and is used in all art classes.</p>
+  
+<p>This is a studio course built on active participation, making together, thinking together, and learning from one another. If you are not in class, then you cannot participate. Therefore, students are expected to attend all scheduled classes for the full duration of the course. Three unexcused absences will lower your final grade by one full letter. Excessive absences would be considered four or more and may be cause for failure in the course. Two tardies, or leaving class early, or stepping out for long durations during class time (20 minutes or more) constitutes one absence. Any absence beyond two, that is not an excused absence, will affect your grade. Excused absences are only missed classes due to the death of an immediate family member, observation of a religious holiday, hospitalization, contagious sickness, or a victim of a crime, all of which should be accompanied by appropriate documentation provided to your professor within a week of the absence. All other reasons for missing class are considered unexcused.</p>
+  
+<p>*Please note that if you communicate with your professor in advance about a class to which you will be absent or tardy, that does not mean the absence or tardy is excused. Only the reasons written above, with documentation, yield an absence as excused. Also, if you have a friend in the same class who is, on your behalf, letting your professor know that you are running late, you will still be marked tardy.</p>
+  
+<p>*Please also note that it is your responsibility to track your attendance, to remain aware of it, and to communicate with your professor if you become concerned. Your professor will be taking attendance every class period, but it is not their obligation to communicate with you if your grade is being affected by your attendance.</p>
+  
+ <h5>makeup</h5>
+  <p>You are responsible for looking at the website and working through the textbook in order to familiarize yourself with what was missed in class. You might also be in touch with a peer in the class to learn what was covered in the course you have missed. It is your responsibility to ask questions about subject matter you may have missed in class. I assume you are in conversation with your peers about course material regularly. Indeed I encourage the class to self-organize; take collective notes in a GoogleDoc, start a Discord, and so on, to share and learn from each other. I am happy to boost these efforts if that is helpful to you.</p>
+
+
+
+<h2>Disability Accomodations</h2>
+<p>
+  >UIC is committed to full inclusion and participation of people with
+  disabilities in all aspects of university life. If you face or anticipate
+  disability-related barriers while at UIC, please connect with the Disability
+  Resource Center (DRC) at drc.uic.edu, via email at drc@uic.edu, or call (312)
+  413-2183 to create a plan for reasonable accommodations. In order to receive
+  accommodations, you will need to disclose the disability to the DRC, complete
+  an interactive registration process with the DRC, and provide me with a Letter
+  of Accommodation (LOA). Upon receipt of an LOA, I will gladly work with you
+  and the DRC to implement approved accommodations.
+</p>
+<h2>Inclusivity Statement</h2>
+<p>
+  “UIC values diversity and inclusion. Regardless of age, disability, ethnicity,
+  race, gender, gender identity, sexual orientation, socioeconomic status,
+  geographic background, religion, political ideology, language, or culture, we
+  expect all members of this class to contribute to a respectful, welcoming, and
+  inclusive environment for every other member of our class. If there are
+  aspects of the instruction or design of this course that result in barriers to
+  your inclusion, engagement, accurate assessment or achievement, please notify
+  me or your TA as soon as possible.”
+</p>
+
+<h2>Religious Holiday Observance Policy</h2>
+<p>
+  In accordance with Illinois state laws and with respect for cultural
+  diversity, we will make every effort to avoid scheduling examinations or
+  requiring student projects be turned in or completed on religious holidays.
+  Students who wish to observe their religious holidays must notify the
+  instructor by the tenth day of the term that they will be absent unless their
+  religious holiday is observed on or before the tenth day, in such case
+  students must notify instructor at least five days in advance of the date when
+  he or she will be absent.
+  <a
+    href="https://oae.uic.edu/religious-calendar/#:~:text=Students%20who%20wish%20to%20observe,tenth%20day%20of%20the%20semester."
+    >UIC’s Policy on religious holidays and Religious Calendar</a
+  >
+</p>
+<h2>Safe Space</h2>
+<p>
+  The UIC School of Art & Art History is committed to creating a safe space in
+  our classrooms that is a welcoming, supportive, and safe environment for
+  lesbian, gay, bisexual, transgender, and queer (LGBTQ) students. See also:
+  <a
+    href="https://policies.uic.edu/uic-policy-library/access-and-equity/nondiscrimination-policy-statement/"
+    >UIC’s Nondiscrimination Policy</a
+  >,
+  <a
+    href="https://policies.uic.edu/uic-policy-library/student-affairs/uic-policy-on-open-expression/"
+    >Open Expressions Policy</a
+  >, and
+  <a href="https://uofi.app.box.com/s/0f6qaffjtjinra28f0t0j18oveq7cllb"
+    >SAAH’s Allyship Booklet</a
+  >.
+</p>
+
+<h2>Image Reproduction</h2>
+<p>
+  Images of projects created in this course may be used for educational
+  purposes, including instruction in future courses and promotion of the School,
+  College or University. If you have concerns about sharing or distributing any
+  of your work for these purposes, please discuss these with your instructor.
+</p>
+
+<h2>Cheating</h2>
+<p>
+  In accordance with UIC policies, any student caught copying homework,
+  plagiarizing a paper, or any copying visual material without giving
+  appropriate credit will:
+</p>
+<ol>
+  <li>Fail the assignment</li>
+  <li>Be subject to removal from and failure of the course</li>
+  <li>
+    Be reported to the Dean of Students for possible removal from the
+    University.
+  </li>
+</ol>
+
+<h2>Digital Privacy @ CADA</h2>
+<p>
+  The College of Architecture, Design, and the Arts (CADA) strives to safeguard
+  the privacy of its faculty, students, prospective students, and employees in
+  online learning environments and other online events and activities hosted or
+  sponsored by the College.
+</p>
+<p>
+  The College may record online events for internal use and faculty may record
+  and post live online lectures on Blackboard, UIC's internal Content Management
+  System; those recordings are permitted under these guidelines. However, the
+  meeting host should endeavor to give notice whenever an online class or event
+  is being recorded. If any student is identifiable in an image or recording
+  from an online class, distributing that content publicly (i.e., outside of
+  password protected Blackboard) may constitute a violation of the educational
+  record protections provided under FERPA.
+</p>
+<p>
+  Individuals who suspect a violation has occurred should report that matter to
+  Assistant Dean Dina Taylor (dltaylor@uic.edu) or Associate Dean Cheryl Towler
+  Weese (cheryltw@uic.edu).
+</p>
+<h2>Lecture Recordings</h2>
+<p>
+  Occasionally, class sessions may be recorded via Zoom (or a similar platform)
+  for the purposes of study / review or for students who are unable to attend an
+  in-class session. Your instructor will inform you if they plan to record the
+  lecture. The “record” feature for students will be disabled so that no one may
+  be able to record the session without your knowledge. Recording in-class
+  lectures without the permission of the instructor is not permitted.
+</p>
+<p>
+  If you have privacy concerns and do not wish to appear in lecture recordings,
+  you may turn OFF your video and notify the instructor. If you prefer to use a
+  pseudonym on screen instead of your name, please let the instructor know what
+  name you will be using, so that they can identify you during the class
+  session. If you wish to ask a question but don’t want your name to appear in
+  the chat, you may direct-message the instructor through the chat feature. If
+  you have questions or concerns about this video recording policy, please
+  contact the instructor before the end of the first week of class.
+</p>
+<p>
+  These guidelines do not restrict a student's right to record lectures or
+  download content pursuant to the
+  <a href="https://drc.uic.edu/accommodations/assistive-technology/"
+    >assistive technology accommodations</a
+  >
+  outlined by the
+  <a href="https://drc.uic.edu/">UIC Disability Resource Center</a>.
+</p>
+<p>
+  It is also important to maintain a learning environment where everyone feels
+  comfortable participating. To protect these interests, students and other
+  participants may not copy, record, reproduce, screenshot, photograph, or
+  distribute the following content:
+</p>
+
+<ul>
+  <li>Live discussions or meetings</li>
+  <li>Discussion boards</li>
+  <li>Rehearsals, Critiques, and other creative activity</li>
+  <li>Images of students, faculty, or other participants</li>
+</ul>
+<p>
+  Any attempt to disrupt an online course or event (e.g., "Zoombombing") or to
+  use the College's online platforms to introduce malware or gain unpermitted
+  access to files or networks is prohibited and may violate other University
+  policies depending on the nature of manner of the conduct. Students who
+  violate this policy may be subject to disciplinary action under the UIC
+  Student Disciplinary Policy.
+</p>
+
+<h2>Student Disciplinary Policy</h2>
+<p>
+  The
+  <a
+    href="https://dos.uic.edu/wp-content/uploads/sites/262/2020/01/DOS_Student-Disciplinary-Policy-2020.pdf"
+    >Student Disciplinary Policy</a
+  >
+  is the University's process to handle allegations of misconduct by UIC
+  Students. The Student Disciplinary Policy addresses both academic misconduct
+  (such as plagiarism, cheating, or grade tampering) and behavioral misconduct
+  (such as theft, assault, under-age drinking, and drug-use.) See also:
+  <a
+    href="http://dos.uic.edu/wp-content/uploads/sites/262/2018/10/Guidelines-for-Academic-Integrity.pdf"
+    >Guidelines for Academic Integrity</a
+  >
+</p>
+<hr />
+
+<h2>UIC Resources</h2>
+<ul>
+  <li>
+    <a href="https://csrc.uic.edu/">UIC Commuter and Off-campus Life Center</a>
+  </li>
+
+  <li>
+    <a href="https://counseling.uic.edu/">UIC Counseling Center</a>:
+    312-996-3490
+  </li>
+  <li>
+    <a href="https://drc.uic.edu/">Disability Resource Center</a>: 312-413-2183
+  </li>
+  <li>
+    <a href="https://gsc.uic.edu/">UIC Gender + Sexuality Center:</a>:
+    312-413-8619
+  </li>
+  <li>
+    <a href="https://wellnesscenter.uic.edu/">UIC Wellness Center:</a>
+    312-413-2120
+  </li>
+  <li>
+    <a href="https://police.uic.edu/">UIC Police Station:</a>
+    <ul>
+      <li>emergency: 312-335-5555</li>
+      <li>non-emergency: 312-996-2830</li>
+    </ul>
+  </li>
+
+  <li>
+    For additional information or assistance with the equal opportunity,
+    affirmative action, and harassment policies and procedures of the University
+    of Illinois at Chicago, please contact the
+    <a href="https://oae.uic.edu/">Office for Access and Equity.</a>
+  </li>
+</ul>
+
+
+      
+        </div>
+      
+        <script>
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
+                itemSelector: ".item",
+              });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
+          });
+        </script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/bootstrap.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
+
+    <script src="/assets/js/display.js" async defer></script>
+    
+    <!-- Mobile nav toggle script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (toggleBtn && sidebar) {
+          toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('sidebar-open');
+          });
+          
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener('click', function(event) {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(event.target) && 
+                !toggleBtn.contains(event.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+              sidebar.classList.remove('sidebar-open');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

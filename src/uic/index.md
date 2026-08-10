@@ -10,8 +10,11 @@ big:
     subname: Introduction to Creative Coding for New Media Art
     url: art151
   - name: ART 250
+    subname: Introduction to Interactive Sound
+    url: art250-interactive-sound
+  - name: ART 250
     subname: More-Than-Human Sonic Ecologies
-    url: art250
+    url: art250-daisy
   - name: ART 520
     subname: Sensations, Visions, & Dreams for a New Weird Anthropocene
     url: art520  

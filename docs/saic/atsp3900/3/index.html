@@ -381,6 +381,7 @@
 
 </div>
 
+
 <div class = "card">
   <h2>Homework</h2>
 
@@ -421,348 +422,8 @@
 
    
 </div>
-<div class = "card">
-  <h3>Examples</h3>
-  
-
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-0', 'p5-code-0')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-0" src="/iframes/src-scripts-introp5-3-0-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-0" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declare our variables 
-// 3 ways to declare a variable: const; var; let 
-
-let d = 3; // diameter of the circle
-let r = d / 2; // calculate the radius 
-let xOffset = 0; // left hand margin (not including the radius of the circle)
-
-let numCircles = 200; // control the number of circles
-
-function setup() {
-  createCanvas(400, 400);
-  console.log(d,r);
-}
-
-function draw() {
-  background(220);
-  
-  
- for (let i = 0;i&lt;numCircles;i=i+1) {
-    // and to repeat it!!! for a certain number of times
-  circle(xOffset+d*i,100,d);
-  }
-  
-  
-}</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-1', 'p5-code-1')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-1" src="/iframes/src-scripts-introp5-3-1-iframe.html" width="500" height="500" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-1" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// control panel
-let x = 3;
-let y = 250;
-let w = 10; // width of my circle
-let g = 7; // growth rate of my circle, how many pixels are added each time
-let num = 150; // number of circles
-
-function setup() {
-  createCanvas(500, 500);
-  noLoop(); // draw loop only runs once;
-}
-
-function draw() {
-  background(220);
-
-  // 3 parts to the rules of a for loop
-  // for loops need a variable
-  // init, where it starts; test, when it should end; update, how it should change
-  for (let i = 1; i &lt;= num; i += 1) {
-    // the block of code to be repeated
-    circle(x * i, y, w);
-    //w += g; // takes what w was, and adds whatever is on the right side of it
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-2', 'p5-code-2')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-2" src="/iframes/src-scripts-introp5-3-2-iframe.html" width="600" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-2" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let g = 100;
-let offset = 100;
-let o = 255; // opacity
-
-function setup() {
-  createCanvas(600, 600);
-  strokeWeight(2);
-  noLoop();
-}
-function draw() {
-  background(204, 0, 100);
-  // stroke(greyscale, opacity)
-  stroke(255, o);
-  // adds a pixel value instead of an index
-
-  //  for loop 1
-  for (var x = 20; x &lt; width; x += g) {
-    stroke(255, o);
-    line(x, 0, x + x / offset, height - 20); // x1, y1, x2, y2
-    o -= 1;
-  }
-
-  // flor loop 2
-  o = 0;
-  for (var x = 20; x &lt; width; x += g) {
-    // rgb opacity: stroke(r,g,b,opacity)
-    stroke(0, 0, 200, o);
-    line(x, 0, x + x / offset, height - 20); // x1, y1, x2, y2
-    o += 1;
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-3', 'p5-code-3')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-3" src="/iframes/src-scripts-introp5-3-3-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-3" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">let x = 25;
-let y = 50;
-let d = 20; // diameter of our circle
-let r = d / 2;
-let num = 10;
-
-function setup() {
-  createCanvas(800, 400);
-}
-
-function draw() {
-  background(220);
-
-  for (let i = 0; i &lt; num; i = i + 1) {
-    circle(x * i, y, d); // x,y, diameter
-    line(x * i - r, y - r, x * i - r, y + r); // 2 xy pairs for the start and stop
-    line(x * i + r, y - r, x * i + r, y + r); // 2 xy pairs for the start and stop
-  }
-
-  noLoop();
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-4', 'p5-code-4')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-4" src="/iframes/src-scripts-introp5-3-4-iframe.html" width="800" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-4" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declaring a varable
-let x = 20;
-let y = 20;
-let w = 20; // w is the width of my rectangle
-let h = 10; // h is the height of my rectangle
-let spz = 20; // spacing between shapes
-
-function setup() {
-  createCanvas(800, 400);
-  noFill();
-}
-
-function draw() {
-  background(220);
-
-  // index
-  for (let i = 0; i &lt; 20; i = i + 1) {
-    rect(x + spz * i, y, w, h);
-    line(x + spz * i, y - h / 2, x + w + spz * i, y + h * 1.5);
-    line(x + spz * i, y + h * 1.5, x + w + spz * i, y - h / 2);
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-5', 'p5-code-5')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-5" src="/iframes/src-scripts-introp5-3-5-iframe.html" width="480" height="800" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-5" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">function setup() {
-  createCanvas(480, 800);
-}
-
-function draw() {
-  background(204);
-  for (var i = 20; i &lt; 400; i = i + 20) {
-    stroke(i, 100, 10);
-    strokeWeight(i / 20);
-    line(i, 0, i + i / 2, 800 - i);
-  }
-
-  noLoop();
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-6', 'p5-code-6')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-6" src="/iframes/src-scripts-introp5-3-6-iframe.html" width="480" height="480" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-6" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// global scope variables
-let numLines = 250; // change var to affect for loop function and drawing spacing!
-let xOffset = 50; // x starting point
-let spacing; // declare but not define spacing;
-
-function setup() {
-  createCanvas(480, 480);
-  strokeWeight(0.5);
-  // updating a global scope
-  spacing = (width - xOffset) / numLines; // 280
-}
-
-function draw() {
-  background(10);
-  // repeats code for a given number of iterations based on the rules inside the parentheses
-  for (let x = xOffset; x &lt; width - xOffset * 2; x += spacing) {
-    // rgb range is 0 to 255;
-    let b = map(x, xOffset, width, 100, 255); // number that belongs to a range, old range min, old range max, new range min, new range max
-    let r = map(x, xOffset, width, 255, 100); //
-    stroke(r, 100, b);
-
-    // code to be repeated
-    let y = height - x * 2;
-    line(x, 0, x + x / 2, y); // 1st set is top, 2nd is elbow
-    line(x + x / 2, y, x, height); // 1st set is elbow, 2nd is bottom
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-7', 'p5-code-7')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-7" src="/iframes/src-scripts-introp5-3-7-iframe.html" width="400" height="600" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-7" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// define our variables
-// control panel
-// variable declaration:
-// let: declares a variable (something that can change)
-// var: like let but older, still works
-// const: declares a constant (cannot be changed)
-
-// camelCaseStyle -- this is not a syntactical rule!
-// style guide for variables -- be short but clear!
-// single equal sign is always used for declaration of variables
-// if you need to use the ma60hematical equals, you write ==;
-
-// global variables are accesible anywhere in the sketch!
-// do *you* need to change it in order to see something different? if yes it should be a global variable, if not it might not need to be
-let vOffset = 150; // the number of pixels between the top and bottom of canvas and the start and end of the line
-let xSpacing = 10; // the horizontal spacing between lines
-let numLines = 60; // number of lines
-
-function setup() {
-  createCanvas(400, 600);
-}
-
-function draw() {
-  background(220);
-  // local scoped variable! only useable within the context of the draw loop.
-
-  // code inside () are the rules and conditions for repeating the for loop
-  // (start;stop;change)
-  // start: declare a variable e.g. let i = 0;
-  // stop: when should the computer repeat the for loop ? (if the condition it true, the computer will repeat. if not it will exit the for loop and do the next thing)
-  // we program rules and conditions around a variable
-
-  // two styles for writing rules and conditions
-  // book style: you are thinking in terms of a visual result (position on the canvas, color amount, opacity)
-  // index style: where you are thinking it terms of the number of repetitions
-
-  // code inside the {} is the code to be repeated in the for loop.
-  for (let i = 0; i &lt; numLines; i++) {
-    line(20 + xSpacing * i, vOffset * i/12, 60 + xSpacing * i/9, height - vOffset);
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-8', 'p5-code-8')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-8" src="/iframes/src-scripts-introp5-3-8-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-8" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// variables
-let d = 20; // diameter of the circle
-let r = d / 2; // radius of the circle
-
-let inclineFactor = 5; // how much the circles go down
-
-let xOffset = 20;
-let numCircles = 20; // number of circles in each row
-
-function setup() {
-  createCanvas(400, 400);
-  console.log(r);
-}
-
-function draw() {
-  background(220);
-  // radius is half the diameter
-  // diameter is the width of the circle cutting thru its center point
-  // radius is the distance between the center of the circle to anywhere on its edge
- 
-
-  for (let i = 0; i &lt; numCircles; i = i + 1) {
-    // the code I want to repeat!
-    
-    fill(i*20,200-i*10,0)
-    circle(xOffset + d * i, 100 + i * inclineFactor, d); // x,y,d
-  }
-}
-</code></pre>
-    </div>
-  
-    <div class="p5-block" style="margin-bottom:2em;">
-      <button onclick="toggleP5View('p5-iframe-9', 'p5-code-9')" style="display:block;margin-bottom:1em;padding:0.5em 1em;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;">Toggle Code/Result</button>
-      <iframe id="p5-iframe-9" src="/iframes/src-scripts-introp5-3-9-iframe.html" width="400" height="400" style="border:1px solid #ccc;display:block;"></iframe>
-      <pre id="p5-code-9" class="language-javascript" style="display:none;background:#f5f5f5 !important;color:#222;padding:1em;overflow:auto;margin:0;"><code class="language-javascript">// declare our variables 
-// 3 ways to declare a variable: const; var; let 
-
-let d = 20; // diameter of the circle
-let r = d / 2; // calculate the radius 
-let xOffset = 0; // left hand margin (not including the radius of the circle)
-
-let numCircles = 200; // control the number of circles
-
-function setup() {
-  createCanvas(400, 400);
-  console.log(d,r);
-}
-
-function draw() {
-  background(220);
-  
-  let g = 0; 
- for (let i = 0;i&lt;numCircles;i=i+1) {
-    // and to repeat it!!! for a certain number of times
-  
-   fill(100,g,200)
-   circle(xOffset+d*i,100,d-i);
-   g+=10;
-  }
-  
-  
-}</code></pre>
-    </div>
-  <script>
-            function toggleP5View(iframeId, codeId) {
-              const iframe = document.getElementById(iframeId);
-              const code = document.getElementById(codeId);
-              if (iframe.style.display === 'none') {
-                iframe.style.display = '';
-                code.style.display = 'none';
-              } else {
-                iframe.style.display = 'none';
-                code.style.display = '';
-                // Trigger Prism.js syntax highlighting
-                if (window.Prism && code.querySelector('code')) {
-                  Prism.highlightElement(code.querySelector('code'));
-                }
-              }
-            }
-          </script>
 
 
-  </div>
   
    
   
@@ -798,17 +459,23 @@ function draw() {
         </div>
       
         <script>
-          $(function () {
-            /* 瀑布流區塊div */
-            var $container = $(".masonry");
-        
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function () {
-    
-              $container.masonry({
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
                 itemSelector: ".item",
               });
-            });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
           });
         </script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

@@ -29,7 +29,7 @@ layout: base.njk
     </a>
     {% elseif reference == "max" %}
 
-    <a href="https://docs.cycling74.com/max8/refpages/{{ c }}">
+    <a href="https://docs.cycling74.com/reference/{{ c }}">
       <li class="list-group-item">{{ c }}</li>
     </a>
 
@@ -74,6 +74,7 @@ layout: base.njk
 
 </div>
 
+{% if homework or tutorial or sketch or readings or screenings or listenings %}
 <div class = "card">
   <h2>Homework</h2>
 
@@ -229,6 +230,8 @@ layout: base.njk
 
   {% endif %} 
 </div>
+{% endif %}
+{% if memberCollection == "ats2101" or memberCollection == "art151" %}
 <div class = "card">
   <h3>Examples</h3>
   
@@ -253,6 +256,7 @@ layout: base.njk
   {% endif %} {% endfor %} {% endif %} 
   #}
   </div>
+{% endif %}
   
   {% if other %} 
   

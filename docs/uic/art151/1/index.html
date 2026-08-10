@@ -541,6 +541,7 @@
 
 </div>
 
+
 <div class = "card">
   <h2>Homework</h2>
 
@@ -585,6 +586,8 @@
 
    
 </div>
+
+
 <div class = "card">
   <h3>Examples</h3>
   
@@ -625,6 +628,7 @@ function draw() {
 
 
   </div>
+
   
    
   
@@ -664,17 +668,23 @@ function draw() {
         </div>
       
         <script>
-          $(function () {
-            /* 瀑布流區塊div */
-            var $container = $(".masonry");
-        
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function () {
-    
-              $container.masonry({
+          window.addEventListener("load", function () {
+            var container = document.querySelector(".masonry");
+            if (!container || typeof Masonry !== "function") {
+              return;
+            }
+
+            var initMasonry = function () {
+              new Masonry(container, {
                 itemSelector: ".item",
               });
-            });
+            };
+
+            if (typeof imagesLoaded === "function") {
+              imagesLoaded(container, initMasonry);
+            } else {
+              initMasonry();
+            }
           });
         </script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

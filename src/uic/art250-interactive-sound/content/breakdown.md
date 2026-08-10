@@ -1,0 +1,3 @@
+- 30% - Midterm
+- 50% - Final Project 
+- 20% - Participation
