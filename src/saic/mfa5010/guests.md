@@ -6,13 +6,26 @@ title: Guests
 
 # Guests
 
+## FA 2026
+
+### [Noa Michaela Fields](https://www.noamicaelafields.com/)
+
+TBA
+
+## FA 2025
+
+### Asa Sakrison
+
+#### Cultural geographer / Geographical Information Systems (GIS), educator, activist | Portland, Oregon
+
+
 ## FA 2024
 
-## Brian Holmes
+### Brian Holmes
 
 #### Activist, artist, theorist, Geographical Information Systems (GIS) | Chicago, Illinois
 
-## Asa Sakrison
+### Asa Sakrison
 
 #### Cultural geographer / Geographical Information Systems (GIS), educator, activists | Portland, Oregon
 
