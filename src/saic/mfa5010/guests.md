@@ -8,7 +8,9 @@ title: Guests
 
 ## FA 2026
 
-### [Noa Michaela Fields](https://www.noamicaelafields.com/)
+// ### [Noa Michaela Fields](https://www.noamicaelafields.com/), poet, organizer | Chicago, IL
+
+### [Zoe Butler](https://playasummerlake.org/zoe-butler/), new media artist and researcher | Chicago, IL
 
 TBA
 

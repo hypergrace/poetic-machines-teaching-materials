@@ -110,7 +110,7 @@ Dufourtmantelle, Anna. In Praise of Risk, selections. 2019.
 
 Fields, Noa Michaela. E, selections. 2025. 
 
-Guest: Noa Michael Fields (dates to be confirmed)
+
 
 ## 11/06/26 Week 11
 
