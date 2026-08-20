@@ -14,6 +14,137 @@ module.exports = function (eleventyConfig) {
     return markdown.render(value);
   });
 
+  // --- Table of contents -----------------------------------------------
+  function slugify(text) {
+    return String(text)
+      .toLowerCase()
+      .replace(/<[^>]+>/g, "")
+      .replace(/&[a-z]+;/g, "")
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+  }
+
+  const HEADING_RE = /<h([2-4])([^>]*)>([\s\S]*?)<\/h\1>/gi;
+
+  // Collect headings from already-rendered HTML, assigning stable slugs.
+  function collectHeadings(html) {
+    const seen = {};
+    const headings = [];
+    String(html).replace(HEADING_RE, (match, level, attrs, inner) => {
+      const existing = attrs.match(/id\s*=\s*["']([^"']+)["']/i);
+      let id = existing ? existing[1] : slugify(inner);
+      if (!id) id = "section";
+      if (!existing) {
+        seen[id] = (seen[id] || 0) + 1;
+        if (seen[id] > 1) id = `${id}-${seen[id]}`;
+      }
+      headings.push({
+        level: Number(level),
+        id,
+        text: inner.replace(/<[^>]+>/g, "").trim(),
+      });
+      return match;
+    });
+    return headings;
+  }
+
+  // Adds id attributes to h2-h4 so the TOC links have somewhere to land.
+  eleventyConfig.addFilter("headingIds", function (html) {
+    if (!html) return html;
+    const headings = collectHeadings(html);
+    let i = 0;
+    return String(html).replace(HEADING_RE, (match, level, attrs, inner) => {
+      const heading = headings[i++];
+      if (/id\s*=\s*["']/i.test(attrs)) return match;
+      return `<h${level}${attrs} id="${heading.id}">${inner}</h${level}>`;
+    });
+  });
+
+  function renderToc(headings) {
+    if (!headings || headings.length < 2) return "";
+    const items = headings
+      .map(
+        (h) =>
+          `<li class="toc-item toc-level-${h.level}"><a class="toc-link" href="#${h.id}">${h.text}</a></li>`
+      )
+      .join("\n        ");
+    return `
+<nav class="toc" aria-label="Table of contents">
+  <div class="card" style="margin:1.5em 0;">
+    <div class="card-header"><strong>Contents</strong></div>
+    <div class="card-body">
+      <ul class="toc-list list-unstyled mb-0">
+        ${items}
+      </ul>
+    </div>
+  </div>
+</nav>
+<style>
+  .toc-list .toc-level-3 { padding-left: 1.25em; }
+  .toc-list .toc-level-4 { padding-left: 2.5em; }
+  .toc-link { text-decoration: none; }
+  .toc-link:hover { text-decoration: underline; }
+  html { scroll-behavior: smooth; }
+</style>
+<script>
+  (function () {
+    // Assign ids to any headings that lack them, matching the build-time slugs.
+    function slug(t) {
+      return t.toLowerCase().trim()
+        .replace(/[^a-z0-9\\s-]/g, "").replace(/\\s+/g, "-").replace(/-+/g, "-");
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var seen = {};
+      document.querySelectorAll("h2, h3, h4").forEach(function (h) {
+        if (h.id) return;
+        var id = slug(h.textContent) || "section";
+        seen[id] = (seen[id] || 0) + 1;
+        h.id = seen[id] > 1 ? id + "-" + seen[id] : id;
+      });
+    });
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest(".toc-link");
+      if (!link) return;
+      var target = document.getElementById(
+        decodeURIComponent(link.getAttribute("href").slice(1))
+      );
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", link.getAttribute("href"));
+    });
+  })();
+</script>`;
+  }
+
+  eleventyConfig.addFilter("toc", function (html) {
+    const headings = collectHeadings(html);
+    return renderToc(headings);
+  });
+
+  // Usable directly in a page: {% toc %} (reads the page's own markdown headings)
+  eleventyConfig.addShortcode("toc", function () {
+    const raw = this.page && this.page.rawInput ? this.page.rawInput : "";
+    const seen = {};
+    const headings = [];
+    raw
+      .replace(/^```[\s\S]*?^```/gm, "")
+      .split("\n")
+      .forEach((line) => {
+        const m = line.match(/^(#{2,4})\s+(.*?)\s*#*\s*$/);
+        if (!m) return;
+        const text = m[2].replace(/[*_`]/g, "").trim();
+        let id = slugify(text) || "section";
+        seen[id] = (seen[id] || 0) + 1;
+        if (seen[id] > 1) id = `${id}-${seen[id]}`;
+        headings.push({ level: m[1].length, id, text });
+      });
+    return renderToc(headings);
+  });
+  // ----------------------------------------------------------------------
+
   // Track figure counts per page
   const figureCounters = {};
   

@@ -3,9 +3,9 @@ weekNum: 0
 tags: syllabus
 layout: base
 title: Syllabus
-instructor: dr. grace grace grace (he/they)
+instructor: Grace Grace (he/they)
 email: gjohns13@saic.edu
-term: Fall 2025
+term: Fall 2026
 time: Friday 3:30-6:15pm
 location: MacLean 401
 ---
@@ -35,6 +35,12 @@ location: MacLean 401
   {% endfor %}
 </ul>
 
+<div style = "border-width:10px;border-color:#000">
+{% set snippet %}
+{% include "./content/schedule.md" %}
+{% endset %}
+{{ snippet | markdown | safe }}
+</div>
 <h2>GRADING, ATTENDANCE, PRIVACY, AND ACCOMMODATION POLICIES</h2>
 
 <h3>Grading Breakdown</h3>

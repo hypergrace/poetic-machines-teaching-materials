@@ -1,0 +1,9 @@
+---
+weekNum: 0
+layout: tutorial.njk
+title: Schedule
+---
+{% set snippet %}
+{% include  "./content/schedule.md" %}
+{% endset %} 
+{{ snippet | markdown | safe }}

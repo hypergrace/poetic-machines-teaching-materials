@@ -1,8 +1,3 @@
----
-weekNum: 0
-layout: tutorial.njk
-title: Schedule
----
 
 <!-- example of linking to hosted PDF:
 Maturana, Humberto & Francisco Varela. [The Tree of Knowledge](/assets/pdf/tree-of-knowledge.pdf). Foreword, Preface, Chapters 1, 2, 3, and 4. 1987. -->
@@ -31,7 +26,7 @@ Prigogyne, Ilya and Isabelle Stengers. [Order Out of Chaos: Man's New Dialogue w
 
 ## 09/11/26 Week 3
 
-Maturana, Humberto & Francisco Varela. [The Tree of Knowledge](/assets/pdf/tree-of-knowledge.pdf). Foreword, Preface, Chapters 1, 2, 3, and 4. 1987.
+Maturana, Humberto & Francisco Varela. [The Tree of Knowledge](/assets/pdf/tree-of-knowledge.pdf). Foreword, Preface, Chapters 1 and 2. 1987.
 
 #### optional
 
@@ -95,7 +90,7 @@ Midterm Presentations
 
 Glissant, Eduardo. Poetics of Relation, ["Theories"](https://monoskop.org/images/2/23/Glissant_Edouard_Poetics_of_Relation.pdf). 2009.
 
-Guest: Zoe Butler (dates to be confirmed)
+Guest: Zoe Butler
 
 ### Optional
 
@@ -110,15 +105,15 @@ Dufourtmantelle, Anna. In Praise of Risk, selections. 2019.
 
 Fields, Noa Michaela. E, selections. 2025. 
 
-
+Guest: Noa Michaela Fields
 
 ## 11/06/26 Week 11
 
-Deleuze, Gilles and Felix Guattari. "[From Chaos to Brain](https://transversalinflections.wordpress.com/wp-content/uploads/2015/04/deleuze-3207-what_is_philosophy-fenomenologie-van-schilderkunst.pdf)" in What is Philosophy? 1991.
+Deleuze, Gilles and Felix Guattari. "[From Chaos to the Brain](https://transversalinflections.wordpress.com/wp-content/uploads/2015/04/deleuze-3207-what_is_philosophy-fenomenologie-van-schilderkunst.pdf)" in What is Philosophy? 1991.
 
 Young, Eugene B. Et al. ["Chaos", "Chaosmosis", and "Chaosophy"](/assets/pdf/dictionary.pdf) in the Deleuze and Guattari Dictionary. 2013.
 
-#### Additional
+### Additional
 
 Holmes, Brian. [Guattari's Schizoanalytic Cartographies: Or, The Pathic Core at the Heart of Cybernetics](https://miriamgrossi.paginas.ufsc.br/files/2013/02/25090965-Guattari%E2%80%99s-Schizoanalytic-Cartographies.pdf).
 
@@ -173,16 +168,10 @@ Liu, Cixin. The Three Body Problem. 2008.
 
 Parisi, Luciana. Contagious Architecture: Computation, Aesthetics and Space. MIT Press. 2022.
 
-Prigogine, Ilya and Isabelle Stengers. Order Out of Chaos: Man’s New Dialogue with Nature. Verso.2019.
 
 Stengers, Isabelle. Cosmopolitics. Selections.
 
 Turner, Fred. From Counterculture to Cyberculture. University of Stanford Press. 2009.
 
 von Uexkull, Jakob. A Foray into the World of Animals and Humans, trans. Joseph D. O’Neil. University of Minnesota Press. 2010.
-
-[def]: /assets/pdf/Count-to-three.pdf
-
-
-von Foerster, Heinz. The Beginning of Heaven and Earth has no Name: Seven Days with Second-Order Cybernetics. 2014. -->
 
