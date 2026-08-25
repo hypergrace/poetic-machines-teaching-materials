@@ -21,9 +21,14 @@ computer:
     children:
       - modern (<10 years minimum, <5 years recommended)
       - preferred Windows 7+ || Mac OS. Chrome OS || Linux may work for many p5 assignments but some i/o libraries may not be - supported.
-      - ideally a working microphone and camera
       - understand the age and power of your computer will introduce performance limitations for more advanced project applications
       - You can’t code on a mobile phone or tablet, so that won’t be a substitution. Since you will need to be able to screen share, it’s recommended to Zoom from the same device you’re using to code.
+  - name: webcam
+    children: 
+      - you need a webcam if your computer is not equipped with one. 
+  - name: external monitor
+    children:
+      - it will be extremely beneficial for you to have an external monitor for online learning. 
   - name: reliable internet connection
     children:
       - use on-campus WIFI or library WIFI if home internet is not reliable

@@ -58,6 +58,12 @@ location: (see course schedule)
 
 {% endif %}
 
+<h2>MATERIALS</h2>
+{% set snippet %}
+{% include "./content/materials.md"%} 
+{% endset %} 
+{% markdown snippet %}
+
 <h3>Attendance</h3>
 
   {% for i in attendance.description%}
