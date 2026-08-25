@@ -1,5 +1,5 @@
 We chart a course across uneven terrains and disparate territories guided by the basic question of chaos theory (Prigogine and Stengers): how can we account for the world as deterministic and predictable (think Newtonian physics, 1990s New Economy computationalism, algorithmic behaviorist psychology, the inevitable heat death of the universe) given our experience suggesting it is otherwise radically open and indeterminate (accidents, relationality and group social dynamics, evolutionary biology’s sensitivity to rare events in sexual selection, the fallibility of weather prediction, and unforeseeable “Black Swan” events such as 9/11, Covid, gender revelation, or falling in love)?
-
+<!-- 
 A flashpoint in this tension between predictability and uncertainty took place in 1970s Chile. Santiago's 1968's student led university occupations informed Biologists-turned cyberneticists Humberto Maturana and Francisco Varela's concept of life as autopoietic system (approximately: self organization) as a kind of temporary autonomous resistance to the deterministic certainty of entropy.
 
 The heterodox process philosophy of mathematician physicist Alfred North Whitehead, whose inheritors include, incredibly, both the philosophy of science and technology and Kode 9’s Hyperdub record label, demands we see feeling and thinking as co-imbricated processes that unfurl reality.
@@ -12,9 +12,9 @@ Adrift in their rowboat on the waters of the Hood Canal, geographer-artist Asa S
 
 In a becoming-animal, Elizabeth Grosz writes of art not in terms of Rationalist notions of beauty and judgement, but driven instead by an improvised dance with evolutionary forces which stakes territory, devises courtship ritual, and generates unforeseeable futures.
 
-We arrive on a plateau where:
+We arrive on a plateau where: -->
 
-Art is not about communicating anything at all— it is an equipment for cracking open the protective shell of “what we all know” and jettisoning into the indeterminate, a turbulent communion with the chaosmos (chaos-cosmos) that cuts across mental, social, and environmental ecologies. The artist returns having woven together variations of sensation that scramble the very possibilities of what we believed our bodies could do.
+We will follow these sources from their own disciplinary conclusions in philosophy, biology, poetics, Art is not about communicating anything at all— it is an equipment for cracking open the protective shell of “what we all know” and jettisoning into the indeterminate, a turbulent communion with the chaosmos (chaos-cosmos) that cuts across mental, social, and environmental ecologies. The artist returns having woven together variations of sensation that scramble the very possibilities of what we believed our bodies could do.
 
 The artist creates the conditions for generating new modes of embodied moving, thinking, feeling, acting; art practice experiments in sensuous seduction, a surfing and surfacing flows of desire. They recode chaos into metastable existential territories, temporarily autonomous ways of life.
 

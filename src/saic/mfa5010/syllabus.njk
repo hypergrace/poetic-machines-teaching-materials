@@ -10,16 +10,22 @@ time: Friday 3:30-6:15pm
 location: MacLean 401
 ---
 {# point to term material #}
-{% set calendar = calendar.saic.f25 %}
+{% set calendar = calendar.saic.f26 %}
 {% set grades = grading.saic %}
+
+
+
 
 {# course header #}
 {% syllabusHeader course, instructor, time, term, location %}
+
 {# course description #}
 {% set snippet %}
 {% include "./content/description.md" %} 
 {% endset %}
 {% markdown snippet %}
+
+
 
 
 <h2>LEARNING OBJECTIVES</h2>
@@ -35,12 +41,12 @@ location: MacLean 401
   {% endfor %}
 </ul>
 
-<div style = "border-width:10px;border-color:#000">
 {% set snippet %}
 {% include "./content/schedule.md" %}
 {% endset %}
 {{ snippet | markdown | safe }}
-</div>
+
+
 <h2>GRADING, ATTENDANCE, PRIVACY, AND ACCOMMODATION POLICIES</h2>
 
 <h3>Grading Breakdown</h3>

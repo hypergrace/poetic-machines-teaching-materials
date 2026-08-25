@@ -4,7 +4,9 @@ layout: toc.njk
 title: Assignments
 ---
 
-## Discussion: Concept Map (30%)
+## Discussion: Concept Map (40%)
+
+This assignment will asks you to study texts closely and diligently and to organize that study in a disciplined manner. 
 
 Over the course of the semester, our class will build a collaboratively accessible  map of various concepts gleaned from the readings from the semester in a shared "vault" inside the software called Obsidian. Your work will help to both prime the discussion for the day and to record the insights of our discussion.
 
@@ -42,6 +44,6 @@ Around midterm, you will do a fifteen minute presentation about your practice. Y
 
 You don't need to have everything worked out at the theory/practice nexus. This is an opportunity to share your work with the class and to express interest in certain strains of thought endemic to the course which you may wish to work with in the final. 
 
-## Final Project: Chaosmotic Experimentations (50%)
+## Final Project: Chaosmotic Experimentations (40%)
 
 You are asked to create a work which draws on your practice that responds directly or indirectly to the concerns of one or more of course's three areas (cybernetics, chaos theory, and process philosophy). Since there is no studio time offered in the course, you may use work you are creating for another class (if the instructor finds that agreeable). In the final session, you will share documentation of the work and discuss it in terms of text's concepts.   

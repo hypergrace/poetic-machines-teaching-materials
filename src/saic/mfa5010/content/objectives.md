@@ -1,4 +1,4 @@
-- develop a working understanding of scientific theory's potential interdisciplinary interplay with the world
+- develop a working understanding of the course's main areas of chaos theory, cybernetics, and process philosophy
 - create and develop practices informed by chaotic, complex, or non-linear systems
-- endeavor to work inter- or transdisciplinarily
-- an understanding of the limits and strengths of both artistic practice and philosophical inquiry
+- endeavor to work inter- or transdisciplinarily through course concepts
+- cultivate an understanding of the distinct goals of artistic practice,  philosophical inquiry, and scientific knowledge creation

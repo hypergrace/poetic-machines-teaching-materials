@@ -24,6 +24,10 @@ Prigogyne, Ilya and Isabelle Stengers. [Order Out of Chaos: Man's New Dialogue w
 - Preface: Man's New Dialogue with Nature
 - Introduction: A Challenge to Science
 
+#### optional
+
+Adkins, Taylor and Cooper Cherry. Machinic Unconscious Happy Hour. ["Order out of Chaos"](https://soundcloud.com/podcast-co-coopercherry/prigogine-stengers-order-out), podcast. 2026
+
 ## 09/11/26 Week 3
 
 Maturana, Humberto & Francisco Varela. [The Tree of Knowledge](/assets/pdf/tree-of-knowledge.pdf). Foreword, Preface, Chapters 1 and 2. 1987.
@@ -83,7 +87,7 @@ Ramos, Ana. "[Standing in the Midst](https://journals.oslomet.no/index.php/rerm/
 ## 10/16/26 Week 8
 
 
-Midterm Presentations 
+Midterm Presentations: Luring Theory Through Practice
 
 
 ## 10/23/26 Week 9
@@ -139,7 +143,7 @@ Critique week, no class
 
 ## 12/12/25 Week 16
 
-Final project showings
+Final Project: Chaosmotic Experimentations
 
 <!--
 Munster, Anna. An Aesthetia of Networks: Conjunctive Experience in Art and Technology. 2013.
@@ -174,4 +178,5 @@ Stengers, Isabelle. Cosmopolitics. Selections.
 Turner, Fred. From Counterculture to Cyberculture. University of Stanford Press. 2009.
 
 von Uexkull, Jakob. A Foray into the World of Animals and Humans, trans. Joseph D. O’Neil. University of Minnesota Press. 2010.
+-->
 
