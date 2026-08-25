@@ -66,14 +66,11 @@ location: (see course schedule)
  <h5>makeup</h5>
   <p>{{attendance.makeup}}</p>
 
-{% if grading.breakdown %}
+  <h3>Grading Breakdown</h3>
 
-<h3>Grading by Assignment</h3>
-<ul class="list-group">
-  {% for item in grading.breakdown %}
-  <li class="list-group-item">{{ item }}</li>
-  {% endfor %}
-</ul>
-{% endif %}
+  {% set snippet %}
+  {% include "./content/breakdown.md" %}
+  {% endset %}
+  {% markdown snippet %}
 
 {% include "../content/syllabus-stock.html"%}

@@ -1,6 +1,8 @@
 ---
-layout: schedule.njk
+layout: tutorial.njk
 semester: Fall 
+title: Schedule
+weekNum: 0
 course: UIC | ART 250 | Introduction to Interactive Sound
 memberCollection: art250-interactive-sound
 tags: art250-interactive-sound
