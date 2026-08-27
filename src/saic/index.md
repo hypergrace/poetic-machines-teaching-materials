@@ -1,6 +1,6 @@
 ---
 layout: bigtext.njk
-title: SAIC ART AND TECH w. garrett laroy johnson
+title: SAIC ART AND TECH w. grace grace grace
 big:
   - name: ATSP 2101
     subname: Art and technology practices

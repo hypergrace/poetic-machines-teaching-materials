@@ -1,6 +1,6 @@
 ---
 layout: bigtext.njk
-title: UIC NEW MEDIA ART w. garrett laroy johnson
+title: UIC NEW MEDIA ART w. grace grace grace
 department: New Media Arts at University of Illinois Chicago
 big:
   - name: ART 150
