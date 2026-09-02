@@ -18,7 +18,7 @@ big:
   - name: atsP 4018
     subname: Anxious Media Ecologies
     url: ats4018
-  - name: MFA 5010
+  - name: ATSP 5010
     subname: Chaosmotic Systems
     url: mfa5010
 ---

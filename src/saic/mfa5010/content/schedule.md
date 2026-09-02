@@ -26,6 +26,8 @@ Prigogyne, Ilya and Isabelle Stengers. [Order Out of Chaos: Man's New Dialogue w
 
 #### optional
 
+Gleick, James. [Chaos: Making a New Science](https://www.are.na/block/11207458). 1987.
+
 Adkins, Taylor and Cooper Cherry. Machinic Unconscious Happy Hour. ["Order out of Chaos"](https://soundcloud.com/podcast-co-coopercherry/prigogine-stengers-order-out), podcast. 2026
 
 ## 09/11/26 Week 3
@@ -47,17 +49,13 @@ Von Foerster, Heinz. [The Beginning of Heaven and Earth has No Name](/assets/pdf
 - Seventh Day: Rest, Rest, Rest
 - Epilogue in Heaven
 
-#### Additional
+#### Optional
 
 Curtis, Adam. [All Watched Over By Machines of Loving Grace](https://vimeo.com/515004292). Three-part film. 2011.
 
 Holmes, Brian. "[Count to Three](/assets/pdf/Count-to-three.pdf)." 2016.
 
 ## 09/25/26 Week 5
-
-Substitute + Obsidian Workshop
-
-## 10/02/26 Week 6
 
 Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehead.pdf). 1938.
 
@@ -66,23 +64,27 @@ Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehe
 
 Gaskill, Nicholas and A.J. Nocek, "[An Adventure in Thought](/assets/pdf/TheLureofWhithead.pdf)", in The Lure of Whitehead. 2014.
 
-#### Additional
+#### Optional
 
 Manning, Erin. [The Minor Gesture](/assets/pdf/The-Minor-Gesture.pdf). 2014.
 
 Halewood, Michael. "[The Order of Nature and the Creation of Societies](/assets/pdf/TheLureofWhithead.pdf)", in The Lure of Whitehead, 2014.
 
-## 10/9/26 Week 7
-
+## 10/02/26 Week 6
 
 Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehead.pdf). 1938.
 
 - Understanding
 - Perspective
 
-#### Additional
+#### Optional
 
 Ramos, Ana. "[Standing in the Midst](https://journals.oslomet.no/index.php/rerm/article/view/5145/4497)", in Erin Manning's Imperatives for Education Research. 2022.
+
+
+## 10/9/26 Week 7
+
+TBD. 
 
 ## 10/16/26 Week 8
 
@@ -115,9 +117,14 @@ Guest: Noa Michaela Fields
 
 Deleuze, Gilles and Felix Guattari. "[From Chaos to the Brain](https://transversalinflections.wordpress.com/wp-content/uploads/2015/04/deleuze-3207-what_is_philosophy-fenomenologie-van-schilderkunst.pdf)" in What is Philosophy? 1991.
 
-Young, Eugene B. Et al. ["Chaos", "Chaosmosis", and "Chaosophy"](/assets/pdf/dictionary.pdf) in the Deleuze and Guattari Dictionary. 2013.
+De Landa, Manuel. _Intensive Science and Virtual Philosophy_. 2004.
+- Introduction.
+- Chapter 1. 
 
-### Additional
+### Optional
+
+
+Young, Eugene B. Et al. ["Chaos", "Chaosmosis", and "Chaosophy"](/assets/pdf/dictionary.pdf) in the Deleuze and Guattari Dictionary. 2013.
 
 Holmes, Brian. [Guattari's Schizoanalytic Cartographies: Or, The Pathic Core at the Heart of Cybernetics](https://miriamgrossi.paginas.ufsc.br/files/2013/02/25090965-Guattari%E2%80%99s-Schizoanalytic-Cartographies.pdf).
 
@@ -129,7 +136,7 @@ Deleuze, Gilles and Felix Guattari. "Rhizome". [A Thousand Plateaus](https://fil
 
 Kronic, Maya B. and Amy Ireland. [Introduction + "Kwaizome" pgs. 3-7 + End Notes pgs. 49-70](/assets/pdf/cuteacc.pdf). Cute Accelerationism. 2024.
 
-Additional:
+Optional:
 
 Interview w. Maya B. Kronic and Amy Ireland. ["Is Accelerationism the Same Thing As Falling in Love?"](https://spikeartmagazine.com/articles/interview-amy-ireland-maya-b-kronic-cute-accelerationism). 2025.
 
