@@ -235,7 +235,7 @@ There are other ways to count. For instance, when you are counting cash money, y
 In creative code, you may frequently count by pixel positional offsets, size of a shape, changes in color, etc.
 
 
-{% p5code "More Variables" %}
+{% p5code "For Loops" %}
 
 let y = 60; // y pos of circle
 let x = 50; // x pos of circle
@@ -246,22 +246,9 @@ let d = 30; // diameter of the circle
 function setup() {
   createCanvas(400, 400);
   background(220);
- 
-  circle(x,y,d);
-  y+= yOffset; 
-  circle(x,y,d);
-  y+= yOffset
-  circle(x,y,d)
 
-y+= yOffset; 
-  circle(x,y,d);
-  y+= yOffset
-  circle(x,y,d)
-
-  y+= yOffset; 
-  circle(x,y,d);
-  y+= yOffset
-  circle(x,y,d)
-
+ for (let y = 50;y<height;y+=yOffset){
+  circle(x,y,d); 
+ }
 }
 {% endp5code %}

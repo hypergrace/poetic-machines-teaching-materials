@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>p5 Sketch</title>
+  <style>body { margin:0; padding:0; overflow:hidden; }</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+new p5(function(p) {
+  let y = 60; // y pos of circle
+  let x = 50; // x pos of circle
+  let yOffset = 80; // y positional difference between circles
+  let d = 30; // diameter of the circle
+
+  p.setup = function() {
+    p.createCanvas(400, 400);
+      p.background(220);
+     
+     for (let y = 50;y<p.height;y+=yOffset){
+      p.circle(x,y,d); 
+     }
+  };
+
+});
+</script>
+</body>
+</html>
