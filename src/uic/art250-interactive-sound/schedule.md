@@ -22,13 +22,26 @@ tags: art250-interactive-sound
 - [random]
 - logic [==]
 - [print]
+- [select]
+
+listenings:
+
+- [Vangelis - Blade Runner introduction](https://www.youtube.com/watch?v=BUgSJt7Q7gw&list=PLQrO-C6odG9aiuTM9aVqFM_00359gs0OM)
+- [Lauren Sarah Hayes - The Accusations that are Confessions](https://www.youtube.com/watch?v=RgPaHgbaevQ&list=RDRgPaHgbaevQ&start_radio=1)
+- [Akihiko Matsumoto - Generative Ambient Music Live Cassette 002](https://www.youtube.com/watch?v=cCLHqbKWi0k&list=RDcCLHqbKWi0k&start_radio=1)
 
 ## Week 2: 
 
 9.1 Tu / Intro to Max (cont.)
 - lists [zl objects]
 - [random], [drunk], [+], [-], [*], [/]  
+- [pack], [unpack]
 9.3 Th / Print Poems 
+
+showings:
+- [Wolfgang Mozart's musical dice game piece](https://thebrickinthesky.wordpress.com/2012/07/18/mozart-musikalisches-wurfelspiel-mozarts-musical-dice-game/)
+- [William S. Burroughs's cut-up technique](https://youtu.be/Rc2yU7OUMcI?si=1epDzO6MXs2fckw2)
+- [Judy Malloy's Uncle Roger (1986-88, 1995) - web art piece](https://collection.eliterature.org/3/work.html?work=uncle-roger&ref=precursorpoets.com)
 
 # Module 1: Synthesizing Drones + Ambient Textures
 
@@ -36,14 +49,26 @@ tags: art250-interactive-sound
 
 9.8 Tu / Tutorial: Additive Sound Synthesis 
 - [cycle~]
+- [ezdac~]
+- [live.gain~]
 - [saw~] 
 - [rect~] 
+- [spectroscope~]
 - [slider] 
 - [kslider] 
+- [*~] (audio amplifier)
+- [meter~]
+- [multislider]
+- [pack], [unpack]
 - [ftom], [mtof] (MIDI tranformations)
 - [zl.lookup]
 
 9.10 Th / Studio: Using messages, kslider, metro + counter to perform and automate additive synthesis 
+
+Listenings:
+- [Intro to Spectral Music](https://www.youtube.com/watch?v=Rs7b4WSxF3w)
+- [Giacinto Scelsi's Konx-Om-Pax (1969)](https://www.youtube.com/watch?v=BnZQVRmJObw&list=RDBnZQVRmJObw&start_radio=1)
+- [Konx-om-Pax - "Regional Surrealism" (2012)](https://konx-om-pax.bandcamp.com/album/regional-surrealism)
 
 ## Week 4 
 
