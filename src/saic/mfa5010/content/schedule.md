@@ -51,7 +51,7 @@ Von Foerster, Heinz. [The Beginning of Heaven and Earth has No Name](/assets/pdf
 
 #### Optional
 
-Curtis, Adam. [All Watched Over By Machines of Loving Grace](https://vimeo.com/515004292). Three-part film. 2011.
+Curtis, Adam. [All Watched Over By Machines of Loving Grace](https://archive.org/details/BBC.All.Watched.Over.by.Machines.of.Loving.Grace.3of3.Monkey.in.the.Machine.PDTV). Three-part film. 2011.
 
 Holmes, Brian. "[Count to Three](/assets/pdf/Count-to-three.pdf)." 2016.
 
