@@ -63,7 +63,7 @@ Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehe
 
 Gaskill, Nicholas and A.J. Nocek, "[An Adventure in Thought](/assets/pdf/TheLureofWhithead.pdf)", in The Lure of Whitehead. 2014.
 
-Guest: Jared Morningstart
+Guest: Jared Morningstar
 
 #### Optional
 
@@ -84,23 +84,21 @@ Ramos, Ana. "[Standing in the Midst](https://journals.oslomet.no/index.php/rerm/
 
 ## 10/9/26 Week 7
 
-TBD.
-
-## 10/16/26 Week 8
-
 Midterm Presentations: Luring Theory Through Practice
 
-## 10/23/26 Week 9
+## 10/16/26 Week 8
 
 Glissant, Eduardo. Poetics of Relation, ["Theories"](https://monoskop.org/images/2/23/Glissant_Edouard_Poetics_of_Relation.pdf). 2009.
 
 Guest: Zoe Butler
 
-### Optional
-
 [Post Tenebras Lux](https://youtu.be/nTfN7NOs-bQ?si=bW63YAGHZauFGqV-) by Carlos Reygadas. [Higher-resolution version, no subtitles](https://www.dailymotion.com/video/x8och7z).
 
 Thomas, Zach. ["Carlos Reygadas' Post Tenebras Lux: Towards a Cinema of Experience,"](/assets/pdf/tal.pdf) in The Anthropocene Laboratory. 2023.
+
+## 10/23/26 Week 9
+
+### Optional
 
 ## 10/30/26 Week 10
 
