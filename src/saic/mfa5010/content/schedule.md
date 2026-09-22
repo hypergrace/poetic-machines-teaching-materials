@@ -1,4 +1,3 @@
-
 <!-- example of linking to hosted PDF:
 Maturana, Humberto & Francisco Varela. [The Tree of Knowledge](/assets/pdf/tree-of-knowledge.pdf). Foreword, Preface, Chapters 1, 2, 3, and 4. 1987. -->
 
@@ -64,6 +63,8 @@ Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehe
 
 Gaskill, Nicholas and A.J. Nocek, "[An Adventure in Thought](/assets/pdf/TheLureofWhithead.pdf)", in The Lure of Whitehead. 2014.
 
+Guest: Jared Morningstart
+
 #### Optional
 
 Manning, Erin. [The Minor Gesture](/assets/pdf/The-Minor-Gesture.pdf). 2014.
@@ -81,16 +82,13 @@ Whitehead, Alfred North. [Modes of Thought](/assets/pdf/Modes-of-Thought-Whitehe
 
 Ramos, Ana. "[Standing in the Midst](https://journals.oslomet.no/index.php/rerm/article/view/5145/4497)", in Erin Manning's Imperatives for Education Research. 2022.
 
-
 ## 10/9/26 Week 7
 
-TBD. 
+TBD.
 
 ## 10/16/26 Week 8
 
-
 Midterm Presentations: Luring Theory Through Practice
-
 
 ## 10/23/26 Week 9
 
@@ -104,12 +102,11 @@ Guest: Zoe Butler
 
 Thomas, Zach. ["Carlos Reygadas' Post Tenebras Lux: Towards a Cinema of Experience,"](/assets/pdf/tal.pdf) in The Anthropocene Laboratory. 2023.
 
-
 ## 10/30/26 Week 10
 
-Dufourtmantelle, Anna. In Praise of Risk, selections. 2019. 
+Dufourtmantelle, Anna. In Praise of Risk, selections. 2019.
 
-Fields, Noa Michaela. E, selections. 2025. 
+Fields, Noa Michaela. E, selections. 2025.
 
 Guest: Noa Michaela Fields
 
@@ -118,11 +115,11 @@ Guest: Noa Michaela Fields
 Deleuze, Gilles and Felix Guattari. "[From Chaos to the Brain](https://transversalinflections.wordpress.com/wp-content/uploads/2015/04/deleuze-3207-what_is_philosophy-fenomenologie-van-schilderkunst.pdf)" in What is Philosophy? 1991.
 
 De Landa, Manuel. _Intensive Science and Virtual Philosophy_. 2004.
+
 - Introduction.
-- Chapter 1. 
+- Chapter 1.
 
 ### Optional
-
 
 Young, Eugene B. Et al. ["Chaos", "Chaosmosis", and "Chaosophy"](/assets/pdf/dictionary.pdf) in the Deleuze and Guattari Dictionary. 2013.
 
@@ -186,4 +183,3 @@ Turner, Fred. From Counterculture to Cyberculture. University of Stanford Press.
 
 von Uexkull, Jakob. A Foray into the World of Animals and Humans, trans. Joseph D. O’Neil. University of Minnesota Press. 2010.
 -->
-

@@ -8,6 +8,8 @@ title: Guests
 
 ## FA 2026
 
+[Jared Morningstar](https://jaredmorningstar.com/), independent scholar and public intellectual | Chicago, IL
+
 [Noa Michaela Fields](https://www.noamicaelafields.com/), poet, organizer | Chicago, IL
 
 [Zoe Butler](https://playasummerlake.org/zoe-butler/), new media artist and researcher | Chicago, IL
@@ -15,7 +17,6 @@ title: Guests
 ## FA 2025
 
 Asa Sakrison, Cultural geographer / Geographical Information Systems (GIS), educator, activist | Portland, Oregon
-
 
 ## FA 2024
 
