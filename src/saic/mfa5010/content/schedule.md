@@ -118,12 +118,11 @@ Substitute: Kristi McGuire
 
 Deleuze, Gilles and Felix Guattari. "[From Chaos to the Brain](https://transversalinflections.wordpress.com/wp-content/uploads/2015/04/deleuze-3207-what_is_philosophy-fenomenologie-van-schilderkunst.pdf)" in What is Philosophy? 1991.
 
-De Landa, Manuel. _Intensive Science and Virtual Philosophy_. 2004.
-
-- Introduction.
-- Chapter 1.
+Massumi, Brian. Translator's Foreword: Pleasures of Philosophy. [A Thousand Plateaus](https://files.libcom.org/files/A%20Thousand%20Plateaus.pdf) by Gilles Deleuze and Felix Guattari. 1980.
 
 ### Optional
+
+De Landa, Manuel. _Intensive Science and Virtual Philosophy_. 2004.
 
 Young, Eugene B. Et al. ["Chaos", "Chaosmosis", and "Chaosophy"](/assets/pdf/dictionary.pdf) in the Deleuze and Guattari Dictionary. 2013.
 
