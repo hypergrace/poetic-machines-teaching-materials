@@ -4,8 +4,7 @@ layout: base.njk
 
 <div class="col-sm-6">
   <h1>Group Presentations</h1>
-  <h2>Presentation Criteria</h2>
-  <strong>Overall</strong>
+  <strong>Overview</strong>
   <p>
     You and 5-6 of your classmates will prepare a presentation on an area of {{ area }}. Groups will be arranged by topic. Each student must select one artist from that topic. Each student should present 4-5 minutes.   
     
@@ -13,18 +12,23 @@ layout: base.njk
 <p>
   Note that these topics fall outside of what we work on with p5.js. This is an opportunity to explore other areas of creative coding and digital art. Pay particular attention to how the artist you select uses code and other technology.
   </p>
-   <strong>Artists</strong>
+
+  <h2>Presentation Criteria</h2>
+
+   <strong>1. Artist Presentations </strong>
+   <p>Each student will present on their selected artist for about ~4 minutes, covering the following points:</p>
   <ul>
     <li>For each artist, present 1 or 2 artworks</li>
     <li>Discuss how the work relates to the topic / technique</li>
     <li>Read and discuss the artist's descriptions of these works (if available, if not, maybe don't pick that artwork!)</li>
     <li>Give your own sense of the work: what do you see, how does it make you feel, what do you think it's about?</li>
+    <li>Why did you choose this artist? How do your interests in or outside of school intersect with this topic / technique?</li>
   </ul>
-  <strong>Your own connections</strong>
-  <p>
-    How do your interests intersect with this topic / technique? How might you
-    continue to pursue this at this school or in your future work?
-  </p>
+  
+  <strong>2. Group Discussion</strong>
+  <p>After all individual presentations, the group will discuss the topic collectively, making connections between the different artists and artworks presented. Your group is responsible for leading this discussion and ensuring that all members contribute.</p> 
+  
+  <p>To structure the discussion, come up with one discussion question per student. Each student in the group should contribute to the discussion by responding to at least one of their peers questions. You should spend about 5 minutes on this concluding discussion.</p>
 
   {% for t in topics%}
   <h3>{{ t.title }}</h3>
@@ -39,16 +43,6 @@ layout: base.njk
     </ul>
   </div>
 
-  <h5>readings:</h5>
-  <div>
-    <ul>
-      {% for r in t.readings%}
-      <li>
-        <a href="{{ r.url }}">{{ r.info }}</a>
-      </li>
-      {% endfor%}
-    </ul>
-  </div>
 
   {% if t.connections%}
   <h5>{{ department }} connections:</h5>
